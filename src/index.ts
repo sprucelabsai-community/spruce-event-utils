@@ -1,12 +1,6 @@
-export { default as versionUtil } from './version.utility'
-export { default as diskUtil } from './disk.utility'
-export { default as namesUtil } from './names.utility'
-export { default as addonUtil } from './addon.utility'
-export { default as pluginUtil } from './plugin.utility'
-
-export { ErrorOptions as UtilErrorOptions } from './SpruceError'
-export * from './constants'
-export * from './global.types'
-
-export { default as SettingsService } from './services/SettingsService'
-export * from './services/SettingsService'
+export { default as buildEventContract } from './utilities/buildEventContract'
+export { default as eventContractUtil } from './utilities/eventContract.utility'
+export { default as eventErrorAssertUtil } from './utilities/eventErrorAssert.utility'
+export { default as eventResponseUtil } from './utilities/eventResponse.utility'
+export { default as validateEventContract } from './utilities/validateEventContract'
+export * from './event.types'
