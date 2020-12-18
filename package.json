@@ -11,7 +11,7 @@
 		"build/**/*",
 		"tsconfig.json"
 	],
-	"description": "Loosely coupled classes and functions to make skill development faster! 🏎",
+	"description": "Some helpful utilities to speed up working with Mercury! 🚅",
 	"keywords": [
 		"node",
 		"sprucelabs"
