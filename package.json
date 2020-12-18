@@ -1,5 +1,5 @@
 {
-	"name": "@sprucelabs/spruce-skill-utils",
+	"name": "@sprucelabs/spruce-event-utils",
 	"publishConfig": {
 		"access": "public"
 	},
