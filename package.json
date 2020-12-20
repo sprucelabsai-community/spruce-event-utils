@@ -31,7 +31,7 @@
 		"lint.watch": "chokidar 'src/**/*' -c 'yarn lint.tsc'",
 		"release": "semantic-release",
 		"test": "jest",
-		"watch.test": "jest --watch",
+		"watch.tests": "jest --watch",
 		"watch.build": "concurrently 'yarn run build.babel --watch' \"chokidar 'src/**/*' -c 'yarn build.types'\"",
 		"upgrade.packages": "yarn-upgrade-all && rm yarn.lock ; yarn ; yarn lint.fix | true",
 		"upgrade.packages.all": "yarn install && yarn upgrade.packages",
