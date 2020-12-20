@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.0.10...v1.1.0) (2020-12-20)
+
+
+### Features
+
+* target and payload builder ([08506b6](https://github.com/sprucelabsai/spruce-event-utils/commit/08506b6))
+
 ## [1.0.10](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.0.9...v1.0.10) (2020-12-19)
 
 ## [1.0.9](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.0.8...v1.0.9) (2020-12-18)
