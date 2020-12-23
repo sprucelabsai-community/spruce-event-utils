@@ -1,4 +1,4 @@
-import { buildSchema, Schema } from '@sprucelabs/schema'
+import { buildSchema, Schema, SchemaValues } from '@sprucelabs/schema'
 
 export const eventTargetSchema = buildSchema({
 	id: 'eventTarget',
@@ -19,6 +19,7 @@ export const eventTargetSchema = buildSchema({
 })
 
 export type EventTargetSchema = typeof eventTargetSchema
+export type EventTarget = SchemaValues<EventTargetSchema>
 
 type TargetAndPayload<PayloadSchema extends Schema> = {
 	id: string
