@@ -43,7 +43,7 @@
 		"@sprucelabs/schema": ">0",
 		"@sprucelabs/spruce-core-schemas": ">0",
 		"@sprucelabs/test": ">0",
-		"@sprucelabs/test-utils": ">01"
+		"@sprucelabs/test-utils": ">0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.12.10",
