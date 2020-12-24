@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.2.3...v1.3.0) (2020-12-24)
+
+
+### Features
+
+* versioning support in name splitting and joining ([1958dcb](https://github.com/sprucelabsai/spruce-event-utils/commit/1958dcb))
+
 ## [1.2.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.2.2...v1.2.3) (2020-12-24)
 
 ## [1.2.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.2.1...v1.2.2) (2020-12-24)
