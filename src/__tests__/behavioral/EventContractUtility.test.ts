@@ -41,7 +41,46 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 			eventName: 'event',
 			version: 'v2020_02_02',
 		})
+
 		assert.isEqual(name, 'test.event::v2020_02_02')
+	}
+
+	@test()
+	protected static noVersionResolvesToVersion() {
+		const sig = eventContractUtil.getSignatureByName(
+			{
+				eventSignatures: {
+					'book-appointment::v1': {},
+				},
+			},
+			//@ts-ignore
+			'book-appointment'
+		)
+
+		assert.isTruthy(sig)
+	}
+
+	@test()
+	protected static noVersionResolvesToLatestVersion() {
+		const sig = eventContractUtil.getSignatureByName(
+			{
+				eventSignatures: {
+					'book-appointment::v1': {},
+					'book-appointment::v3': {},
+					'book-appointment::v5': {
+						emitPayloadSchema: {
+							id: 'test',
+							fields: {},
+						},
+					},
+					'book-appointment::v4': {},
+				},
+			},
+			//@ts-ignore
+			'book-appointment'
+		)
+
+		assert.isTruthy(sig.emitPayloadSchema)
 	}
 
 	@test(

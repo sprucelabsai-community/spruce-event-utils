@@ -3,12 +3,14 @@ import {
 	EventNames,
 	EventSignature,
 } from '@sprucelabs/mercury-types'
+import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
 
 export interface NamedEventSignature {
 	eventNameWithOptionalNamespace: string
 	eventName: string
 	eventNamespace?: string
+	version?: string
 	signature: EventSignature
 }
 
@@ -75,6 +77,7 @@ const eventContractUtil = {
 				eventName: nameParts.eventName,
 				eventNamespace: nameParts.eventNamespace,
 				signature: contract.eventSignatures[name],
+				version: nameParts.version,
 			}
 		})
 	},
@@ -105,10 +108,43 @@ const eventContractUtil = {
 		contract: Contract,
 		eventNameWithOptionalNamespace: EventNames<Contract>
 	) {
-		const match = this.getNamedEventSignatures(contract).find(
+		const sigs = this.getNamedEventSignatures(contract)
+		let match = sigs.find(
 			(event) =>
 				event.eventNameWithOptionalNamespace === eventNameWithOptionalNamespace
 		)
+
+		if (!match) {
+			const search = eventNameWithOptionalNamespace + EVENT_VERSION_DIVIDER
+			const matchesOnVersion = Object.keys(contract.eventSignatures).filter(
+				(name) => {
+					if (name.search(search) === 0) {
+						return true
+					}
+
+					return false
+				}
+			)
+
+			matchesOnVersion.sort((a, b) => {
+				const v1 = a.split('::').pop() ?? 0
+				const v2 = b.split('::').pop() ?? 0
+
+				if (v1 > v2) {
+					return 1
+				} else if (v1 < v2) {
+					return -1
+				}
+
+				return 0
+			})
+
+			const latestVersion = matchesOnVersion.pop()
+
+			match = sigs.find(
+				(event) => event.eventNameWithOptionalNamespace === latestVersion
+			)
+		}
 
 		if (!match) {
 			throw new SpruceError({
