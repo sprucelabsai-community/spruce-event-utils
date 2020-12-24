@@ -1,5 +1,6 @@
 import AbstractSpruceTest, { assert, test } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
+import { eventErrorAssertUtil } from '../..'
 import SpruceError from '../../errors/SpruceError'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
 
@@ -46,8 +47,6 @@ export default class EventResponseUtilTest extends AbstractSpruceTest {
 			)
 		)
 
-		errorAssertUtil.assertError(err, 'MERCURY_RESPONSE_ERROR', {
-			'responseErrors[0].options.code': 'COOL_ERROR',
-		})
+		eventErrorAssertUtil.assertError(err, 'COOL_ERROR')
 	}
 }

@@ -26,7 +26,8 @@
                 "--inspect",
                 "5200",
                 "--pattern",
-                "${fileBasenameNoExtension}"
+                "${fileBasenameNoExtension}",
+                "--shouldWatch"
             ],
             "promptOnClose": false,
             "group": {
@@ -46,8 +47,8 @@
                 "test",
                 "--inspect",
                 "5200",
-                "--shouldTestAtStart",
-                "false"
+                "--shouldHoldAtStart",
+                "start"
             ],
             "promptOnClose": false,
             "group": "test",

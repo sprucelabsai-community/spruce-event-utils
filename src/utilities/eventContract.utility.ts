@@ -19,20 +19,34 @@ const eventContractUtil = {
 
 	splitEventNameWithOptionalNamespace(
 		name: string
-	): { eventName: string; eventNamespace?: string } {
-		const parts = name.split('.')
+	): { eventName: string; eventNamespace?: string; version?: string } {
+		const versionParts = name.split('::')
+		const eventNameWithOptionalNamespace = versionParts[0]
+		const version = versionParts[1]
+
+		const parts = eventNameWithOptionalNamespace.split('.')
 		const eventNamespace = parts[1] ? parts[0] : undefined
 		const eventName = parts[1] || parts[0]
 
-		return {
+		const e: any = {
 			eventName,
-			eventNamespace,
 		}
+
+		if (eventNamespace) {
+			e.eventNamespace = eventNamespace
+		}
+
+		if (version) {
+			e.version = version
+		}
+
+		return e
 	},
 
 	joinEventNameWithOptionalNamespace(options: {
 		eventName: string
 		eventNamespace?: string
+		version?: string
 	}): string {
 		const { eventName, eventNamespace } = options
 
@@ -40,7 +54,15 @@ const eventContractUtil = {
 			return eventName
 		}
 
-		return !eventNamespace ? eventName : `${eventNamespace}.${eventName}`
+		let eventNameWithOptionalNamespace = !eventNamespace
+			? eventName
+			: `${eventNamespace}.${eventName}`
+
+		if (options.version) {
+			eventNameWithOptionalNamespace += '::' + options.version
+		}
+
+		return eventNameWithOptionalNamespace
 	},
 
 	getNamedEventSignatures(contract: EventContract): NamedEventSignature[] {
@@ -100,7 +122,22 @@ const eventContractUtil = {
 	},
 
 	generateResponseEventName(eventNameWithOptionalNamespace: string) {
-		return `${eventNameWithOptionalNamespace}:response`
+		const {
+			eventName,
+			eventNamespace,
+			version,
+		} = this.splitEventNameWithOptionalNamespace(eventNameWithOptionalNamespace)
+
+		let name = `${this.joinEventNameWithOptionalNamespace({
+			eventNamespace,
+			eventName,
+		})}:response`
+
+		if (version) {
+			name += '::' + version
+		}
+
+		return name
 	},
 }
 
