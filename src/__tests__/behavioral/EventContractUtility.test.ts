@@ -37,6 +37,16 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 	@test()
 	protected static canJoinEventNameWithVersion() {
 		const name = eventContractUtil.joinEventNameWithOptionalNamespace({
+			eventName: 'event',
+			version: 'v2020_02_02',
+		})
+
+		assert.isEqual(name, 'event::v2020_02_02')
+	}
+
+	@test()
+	protected static canJoinEventNameWithVersionAndNamespace() {
+		const name = eventContractUtil.joinEventNameWithOptionalNamespace({
 			eventNamespace: 'test',
 			eventName: 'event',
 			version: 'v2020_02_02',

@@ -50,19 +50,26 @@ const eventContractUtil = {
 		eventNamespace?: string
 		version?: string
 	}): string {
-		const { eventName, eventNamespace } = options
+		const { eventName, eventNamespace, version } = options
+
+		function optionallyAttachversion(name: string) {
+			if (version) {
+				return name + EVENT_VERSION_DIVIDER + version
+			}
+			return name
+		}
 
 		if (!eventNamespace) {
-			return eventName
+			return optionallyAttachversion(eventName)
 		}
 
 		let eventNameWithOptionalNamespace = !eventNamespace
 			? eventName
 			: `${eventNamespace}.${eventName}`
 
-		if (options.version) {
-			eventNameWithOptionalNamespace += '::' + options.version
-		}
+		eventNameWithOptionalNamespace = optionallyAttachversion(
+			eventNameWithOptionalNamespace
+		)
 
 		return eventNameWithOptionalNamespace
 	},
