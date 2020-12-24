@@ -73,6 +73,12 @@ const eventDiskUtil = {
 		event.eventName = matches[1]
 		event.version = matches[2]
 
+		if (!event.eventName || !event.version) {
+			throw new Error(
+				"Invalid event path. Must be in a folder structure like '**/src/events/{{eventName}}/{{version}}/emitPayloadSchema.builder.ts"
+			)
+		}
+
 		return event
 	},
 	resolveEventPath(

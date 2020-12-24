@@ -26,19 +26,25 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 				this.resolvePath('my-great-event/v2020_02_02.listener.ts')
 			)
 		)
+
+		assert.doesThrow(() =>
+			eventDiskUtil.splitPathToListener(
+				'/Volumes/RAMDisk/spruce-cli/16aa2e3a-d104-48de-a807-0804e87af9e1/src/listeners/MySkill1608771478325/v2020_12_23/my-fantastically-amazing-event/emitPayload.builder.ts'
+			)
+		)
 	}
 
 	@test()
 	protected static throwsIfNotEvent() {
 		assert.doesThrow(() =>
-			eventDiskUtil.splitPathToListener(
+			eventDiskUtil.splitPathToEvent(
 				this.resolvePath('src/events/my-great-event/emitPayload.builder.ts')
 			)
 		)
 
 		assert.doesThrow(() =>
-			eventDiskUtil.splitPathToListener(
-				this.resolvePath('src/events/v2020_02_02/emitPayload.builder.ts')
+			eventDiskUtil.splitPathToEvent(
+				'/Volumes/RAMDisk/spruce-cli/16aa2e3a-d104-48de-a807-0804e87af9e1/src/events/MySkill1608771478325/v2020_12_23/my-fantastically-amazing-event/permissions.contract.ts'
 			)
 		)
 	}
