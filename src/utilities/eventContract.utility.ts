@@ -90,25 +90,38 @@ const eventContractUtil = {
 	},
 
 	unifyContracts<Contract extends EventContract = EventContract>(
-		contracts: EventContract[]
+		contracts: Contract[]
 	) {
+		if (!contracts || contracts.length === 0) {
+			return undefined
+		}
+
 		const unifiedContract: EventContract = {
 			eventSignatures: {},
 		}
 
+		let existingNames: string[] = []
+
 		for (const contract of contracts ?? []) {
+			const names = Object.keys(contract.eventSignatures)
+			for (const name of names) {
+				if (existingNames.indexOf(name) > -1) {
+					throw new SpruceError({
+						code: 'DUPLICATE_EVENT',
+						eventNameWithOptionalNamespace: name,
+					})
+				}
+			}
+
+			existingNames.push(...names)
+
 			unifiedContract.eventSignatures = {
 				...unifiedContract.eventSignatures,
 				...contract.eventSignatures,
 			}
 		}
 
-		const eventContract =
-			contracts && contracts.length > 0
-				? (unifiedContract as Contract)
-				: undefined
-
-		return eventContract
+		return unifiedContract as Contract
 	},
 
 	getSignatureByName<Contract extends EventContract>(

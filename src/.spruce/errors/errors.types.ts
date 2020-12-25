@@ -7,6 +7,34 @@ import * as SpruceSchema from '@sprucelabs/schema'
 
 
 
+
+export declare namespace SpruceErrors.SpruceEventUtils {
+
+	
+	export interface DuplicateEvent {
+		
+			
+			'eventNameWithOptionalNamespace'?: string| undefined | null
+	}
+
+	export interface DuplicateEventSchema extends SpruceSchema.Schema {
+		id: 'duplicateEvent',
+		namespace: 'SpruceEventUtils',
+		name: 'Duplicate event',
+		    fields: {
+		            /** . */
+		            'eventNameWithOptionalNamespace': {
+		                type: 'text',
+		                options: undefined
+		            },
+		    }
+	}
+
+	export type DuplicateEventEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.DuplicateEventSchema>
+
+}
+
+
 import AbstractSpruceError from '@sprucelabs/error'
 
 export declare namespace SpruceErrors.SpruceEventUtils {

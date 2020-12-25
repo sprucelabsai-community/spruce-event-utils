@@ -31,6 +31,10 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				message = 'Got no results back from the server! That was unexpected.'
 				break
 
+			case 'DUPLICATE_EVENT':
+				message = `'${options.eventNameWithOptionalNamespace}' event already exists.`
+				break
+
 			default:
 				message = super.friendlyMessage()
 		}

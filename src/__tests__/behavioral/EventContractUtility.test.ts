@@ -1,4 +1,5 @@
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import { errorAssertUtil } from '@sprucelabs/test-utils'
 import eventContractUtil from '../../utilities/eventContract.utility'
 
 export default class EventContractUtilityTest extends AbstractSpruceTest {
@@ -91,6 +92,65 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 		)
 
 		assert.isTruthy(sig.emitPayloadSchema)
+	}
+
+	@test()
+	protected static unifyingNoontractsWithNoEventsYieldsUndefined() {
+		assert.isUndefined(eventContractUtil.unifyContracts([]))
+	}
+
+	@test()
+	protected static unifyingContractsJoinsEvents() {
+		const contract = eventContractUtil.unifyContracts([
+			{
+				eventSignatures: { 'good-event::1': {} },
+			},
+			{
+				eventSignatures: { 'another-good-event::1': {} },
+			},
+		])
+
+		assert.isTruthy(contract?.eventSignatures['good-event::1'])
+		assert.isTruthy(contract?.eventSignatures['another-good-event::1'])
+	}
+
+	@test()
+	protected static catchedDuplicates() {
+		const err = assert.doesThrow(() =>
+			eventContractUtil.unifyContracts([
+				{
+					eventSignatures: { 'good-event::1': {} },
+				},
+				{
+					eventSignatures: { 'good-event::1': {} },
+				},
+			])
+		)
+
+		errorAssertUtil.assertError(err, 'DUPLICATE_EVENT', {
+			eventNameWithOptionalNamespace: 'good-event::1',
+		})
+	}
+
+	@test()
+	protected static catchedDuplicatesWithManyContracts() {
+		const err = assert.doesThrow(() =>
+			eventContractUtil.unifyContracts([
+				{
+					eventSignatures: { 'good-event::1': {}, 'good-event::2': {} },
+				},
+				{
+					eventSignatures: { 'good-event::3': {}, 'good-event::4': {} },
+				},
+				{
+					eventSignatures: { 'good-event::3': {} },
+				},
+			])
+		)
+
+		errorAssertUtil.assertError(err, 'DUPLICATE_EVENT', {
+			eventNameWithOptionalNamespace: 'good-event::3',
+		})
 	}
 
 	@test(
