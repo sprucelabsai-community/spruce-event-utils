@@ -115,7 +115,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 	}
 
 	@test()
-	protected static catchedDuplicates() {
+	protected static unifyingCatchesDups() {
 		const err = assert.doesThrow(() =>
 			eventContractUtil.unifyContracts([
 				{
@@ -133,7 +133,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 	}
 
 	@test()
-	protected static catchedDuplicatesWithManyContracts() {
+	protected static catchesDuplicatesWithManyContracts() {
 		const err = assert.doesThrow(() =>
 			eventContractUtil.unifyContracts([
 				{

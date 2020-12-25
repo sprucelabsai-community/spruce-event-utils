@@ -11,9 +11,8 @@
                 "runOn": "folderOpen"
             },
             "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
+                "reveal": "always",
+                "focus": true,
                 "panel": "dedicated",
                 "clear": true
             }
