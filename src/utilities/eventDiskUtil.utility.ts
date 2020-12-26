@@ -1,4 +1,4 @@
-import eventContractUtil from './eventContract.utility'
+import eventNameUtil from './eventName.utility'
 
 interface Event {
 	eventName: string
@@ -48,12 +48,10 @@ const eventDiskUtil = {
 		listener.eventNamespace = matches[1]
 		listener.version = matches[2]
 		listener.eventName = matches[3]
-		listener.eventNameWithOptionalNamespace = eventContractUtil.joinEventNameWithOptionalNamespace(
-			{
-				eventName: listener.eventName,
-				eventNamespace: listener.eventNamespace,
-			}
-		)
+		listener.eventNameWithOptionalNamespace = eventNameUtil.join({
+			eventName: listener.eventName,
+			eventNamespace: listener.eventNamespace,
+		})
 
 		return listener
 	},

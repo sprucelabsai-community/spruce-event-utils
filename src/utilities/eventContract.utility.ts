@@ -5,6 +5,7 @@ import {
 } from '@sprucelabs/mercury-types'
 import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
+import eventNameUtil from './eventName.utility'
 
 export interface NamedEventSignature {
 	eventNameWithOptionalNamespace: string
@@ -19,66 +20,11 @@ const eventContractUtil = {
 		return Object.keys(contract.eventSignatures)
 	},
 
-	splitEventNameWithOptionalNamespace(
-		name: string
-	): { eventName: string; eventNamespace?: string; version?: string } {
-		const versionParts = name.split('::')
-		const eventNameWithOptionalNamespace = versionParts[0]
-		const version = versionParts[1]
-
-		const parts = eventNameWithOptionalNamespace.split('.')
-		const eventNamespace = parts[1] ? parts[0] : undefined
-		const eventName = parts[1] || parts[0]
-
-		const e: any = {
-			eventName,
-		}
-
-		if (eventNamespace) {
-			e.eventNamespace = eventNamespace
-		}
-
-		if (version) {
-			e.version = version
-		}
-
-		return e
-	},
-
-	joinEventNameWithOptionalNamespace(options: {
-		eventName: string
-		eventNamespace?: string
-		version?: string
-	}): string {
-		const { eventName, eventNamespace, version } = options
-
-		function optionallyAttachversion(name: string) {
-			if (version) {
-				return name + EVENT_VERSION_DIVIDER + version
-			}
-			return name
-		}
-
-		if (!eventNamespace) {
-			return optionallyAttachversion(eventName)
-		}
-
-		let eventNameWithOptionalNamespace = !eventNamespace
-			? eventName
-			: `${eventNamespace}.${eventName}`
-
-		eventNameWithOptionalNamespace = optionallyAttachversion(
-			eventNameWithOptionalNamespace
-		)
-
-		return eventNameWithOptionalNamespace
-	},
-
 	getNamedEventSignatures(contract: EventContract): NamedEventSignature[] {
 		const names = this.getEventNames(contract)
 
 		return names.map((name) => {
-			const nameParts = this.splitEventNameWithOptionalNamespace(name)
+			const nameParts = eventNameUtil.split(name)
 			return {
 				eventNameWithOptionalNamespace: name,
 				eventName: nameParts.eventName,
@@ -178,13 +124,11 @@ const eventContractUtil = {
 	},
 
 	generateResponseEventName(eventNameWithOptionalNamespace: string) {
-		const {
-			eventName,
-			eventNamespace,
-			version,
-		} = this.splitEventNameWithOptionalNamespace(eventNameWithOptionalNamespace)
+		const { eventName, eventNamespace, version } = eventNameUtil.split(
+			eventNameWithOptionalNamespace
+		)
 
-		let name = `${this.joinEventNameWithOptionalNamespace({
+		let name = `${eventNameUtil.join({
 			eventNamespace,
 			eventName,
 		})}:response`
