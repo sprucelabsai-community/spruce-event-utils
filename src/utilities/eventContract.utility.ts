@@ -130,13 +130,13 @@ const eventContractUtil = {
 		eventNameWithOptionalNamespace: EventNames<Contract>
 	) {
 		const sigs = this.getNamedEventSignatures(contract)
-		const reslovedName = this.resolveEventName(
+		const resolvedName = this.resolveEventName(
 			contract,
 			eventNameWithOptionalNamespace
 		)
 
 		let match = sigs.find(
-			(event) => event.eventNameWithOptionalNamespace === reslovedName
+			(event) => event.eventNameWithOptionalNamespace === resolvedName
 		)
 
 		if (!match) {
