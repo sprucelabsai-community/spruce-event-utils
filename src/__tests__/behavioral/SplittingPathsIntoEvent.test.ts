@@ -1,5 +1,5 @@
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import eventDiskUtil from '../../utilities/eventDiskUtil.utility'
+import eventDiskUtil from '../../utilities/eventDisk.utility'
 
 export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 	@test()
