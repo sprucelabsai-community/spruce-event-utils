@@ -1,3 +1,10 @@
+# [2.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.3.4...v2.0.0) (2020-12-26)
+
+
+### Breaking Changes
+
+* name util with concise api ([e1d6e9c](https://github.com/sprucelabsai/spruce-event-utils/commit/e1d6e9c))
+
 ## [1.3.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.3.3...v1.3.4) (2020-12-25)
 
 ## [1.3.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.3.2...v1.3.3) (2020-12-25)
