@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v2.0.0...v2.1.0) (2020-12-26)
+
+
+### Features
+
+* name resolving ([7eb5431](https://github.com/sprucelabsai/spruce-event-utils/commit/7eb5431))
+
 # [2.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v1.3.4...v2.0.0) (2020-12-26)
 
 
