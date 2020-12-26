@@ -42,7 +42,56 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 	}
 
 	@test()
-	protected static unifyingNoontractsWithNoEventsYieldsUndefined() {
+	protected static canResolveQualifiedEventNameBasedOnName() {
+		const name = eventContractUtil.resolveEventName(
+			{
+				eventSignatures: {
+					'book-appointment::v1': {},
+					'book-appointment::v3': {},
+					'book-appointment::v5': {
+						emitPayloadSchema: {
+							id: 'test',
+							fields: {},
+						},
+					},
+					'book-appointment::v4': {},
+				},
+			},
+			'book-appointment'
+		)
+
+		assert.isEqual(name, 'book-appointment::v5')
+	}
+
+	@test()
+	protected static canResolveQualifiedEventNameBasedOnName2() {
+		const name = eventContractUtil.resolveEventName(
+			{
+				eventSignatures: {
+					'book-appointment::v1': {},
+					'book-appointment::v3': {},
+					'book-appointment::v5': {
+						emitPayloadSchema: {
+							id: 'test',
+							fields: {},
+						},
+					},
+					'book-appointment::v6': {
+						emitPayloadSchema: {
+							id: 'test',
+							fields: {},
+						},
+					},
+				},
+			},
+			'book-appointment'
+		)
+
+		assert.isEqual(name, 'book-appointment::v6')
+	}
+
+	@test()
+	protected static unifyingContractsWithNoEventsYieldsUndefined() {
 		assert.isUndefined(eventContractUtil.unifyContracts([]))
 	}
 

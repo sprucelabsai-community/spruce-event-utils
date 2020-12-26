@@ -70,9 +70,9 @@ const eventContractUtil = {
 		return unifiedContract as Contract
 	},
 
-	getSignatureByName<Contract extends EventContract>(
+	resolveEventName<Contract extends EventContract>(
 		contract: Contract,
-		eventNameWithOptionalNamespace: EventNames<Contract>
+		eventNameWithOptionalNamespace: string
 	) {
 		const sigs = this.getNamedEventSignatures(contract)
 		let match = sigs.find(
@@ -80,37 +80,64 @@ const eventContractUtil = {
 				event.eventNameWithOptionalNamespace === eventNameWithOptionalNamespace
 		)
 
-		if (!match) {
-			const search = eventNameWithOptionalNamespace + EVENT_VERSION_DIVIDER
-			const matchesOnVersion = Object.keys(contract.eventSignatures).filter(
-				(name) => {
-					if (name.search(search) === 0) {
-						return true
-					}
-
-					return false
-				}
-			)
-
-			matchesOnVersion.sort((a, b) => {
-				const v1 = a.split('::').pop() ?? 0
-				const v2 = b.split('::').pop() ?? 0
-
-				if (v1 > v2) {
-					return 1
-				} else if (v1 < v2) {
-					return -1
-				}
-
-				return 0
-			})
-
-			const latestVersion = matchesOnVersion.pop()
-
-			match = sigs.find(
-				(event) => event.eventNameWithOptionalNamespace === latestVersion
-			)
+		if (match) {
+			return eventNameWithOptionalNamespace
 		}
+
+		const search = eventNameWithOptionalNamespace + EVENT_VERSION_DIVIDER
+		const matchesOnVersion = Object.keys(contract.eventSignatures).filter(
+			(name) => {
+				if (name.search(search) === 0) {
+					return true
+				}
+
+				return false
+			}
+		)
+
+		matchesOnVersion.sort((a, b) => {
+			const v1 = a.split('::').pop() ?? 0
+			const v2 = b.split('::').pop() ?? 0
+
+			if (v1 > v2) {
+				return 1
+			} else if (v1 < v2) {
+				return -1
+			}
+
+			return 0
+		})
+
+		const latestVersion = matchesOnVersion.pop()
+
+		match = sigs.find(
+			(event) => event.eventNameWithOptionalNamespace === latestVersion
+		)
+
+		if (match) {
+			return latestVersion
+		}
+
+		throw new SpruceError({
+			code: 'INVALID_EVENT_NAME',
+			eventNameWithOptionalNamespace,
+			validNames: this.getEventNames(contract),
+		})
+	},
+
+	getSignatureByName<Contract extends EventContract>(
+		contract: Contract,
+		eventNameWithOptionalNamespace: EventNames<Contract>
+	) {
+		const sigs = this.getNamedEventSignatures(contract)
+		const reslovedName = this.resolveEventName(
+			contract,
+			eventNameWithOptionalNamespace
+		)
+
+		let match = sigs.find(
+			(event) => event.eventNameWithOptionalNamespace === reslovedName
+		)
 
 		if (!match) {
 			throw new SpruceError({
