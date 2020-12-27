@@ -149,23 +149,6 @@ const eventContractUtil = {
 
 		return match.signature
 	},
-
-	generateResponseEventName(eventNameWithOptionalNamespace: string) {
-		const { eventName, eventNamespace, version } = eventNameUtil.split(
-			eventNameWithOptionalNamespace
-		)
-
-		let name = `${eventNameUtil.join({
-			eventNamespace,
-			eventName,
-		})}:response`
-
-		if (version) {
-			name += '::' + version
-		}
-
-		return name
-	},
 }
 
 export default eventContractUtil

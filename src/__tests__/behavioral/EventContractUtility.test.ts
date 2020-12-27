@@ -148,32 +148,4 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 			eventNameWithOptionalNamespace: 'good-event::3',
 		})
 	}
-
-	@test(
-		'can generate response name from event',
-		'test-event',
-		'test-event:response'
-	)
-	@test(
-		'can generate response name from event with namespace',
-		'test.event',
-		'test.event:response'
-	)
-	@test(
-		'can generate response name from event with version',
-		'test-event::v2020_02_01',
-		'test-event:response::v2020_02_01'
-	)
-	@test(
-		'can generate response name from event with namespace with version',
-		'test.event::v2020_02_01',
-		'test.event:response::v2020_02_01'
-	)
-	protected static canGenerateResponseEventName(
-		eventName: string,
-		expected: string
-	) {
-		const actual = eventContractUtil.generateResponseEventName(eventName)
-		assert.isEqual(actual, expected)
-	}
 }

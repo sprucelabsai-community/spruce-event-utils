@@ -64,6 +64,23 @@ const eventNameUtil = {
 
 		return eventNameWithOptionalNamespace
 	},
+
+	generateResponseEventName(eventNameWithOptionalNamespace: string) {
+		const { eventName, eventNamespace, version } = this.split(
+			eventNameWithOptionalNamespace
+		)
+
+		let name = `${this.join({
+			eventNamespace,
+			eventName,
+		})}:response`
+
+		if (version) {
+			name += '::' + version
+		}
+
+		return name
+	},
 }
 
 export default eventNameUtil
