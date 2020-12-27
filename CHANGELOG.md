@@ -1,3 +1,10 @@
+# [3.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v2.1.1...v3.0.0) (2020-12-27)
+
+
+### Breaking Changes
+
+* resolveEventName -> resloveToLatestEventName ([201608d](https://github.com/sprucelabsai/spruce-event-utils/commit/201608d))
+
 ## [2.1.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v2.1.0...v2.1.1) (2020-12-26)
 
 # [2.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v2.0.0...v2.1.0) (2020-12-26)
