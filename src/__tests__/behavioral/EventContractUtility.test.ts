@@ -43,7 +43,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 
 	@test()
 	protected static canResolveQualifiedEventNameBasedOnName() {
-		const name = eventContractUtil.resolveEventName(
+		const name = eventContractUtil.resolveToLatestEventName(
 			{
 				eventSignatures: {
 					'book-appointment::v1': {},
@@ -65,7 +65,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 
 	@test()
 	protected static canResolveQualifiedEventNameBasedOnName2() {
-		const name = eventContractUtil.resolveEventName(
+		const name = eventContractUtil.resolveToLatestEventName(
 			{
 				eventSignatures: {
 					'book-appointment::v1': {},

@@ -70,7 +70,7 @@ const eventContractUtil = {
 		return unifiedContract as Contract
 	},
 
-	resolveEventName<Contract extends EventContract>(
+	resolveToLatestEventName<Contract extends EventContract>(
 		contract: Contract,
 		eventNameWithOptionalNamespace: string
 	) {
@@ -130,7 +130,7 @@ const eventContractUtil = {
 		eventNameWithOptionalNamespace: EventNames<Contract>
 	) {
 		const sigs = this.getNamedEventSignatures(contract)
-		const resolvedName = this.resolveEventName(
+		const resolvedName = this.resolveToLatestEventName(
 			contract,
 			eventNameWithOptionalNamespace
 		)

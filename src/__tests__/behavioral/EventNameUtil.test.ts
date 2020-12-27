@@ -1,7 +1,7 @@
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
 import eventNameUtil from '../../utilities/eventName.utility'
 
-export default class NameSplittingAndJoiningTest extends AbstractSpruceTest {
+export default class EventNameUtil extends AbstractSpruceTest {
 	@test()
 	protected static canParseEventName() {
 		const nameParts = eventNameUtil.split('test.event')
