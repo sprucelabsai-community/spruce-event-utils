@@ -26,7 +26,7 @@
 		"build.babel": "babel src --out-dir build --extensions \".ts,.tsx\" --source-maps --copy-files",
 		"rebuild": "yarn clean && yarn && yarn build",
 		"clean": "rm -rf build",
-		"clean.all": "rm -rf node_modules && y clean",
+		"clean.all": "rm -rf node_modules && rm -f yarn.lock && yarn clean",
 		"lint": "eslint '**/*.ts' && echo 'LINT PASS'",
 		"lint.fix": "eslint --fix '**/*.ts'",
 		"release": "semantic-release",
