@@ -37,7 +37,7 @@ export type SpruceEventResponse<
 > = Promise<ResponsePayload>
 
 export interface NamedEventSignature {
-	eventNameWithOptionalNamespace: string
+	fullyQualifiedEventName: string
 	eventName: string
 	eventNamespace?: string
 	version: string

@@ -9,7 +9,7 @@ const invalidEventNameSchema: SpruceErrors.SpruceEventUtils.InvalidEventNameSche
 	name: 'Invalid event name',
 	    fields: {
 	            /** . */
-	            'eventNameWithOptionalNamespace': {
+	            'fullyQualifiedEventName': {
 	                type: 'text',
 	                isRequired: true,
 	                options: undefined

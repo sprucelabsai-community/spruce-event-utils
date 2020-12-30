@@ -5,7 +5,7 @@ export default buildErrorSchema({
 	name: 'Duplicate event',
 	description: '',
 	fields: {
-		eventNameWithOptionalNamespace: {
+		fullyQualifiedEventName: {
 			type: 'text',
 		},
 	},

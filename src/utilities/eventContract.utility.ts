@@ -8,7 +8,7 @@ import SpruceError from '../errors/SpruceError'
 import eventNameUtil from './eventName.utility'
 
 export interface NamedEventSignature {
-	eventNameWithOptionalNamespace: string
+	fullyQualifiedEventName: string
 	eventName: string
 	eventNamespace?: string
 	version?: string
@@ -26,7 +26,7 @@ const eventContractUtil = {
 		return names.map((name) => {
 			const nameParts = eventNameUtil.split(name)
 			return {
-				eventNameWithOptionalNamespace: name,
+				fullyQualifiedEventName: name,
 				eventName: nameParts.eventName,
 				eventNamespace: nameParts.eventNamespace,
 				signature: contract.eventSignatures[name],
@@ -54,7 +54,7 @@ const eventContractUtil = {
 				if (existingNames.indexOf(name) > -1) {
 					throw new SpruceError({
 						code: 'DUPLICATE_EVENT',
-						eventNameWithOptionalNamespace: name,
+						fullyQualifiedEventName: name,
 					})
 				}
 			}
@@ -72,19 +72,18 @@ const eventContractUtil = {
 
 	resolveToLatestEventName<Contract extends EventContract>(
 		contract: Contract,
-		eventNameWithOptionalNamespace: string
+		fullyQualifiedEventName: string
 	) {
 		const sigs = this.getNamedEventSignatures(contract)
 		let match = sigs.find(
-			(event) =>
-				event.eventNameWithOptionalNamespace === eventNameWithOptionalNamespace
+			(event) => event.fullyQualifiedEventName === fullyQualifiedEventName
 		)
 
 		if (match) {
-			return eventNameWithOptionalNamespace
+			return fullyQualifiedEventName
 		}
 
-		const search = eventNameWithOptionalNamespace + EVENT_VERSION_DIVIDER
+		const search = fullyQualifiedEventName + EVENT_VERSION_DIVIDER
 		const matchesOnVersion = Object.keys(contract.eventSignatures).filter(
 			(name) => {
 				if (name.search(search) === 0) {
@@ -111,7 +110,7 @@ const eventContractUtil = {
 		const latestVersion = matchesOnVersion.pop()
 
 		match = sigs.find(
-			(event) => event.eventNameWithOptionalNamespace === latestVersion
+			(event) => event.fullyQualifiedEventName === latestVersion
 		)
 
 		if (match) {
@@ -120,29 +119,29 @@ const eventContractUtil = {
 
 		throw new SpruceError({
 			code: 'INVALID_EVENT_NAME',
-			eventNameWithOptionalNamespace,
+			fullyQualifiedEventName,
 			validNames: this.getEventNames(contract),
 		})
 	},
 
 	getSignatureByName<Contract extends EventContract>(
 		contract: Contract,
-		eventNameWithOptionalNamespace: EventNames<Contract>
+		fullyQualifiedEventName: EventNames<Contract>
 	) {
 		const sigs = this.getNamedEventSignatures(contract)
 		const resolvedName = this.resolveToLatestEventName(
 			contract,
-			eventNameWithOptionalNamespace
+			fullyQualifiedEventName
 		)
 
 		let match = sigs.find(
-			(event) => event.eventNameWithOptionalNamespace === resolvedName
+			(event) => event.fullyQualifiedEventName === resolvedName
 		)
 
 		if (!match) {
 			throw new SpruceError({
 				code: 'INVALID_EVENT_NAME',
-				eventNameWithOptionalNamespace,
+				fullyQualifiedEventName,
 				validNames: this.getEventNames(contract),
 			})
 		}
