@@ -70,7 +70,7 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 		assert.isEqualDeep(eventDiskUtil.splitPathToListener(eventPath), {
 			eventNamespace: 'some-great-skill',
 			eventName: 'did-book',
-			eventNameWithOptionalNamespace: 'some-great-skill.did-book',
+			eventNameWithOptionalNamespace: 'some-great-skill.did-book::v2020_10_10',
 			version: 'v2020_10_10',
 		})
 	}
