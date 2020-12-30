@@ -5,10 +5,10 @@ const eventNameUtil = {
 		name: string
 	): { eventName: string; eventNamespace?: string; version?: string } {
 		const versionParts = name.split('::')
-		const eventNameWithOptionalNamespace = versionParts[0]
+		const fullyQualifiedEventName = versionParts[0]
 		const version = versionParts[1]
 
-		const parts = eventNameWithOptionalNamespace.split('.')
+		const parts = fullyQualifiedEventName.split('.')
 		const eventNamespace = parts[1] ? parts[0] : undefined
 		const eventName = parts[1] || parts[0]
 
@@ -45,20 +45,20 @@ const eventNameUtil = {
 			return optionallyAttachversion(eventName)
 		}
 
-		let eventNameWithOptionalNamespace = !eventNamespace
+		let fullyQualifiedEventName = !eventNamespace
 			? eventName
 			: `${eventNamespace}.${eventName}`
 
-		eventNameWithOptionalNamespace = optionallyAttachversion(
-			eventNameWithOptionalNamespace
+		fullyQualifiedEventName = optionallyAttachversion(
+			fullyQualifiedEventName
 		)
 
-		return eventNameWithOptionalNamespace
+		return fullyQualifiedEventName
 	},
 
-	generateResponseEventName(eventNameWithOptionalNamespace: string) {
+	generateResponseEventName(fullyQualifiedEventName: string) {
 		const { eventName, eventNamespace, version } = this.split(
-			eventNameWithOptionalNamespace
+			fullyQualifiedEventName
 		)
 
 		let name = `${this.join({

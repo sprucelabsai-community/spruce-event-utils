@@ -9,7 +9,7 @@ const duplicateEventSchema: SpruceErrors.SpruceEventUtils.DuplicateEventSchema  
 	name: 'Duplicate event',
 	    fields: {
 	            /** . */
-	            'eventNameWithOptionalNamespace': {
+	            'fullyQualifiedEventName': {
 	                type: 'text',
 	                options: undefined
 	            },

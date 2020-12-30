@@ -8,7 +8,7 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 		let message
 		switch (options?.code) {
 			case 'INVALID_EVENT_NAME':
-				message = `I couldn't find an event called ${options.eventNameWithOptionalNamespace}.`
+				message = `I couldn't find an event called ${options.fullyQualifiedEventName}.`
 				break
 
 			case 'MERCURY_RESPONSE_ERROR': {
@@ -32,7 +32,7 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				break
 
 			case 'DUPLICATE_EVENT':
-				message = `'${options.eventNameWithOptionalNamespace}' event already exists.`
+				message = `'${options.fullyQualifiedEventName}' event already exists.`
 				break
 
 			default:

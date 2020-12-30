@@ -124,7 +124,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 		)
 
 		errorAssertUtil.assertError(err, 'DUPLICATE_EVENT', {
-			eventNameWithOptionalNamespace: 'good-event::1',
+			fullyQualifiedEventName: 'good-event::1',
 		})
 	}
 
@@ -145,7 +145,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 		)
 
 		errorAssertUtil.assertError(err, 'DUPLICATE_EVENT', {
-			eventNameWithOptionalNamespace: 'good-event::3',
+			fullyQualifiedEventName: 'good-event::3',
 		})
 	}
 }

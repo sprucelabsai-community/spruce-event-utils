@@ -8,7 +8,7 @@ interface Event {
 interface Listener {
 	eventName: string
 	eventNamespace: string
-	eventNameWithOptionalNamespace: string
+	fullyQualifiedEventName: string
 	version: string
 }
 
@@ -48,7 +48,7 @@ const eventDiskUtil = {
 		listener.eventNamespace = matches[1]
 		listener.version = matches[2]
 		listener.eventName = matches[3]
-		listener.eventNameWithOptionalNamespace = eventNameUtil.join({
+		listener.fullyQualifiedEventName = eventNameUtil.join({
 			eventName: listener.eventName,
 			eventNamespace: listener.eventNamespace,
 			version: listener.version,

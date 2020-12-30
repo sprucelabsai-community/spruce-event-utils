@@ -14,7 +14,7 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 	export interface DuplicateEvent {
 		
 			
-			'eventNameWithOptionalNamespace'?: string| undefined | null
+			'fullyQualifiedEventName'?: string| undefined | null
 	}
 
 	export interface DuplicateEventSchema extends SpruceSchema.Schema {
@@ -23,7 +23,7 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 		name: 'Duplicate event',
 		    fields: {
 		            /** . */
-		            'eventNameWithOptionalNamespace': {
+		            'fullyQualifiedEventName': {
 		                type: 'text',
 		                options: undefined
 		            },
@@ -73,7 +73,7 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 	export interface InvalidEventName {
 		
 			
-			'eventNameWithOptionalNamespace': string
+			'fullyQualifiedEventName': string
 			
 			'validNames': string[]
 	}
@@ -84,7 +84,7 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 		name: 'Invalid event name',
 		    fields: {
 		            /** . */
-		            'eventNameWithOptionalNamespace': {
+		            'fullyQualifiedEventName': {
 		                type: 'text',
 		                isRequired: true,
 		                options: undefined
