@@ -51,6 +51,7 @@ const eventDiskUtil = {
 		listener.eventNameWithOptionalNamespace = eventNameUtil.join({
 			eventName: listener.eventName,
 			eventNamespace: listener.eventNamespace,
+			version: listener.version,
 		})
 
 		return listener

@@ -1,13 +1,4 @@
-import { EventSignature } from '@sprucelabs/mercury-types'
 import { EVENT_VERSION_DIVIDER } from '../constants'
-
-export interface NamedEventSignature {
-	eventNameWithOptionalNamespace: string
-	eventName: string
-	eventNamespace?: string
-	version?: string
-	signature: EventSignature
-}
 
 const eventNameUtil = {
 	split(
@@ -39,7 +30,7 @@ const eventNameUtil = {
 	join(options: {
 		eventName: string
 		eventNamespace?: string
-		version?: string
+		version: string
 	}): string {
 		const { eventName, eventNamespace, version } = options
 
@@ -73,6 +64,7 @@ const eventNameUtil = {
 		let name = `${this.join({
 			eventNamespace,
 			eventName,
+			version: '',
 		})}:response`
 
 		if (version) {

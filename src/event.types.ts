@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { EventContract, MercuryEventEmitter } from '@sprucelabs/mercury-types'
+import {
+	EventContract,
+	EventSignature,
+	MercuryEventEmitter,
+} from '@sprucelabs/mercury-types'
 import { SpruceSchemas } from '@sprucelabs/spruce-core-schemas'
 
 type Skill = SpruceSchemas.Spruce.v2020_07_22.Skill
@@ -31,3 +35,11 @@ export type SpruceEvent<
 export type SpruceEventResponse<
 	ResponsePayload extends any = undefined
 > = Promise<ResponsePayload>
+
+export interface NamedEventSignature {
+	eventNameWithOptionalNamespace: string
+	eventName: string
+	eventNamespace?: string
+	version: string
+	signature: EventSignature
+}

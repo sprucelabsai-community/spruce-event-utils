@@ -22,15 +22,6 @@ export default class EventNameUtil extends AbstractSpruceTest {
 	}
 
 	@test()
-	protected static canJoinEventName() {
-		const name = eventNameUtil.join({
-			eventNamespace: 'test',
-			eventName: 'event',
-		})
-		assert.isEqual(name, 'test.event')
-	}
-
-	@test()
 	protected static canJoinEventNameWithVersion() {
 		const name = eventNameUtil.join({
 			eventName: 'event',
