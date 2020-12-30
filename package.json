@@ -57,7 +57,7 @@
 		"@sprucelabs/babel-plugin-schema": "latest",
 		"@sprucelabs/jest-json-reporter": "latest",
 		"@sprucelabs/semantic-release": "latest",
-		"@types/node": "^14.14.16",
+		"@types/node": "^14.14.17",
 		"babel-plugin-module-resolver": "^4.1.0",
 		"chokidar-cli": "^2.1.0",
 		"concurrently": "^5.3.0",
