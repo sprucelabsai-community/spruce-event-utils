@@ -30,7 +30,7 @@ const eventNameUtil = {
 	join(options: {
 		eventName: string
 		eventNamespace?: string
-		version: string
+		version?: string
 	}): string {
 		const { eventName, eventNamespace, version } = options
 
