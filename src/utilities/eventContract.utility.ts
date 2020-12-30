@@ -1,19 +1,8 @@
-import {
-	EventContract,
-	EventNames,
-	EventSignature,
-} from '@sprucelabs/mercury-types'
+import { EventContract, EventNames } from '@sprucelabs/mercury-types'
 import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
+import { NamedEventSignature } from '../event.types'
 import eventNameUtil from './eventName.utility'
-
-export interface NamedEventSignature {
-	fullyQualifiedEventName: string
-	eventName: string
-	eventNamespace?: string
-	version?: string
-	signature: EventSignature
-}
 
 const eventContractUtil = {
 	getEventNames(contract: EventContract) {
@@ -31,7 +20,7 @@ const eventContractUtil = {
 				eventNamespace: nameParts.eventNamespace,
 				signature: contract.eventSignatures[name],
 				version: nameParts.version,
-			}
+			} as NamedEventSignature
 		})
 	},
 
