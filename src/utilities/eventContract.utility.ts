@@ -76,8 +76,7 @@ const eventContractUtil = {
 	) {
 		const sigs = this.getNamedEventSignatures(contract)
 		let match = sigs.find(
-			(event) =>
-				event.fullyQualifiedEventName === fullyQualifiedEventName
+			(event) => event.fullyQualifiedEventName === fullyQualifiedEventName
 		)
 
 		if (match) {

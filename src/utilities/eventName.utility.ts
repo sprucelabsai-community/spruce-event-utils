@@ -49,9 +49,7 @@ const eventNameUtil = {
 			? eventName
 			: `${eventNamespace}.${eventName}`
 
-		fullyQualifiedEventName = optionallyAttachversion(
-			fullyQualifiedEventName
-		)
+		fullyQualifiedEventName = optionallyAttachversion(fullyQualifiedEventName)
 
 		return fullyQualifiedEventName
 	},
