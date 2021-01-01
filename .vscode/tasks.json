@@ -11,8 +11,7 @@
                 "runOn": "folderOpen"
             },
             "presentation": {
-                "reveal": "always",
-                "focus": true,
+                "reveal": "silent",
                 "panel": "dedicated",
                 "clear": true
             }
@@ -35,7 +34,7 @@
             },
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             },
             "problemMatcher": []
         },
@@ -47,14 +46,18 @@
                 "--inspect",
                 "5200",
                 "--shouldHoldAtStart",
-                "start"
+                "--shouldWatch"
             ],
             "promptOnClose": false,
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
-            }
+                "panel": "shared",
+                "focus": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
         }
     ]
 }

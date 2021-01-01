@@ -67,6 +67,18 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 	}
 
 	@test()
+	protected static canResolveEventPathWithNumbers() {
+		const eventPath = this.resolvePath(
+			'src/events/my-great-event-101/v2020_10_10/emitPayload.builder.ts'
+		)
+
+		assert.isEqualDeep(eventDiskUtil.splitPathToEvent(eventPath), {
+			eventName: 'my-great-event-101',
+			version: 'v2020_10_10',
+		})
+	}
+
+	@test()
 	protected static canResolveListenerPath() {
 		const eventPath = this.resolvePath(
 			'src/listeners/some-great-skill/did-book.v2020_10_10.listener.ts'
@@ -76,6 +88,35 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 			eventNamespace: 'some-great-skill',
 			eventName: 'did-book',
 			fullyQualifiedEventName: 'some-great-skill.did-book::v2020_10_10',
+			version: 'v2020_10_10',
+		})
+	}
+
+	@test()
+	protected static canResolveListenerPathWithNumbersInNamespace() {
+		const eventPath = this.resolvePath(
+			'src/listeners/some-great-skill-1234/did-book.v2020_10_10.listener.ts'
+		)
+
+		assert.isEqualDeep(eventDiskUtil.splitPathToListener(eventPath), {
+			eventNamespace: 'some-great-skill-1234',
+			eventName: 'did-book',
+			fullyQualifiedEventName: 'some-great-skill-1234.did-book::v2020_10_10',
+			version: 'v2020_10_10',
+		})
+	}
+
+	@test()
+	protected static canResolveListenerPathWithNumbersInEventName() {
+		const eventPath = this.resolvePath(
+			'src/listeners/some-great-skill-1234/did-book-101.v2020_10_10.listener.ts'
+		)
+
+		assert.isEqualDeep(eventDiskUtil.splitPathToListener(eventPath), {
+			eventNamespace: 'some-great-skill-1234',
+			eventName: 'did-book-101',
+			fullyQualifiedEventName:
+				'some-great-skill-1234.did-book-101::v2020_10_10',
 			version: 'v2020_10_10',
 		})
 	}

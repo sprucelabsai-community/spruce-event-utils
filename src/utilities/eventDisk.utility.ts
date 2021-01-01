@@ -33,7 +33,7 @@ const eventDiskUtil = {
 
 	splitPathToListener(match: string, seperator = '/'): Listener {
 		const matches = new RegExp(
-			`([a-z\\-]+)\\${seperator}([a-z\\-]+)\\.(v[0-9]{4}_[0-9]{2}_[0-9]{2})\\.listener.ts`
+			`([a-z0-9\\-]+)\\${seperator}([a-z0-9\\-]+)\\.(v[0-9]{4}_[0-9]{2}_[0-9]{2})\\.listener.ts`
 		).exec(match)
 
 		if (!matches) {
@@ -57,7 +57,7 @@ const eventDiskUtil = {
 	},
 	splitPathToEvent(match: string, seperator = '/'): Event {
 		const matches = new RegExp(
-			`([a-z\\-]*)\\${seperator}(v[0-9]{4}_[0-9]{2}_[0-9]{2})\\${seperator}.*?\\.builder\\.ts`
+			`([a-z0-9\\-]*)\\${seperator}(v[0-9]{4}_[0-9]{2}_[0-9]{2})\\${seperator}.*?\\.builder\\.ts`
 		).exec(match)
 
 		if (!matches) {
