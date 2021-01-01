@@ -27,27 +27,26 @@ const eventDiskUtil = {
 		return [
 			destination,
 			e.eventNamespace,
-			e.version,
-			e.eventName + '.listener.ts',
+			e.eventName + '.' + e.version + '.listener.ts',
 		].join(seperator)
 	},
 
 	splitPathToListener(match: string, seperator = '/'): Listener {
 		const matches = new RegExp(
-			`([a-z\\-]*)\\${seperator}(v[0-9]{4}_[0-9]{2}_[0-9]{2})\\${seperator}([a-z\\-]*)\\.listener\\.ts`
+			`([a-z\\-]+)\\${seperator}([a-z\\-]+)\\.(v[0-9]{4}_[0-9]{2}_[0-9]{2})\\.listener.ts`
 		).exec(match)
 
 		if (!matches) {
 			throw new Error(
-				"Invalid listener path. Must be in a folder structure like '**/src/listeners/{{eventNamespace}}/{{version}}/{{eventName}}.listener.ts"
+				"Invalid listener path. Must be in a folder structure like '**/src/listeners/{{eventNamespace}}/{{eventName}}.{{version}}.listener.ts"
 			)
 		}
 
 		const listener: any = {}
 
 		listener.eventNamespace = matches[1]
-		listener.version = matches[2]
-		listener.eventName = matches[3]
+		listener.version = matches[3]
+		listener.eventName = matches[2]
 		listener.fullyQualifiedEventName = eventNameUtil.join({
 			eventName: listener.eventName,
 			eventNamespace: listener.eventNamespace,
@@ -82,6 +81,11 @@ const eventDiskUtil = {
 	},
 	resolveEventPath(
 		destination: string,
+		fileName:
+			| 'emitPayload.builder.ts'
+			| 'responsePayload.builder.ts'
+			| 'emitPermissions.builder.ts'
+			| 'listenPermissions.builder.ts',
 		e: { eventName: string; version: string },
 		seperator = '/'
 	) {
@@ -91,7 +95,7 @@ const eventDiskUtil = {
 			)
 		}
 		e
-		return [destination, e.eventName, e.version].join(seperator)
+		return [destination, e.eventName, e.version, fileName].join(seperator)
 	},
 }
 

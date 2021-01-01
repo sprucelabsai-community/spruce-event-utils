@@ -26,6 +26,11 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 				this.resolvePath('my-great-event/v2020_02_02.listener.ts')
 			)
 		)
+		assert.doesThrow(() =>
+			eventDiskUtil.splitPathToListener(
+				this.resolvePath('my-great-event/v2020_02_02/my-event.listener.ts')
+			)
+		)
 
 		assert.doesThrow(() =>
 			eventDiskUtil.splitPathToListener(
@@ -50,7 +55,7 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 	}
 
 	@test()
-	protected static canEventPath() {
+	protected static canResolveEventPath() {
 		const eventPath = this.resolvePath(
 			'src/events/my-great-event/v2020_10_10/emitPayload.builder.ts'
 		)
@@ -62,9 +67,9 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 	}
 
 	@test()
-	protected static canListener() {
+	protected static canResolveListenerPath() {
 		const eventPath = this.resolvePath(
-			'src/listeners/some-great-skill/v2020_10_10/did-book.listener.ts'
+			'src/listeners/some-great-skill/did-book.v2020_10_10.listener.ts'
 		)
 
 		assert.isEqualDeep(eventDiskUtil.splitPathToListener(eventPath), {
@@ -127,7 +132,7 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 		}
 
 		const expected = this.resolvePath(
-			`booking/v2020_02_02/did-book.listener.ts`
+			`booking/did-book.v2020_02_02.listener.ts`
 		)
 
 		assert.isEqual(eventDiskUtil.resolveListenerPath(this.cwd, e), expected)
@@ -140,8 +145,15 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 			version: 'v2020_02_02',
 		}
 
-		const expected = this.resolvePath(`did-book/v2020_02_02`)
+		const expected = this.resolvePath(
+			`did-book`,
+			e.version,
+			'emitPayload.builder.ts'
+		)
 
-		assert.isEqual(eventDiskUtil.resolveEventPath(this.cwd, e), expected)
+		assert.isEqual(
+			eventDiskUtil.resolveEventPath(this.cwd, 'emitPayload.builder.ts', e),
+			expected
+		)
 	}
 }
