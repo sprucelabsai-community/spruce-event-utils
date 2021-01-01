@@ -1,3 +1,10 @@
+# [6.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v5.0.4...v6.0.0) (2021-01-01)
+
+
+### Breaking Changes
+
+* updated listener and event paths based on planning ([048699d](https://github.com/sprucelabsai/spruce-event-utils/commit/048699d))
+
 ## [5.0.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v5.0.3...v5.0.4) (2020-12-30)
 
 ## [5.0.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v5.0.2...v5.0.3) (2020-12-30)
