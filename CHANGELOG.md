@@ -1,3 +1,10 @@
+# [8.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v7.0.1...v8.0.0) (2021-01-02)
+
+
+### Breaking Changes
+
+* building emit target and payload enhancement ([06d55f2](https://github.com/sprucelabsai/spruce-event-utils/commit/06d55f2))
+
 ## [7.0.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v7.0.0...v7.0.1) (2021-01-02)
 
 # [7.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v6.0.5...v7.0.0) (2021-01-02)
