@@ -1,3 +1,10 @@
+# [7.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v6.0.5...v7.0.0) (2021-01-02)
+
+
+### Breaking Changes
+
+* resolve event path api change ([c084d24](https://github.com/sprucelabsai/spruce-event-utils/commit/c084d24))
+
 ## [6.0.5](https://github.com/sprucelabsai/spruce-event-utils/compare/v6.0.4...v6.0.5) (2021-01-02)
 
 ## [6.0.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v6.0.3...v6.0.4) (2021-01-02)
