@@ -27,7 +27,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 			},
 		})
 
-		assert.isEqual(schema.id, 'didBookTargetAndPayload')
+		assert.isEqual(schema.id, 'didBookEmitTargetAndPayload')
 		assert.isTruthy(schema.fields.target)
 		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
 		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)

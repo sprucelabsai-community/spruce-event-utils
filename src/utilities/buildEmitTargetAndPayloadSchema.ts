@@ -48,7 +48,7 @@ function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
 	const { eventName, emitPayloadSchema } = options
 
 	const schema = {
-		id: `${namesUtil.toCamel(eventName)}TargetAndPayload`,
+		id: `${namesUtil.toCamel(eventName)}EmitTargetAndPayload`,
 		fields: {
 			target: {
 				type: 'schema',
