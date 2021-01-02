@@ -61,6 +61,17 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 		assert.isFalsy(schema.fields.payload)
 	}
 
+	@test()
+	protected static buildsOverAndOverWithoutErroring() {
+		buildEmitTargetPayloadSchema({ eventName: 'did-book' })
+		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
+
+		assert.isTruthy(schema.fields.target)
+		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
+		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
+		assert.isFalsy(schema.fields.payload)
+	}
+
 	@test('tests typing (tests always pass, types will fail)')
 	protected static typesTarget() {
 		const schema = buildEmitTargetPayloadSchema({

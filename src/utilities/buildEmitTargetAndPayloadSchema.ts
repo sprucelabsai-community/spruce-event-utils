@@ -47,7 +47,7 @@ function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
 }): TargetAndPayload<T> {
 	const { eventName, emitPayloadSchema } = options
 
-	const schema = buildSchema({
+	const schema = {
 		id: `${namesUtil.toCamel(eventName)}TargetAndPayload`,
 		fields: {
 			target: {
@@ -58,7 +58,7 @@ function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
 				},
 			},
 		},
-	})
+	}
 
 	const hasPayloadFields =
 		emitPayloadSchema && Object.keys(emitPayloadSchema.fields ?? {}).length > 0
