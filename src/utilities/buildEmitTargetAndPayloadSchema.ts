@@ -1,4 +1,5 @@
 import { buildSchema, Schema, SchemaValues } from '@sprucelabs/schema'
+import { namesUtil } from '@sprucelabs/spruce-skill-utils'
 
 export const eventTargetSchema = buildSchema({
 	id: 'eventTarget',
@@ -40,11 +41,14 @@ type TargetAndPayload<PayloadSchema extends Schema> = {
 	}
 }
 
-function buildEmitTargetAndPayloadSchema<T extends Schema>(
-	payloadSchema: T
-): TargetAndPayload<T> {
+function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
+	eventName: string
+	emitPayloadSchema?: T
+}): TargetAndPayload<T> {
+	const { eventName, emitPayloadSchema } = options
+
 	const schema = buildSchema({
-		id: `${payloadSchema.id}TargetAndPayload`,
+		id: `${namesUtil.toCamel(eventName)}TargetAndPayload`,
 		fields: {
 			target: {
 				type: 'schema',
@@ -56,14 +60,15 @@ function buildEmitTargetAndPayloadSchema<T extends Schema>(
 		},
 	})
 
-	const hasPayloadFields = Object.keys(payloadSchema.fields ?? {}).length > 0
+	const hasPayloadFields =
+		emitPayloadSchema && Object.keys(emitPayloadSchema.fields ?? {}).length > 0
 	if (hasPayloadFields) {
 		//@ts-ignore
 		schema.fields.payload = {
 			type: 'schema',
 			isRequired: true,
 			options: {
-				schema: payloadSchema,
+				schema: emitPayloadSchema,
 			},
 		}
 	}

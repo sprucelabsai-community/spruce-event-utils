@@ -16,14 +16,18 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	@test()
 	protected static builderAddsInOptionalTarget() {
 		const schema = buildEmitTargetPayloadSchema({
-			id: 'emitPayload',
-			fields: {
-				textField: {
-					type: 'text',
+			eventName: 'did-book',
+			emitPayloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					textField: {
+						type: 'text',
+					},
 				},
 			},
 		})
 
+		assert.isEqual(schema.id, 'didBookTargetAndPayload')
 		assert.isTruthy(schema.fields.target)
 		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
 		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
@@ -32,11 +36,24 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	}
 
 	@test()
-	protected static buildsWithoutPayload() {
+	protected static buildsWithoutPayloadForNoFields() {
 		const schema = buildEmitTargetPayloadSchema({
-			id: 'emitPayload',
-			fields: {},
+			eventName: 'did-book',
+			emitPayloadSchema: {
+				id: 'emitPayload',
+				fields: {},
+			},
 		})
+
+		assert.isTruthy(schema.fields.target)
+		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
+		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
+		assert.isFalsy(schema.fields.payload)
+	}
+
+	@test()
+	protected static buildsWithoutPayload() {
+		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 
 		assert.isTruthy(schema.fields.target)
 		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
@@ -47,10 +64,13 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	@test('tests typing (tests always pass, types will fail)')
 	protected static typesTarget() {
 		const schema = buildEmitTargetPayloadSchema({
-			id: 'emitPayload',
-			fields: {
-				textField: {
-					type: 'text',
+			eventName: 'will-book',
+			emitPayloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					textField: {
+						type: 'text',
+					},
 				},
 			},
 		})
