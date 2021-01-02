@@ -67,9 +67,33 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 	}
 
 	@test()
+	protected static canResolveEventPathJs() {
+		const eventPath = this.resolvePath(
+			'src/events/my-great-event/v2020_10_10/emitPayload.builder.js'
+		)
+
+		assert.isEqualDeep(eventDiskUtil.splitPathToEvent(eventPath), {
+			eventName: 'my-great-event',
+			version: 'v2020_10_10',
+		})
+	}
+
+	@test()
 	protected static canResolveEventPathWithNumbers() {
 		const eventPath = this.resolvePath(
 			'src/events/my-great-event-101/v2020_10_10/emitPayload.builder.ts'
+		)
+
+		assert.isEqualDeep(eventDiskUtil.splitPathToEvent(eventPath), {
+			eventName: 'my-great-event-101',
+			version: 'v2020_10_10',
+		})
+	}
+
+	@test()
+	protected static canResolveEventPathWithNumbersJs() {
+		const eventPath = this.resolvePath(
+			'src/events/my-great-event-101/v2020_10_10/emitPayload.builder.js'
 		)
 
 		assert.isEqualDeep(eventDiskUtil.splitPathToEvent(eventPath), {
