@@ -184,17 +184,15 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 		const e = {
 			eventName: 'did-book',
 			version: 'v2020_02_02',
-		}
+			fileName: 'emitPayload.builder.ts',
+		} as const
 
 		const expected = this.resolvePath(
 			`did-book`,
-			e.version,
+			'v2020_02_02',
 			'emitPayload.builder.ts'
 		)
 
-		assert.isEqual(
-			eventDiskUtil.resolveEventPath(this.cwd, 'emitPayload.builder.ts', e),
-			expected
-		)
+		assert.isEqual(eventDiskUtil.resolveEventPath(this.cwd, e), expected)
 	}
 }

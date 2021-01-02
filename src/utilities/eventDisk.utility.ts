@@ -1,3 +1,4 @@
+import pathUtil from 'path'
 import eventNameUtil from './eventName.utility'
 
 interface Event {
@@ -81,21 +82,23 @@ const eventDiskUtil = {
 	},
 	resolveEventPath(
 		destination: string,
-		fileName:
-			| 'emitPayload.builder.ts'
-			| 'responsePayload.builder.ts'
-			| 'emitPermissions.builder.ts'
-			| 'listenPermissions.builder.ts',
-		e: { eventName: string; version: string },
-		seperator = '/'
+		e: {
+			fileName:
+				| 'emitPayload.builder.ts'
+				| 'responsePayload.builder.ts'
+				| 'emitPermissions.builder.ts'
+				| 'listenPermissions.builder.ts'
+			eventName: string
+			version: string
+		}
 	) {
 		if (!e || !e.eventName || !e.version) {
 			throw new Error(
 				"Can't resolve path to event without eventName, eventNamespace, version"
 			)
 		}
-		e
-		return [destination, e.eventName, e.version, fileName].join(seperator)
+
+		return pathUtil.join(destination, e.eventName, e.version, e.fileName)
 	},
 }
 
