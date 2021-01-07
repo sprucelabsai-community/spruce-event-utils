@@ -41,7 +41,7 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 	protected static canAssertMercuryError() {
 		const err = assert.doesThrow(() =>
 			eventResponseUtil.getFirstResponseOrThrow(
-				eventResponseUtil.mutatingMapAggregateResultsErrorsToSpruceErrors(
+				eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
 					this.errorWithoutErrorInstance,
 					SpruceError
 				)
@@ -61,7 +61,7 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 
 	@test()
 	protected static canAssertMercuryErrorFromRawResponse() {
-		const response = eventResponseUtil.mutatingMapAggregateResultsErrorsToSpruceErrors(
+		const response = eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
 			this.errorWithoutErrorInstance,
 			SpruceError
 		)
@@ -79,7 +79,7 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 
 	@test()
 	protected static throwsWithTooManyErrors() {
-		const response = eventResponseUtil.mutatingMapAggregateResultsErrorsToSpruceErrors(
+		const response = eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
 			this.twoErrorsWithoutErrorInstance,
 			SpruceError
 		)

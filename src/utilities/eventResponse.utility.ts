@@ -20,7 +20,7 @@ type MercurySingleResponseWithoutErrorInstances = Omit<
 }
 
 const eventResponseUtil = {
-	mutatingMapAggregateResultsErrorsToSpruceErrors<
+	mutatingMapAggregateResponseErrorsToSpruceErrors<
 		R extends
 			| MercuryAggregateResponse<any>
 			| MercuryAggregateResponseWithoutErrorInstances,
@@ -67,6 +67,44 @@ const eventResponseUtil = {
 		}
 
 		return payload as NonNullable<R['responses'][number]['payload']>
+	},
+
+	getAllResponsePayloadsAndErrors<
+		R extends MercuryAggregateResponse<any>,
+		T extends new (...args: any) => any
+	>(emitResponse: R, ClassRef: T) {
+		type Payload = NonNullable<R['responses'][number]['payload']>
+
+		type Results = {
+			payloads: Payload[]
+			errors?: InstanceType<T>[]
+		}
+
+		const payloads: Payload[] = emitResponse.responses
+			.filter((r) => !!r.payload)
+			.map((r) => r.payload)
+
+		const results: Results = {
+			payloads,
+		}
+
+		if (emitResponse.totalErrors > 0) {
+			this.mutatingMapAggregateResponseErrorsToSpruceErrors(
+				emitResponse,
+				ClassRef
+			)
+
+			results.errors = []
+
+			emitResponse.responses.forEach((r) => {
+				r.errors?.forEach((err) => {
+					//@ts-ignore
+					results.errors?.push(err)
+				})
+			})
+		}
+
+		return results
 	},
 }
 

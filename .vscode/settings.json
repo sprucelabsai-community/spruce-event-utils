@@ -37,11 +37,6 @@
 	"[handlebars]": {
 		"editor.formatOnSave": false
 	},
-	"eslint.workingDirectories": [
-		"./packages/spruce-cli",
-		"./packages/spruce-templates",
-		"./packages/spruce-skill-utils"
-	],
 	"eslint.options": {
 		"extensions": [
 			".js",
