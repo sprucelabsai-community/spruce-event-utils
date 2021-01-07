@@ -28,7 +28,7 @@
 		"clean": "rm -rf build",
 		"clean.all": "rm -rf node_modules && rm -f yarn.lock && yarn clean",
 		"lint": "eslint '**/*.ts' && echo 'LINT PASS'",
-		"lint.fix": "eslint --fix '**/*.ts'",
+		"fix.lint": "eslint --fix '**/*.ts'",
 		"release": "semantic-release",
 		"test": "jest",
 		"watch.tests": "jest --watch",
