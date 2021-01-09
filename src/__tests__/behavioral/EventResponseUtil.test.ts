@@ -78,4 +78,18 @@ export default class EventResponseUtilTest extends AbstractSpruceTest {
 
 		assert.isLength(payloads, 2)
 	}
+
+	@test()
+	protected static throwsHelpfulErrorWhenNoResultsReturnedButExpectingAtLeastOne() {
+		const err = assert.doesThrow(() =>
+			eventResponseUtil.getFirstResponseOrThrow({
+				totalContracts: 0,
+				totalErrors: 0,
+				totalResponses: 0,
+				responses: [],
+			})
+		)
+
+		eventErrorAssertUtil.assertError(err, 'EMPTY_MERCURY_RESPONSE')
+	}
 }

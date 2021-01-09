@@ -56,6 +56,17 @@ const eventResponseUtil = {
 	getFirstResponseOrThrow<R extends MercuryAggregateResponse<any>>(
 		emitResponse: R
 	) {
+		if (!emitResponse?.responses?.[0]) {
+			throw new SpruceError({
+				code: 'MERCURY_RESPONSE_ERROR',
+				responseErrors: [
+					new SpruceError({
+						code: 'EMPTY_MERCURY_RESPONSE',
+					}),
+				],
+			})
+		}
+
 		const payload = emitResponse.responses[0].payload
 		const errors = emitResponse.responses[0].errors
 
