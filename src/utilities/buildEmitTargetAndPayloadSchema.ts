@@ -13,7 +13,7 @@ export const eventTargetSchema = buildSchema({
 		organizationId: {
 			type: 'id',
 		},
-		skillSlug: {
+		skillId: {
 			type: 'id',
 		},
 	},
