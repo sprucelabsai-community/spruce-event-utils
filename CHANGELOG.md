@@ -1,3 +1,10 @@
+# [9.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v8.1.2...v9.0.0) (2021-01-09)
+
+
+### Breaking Changes
+
+* event target skillSlug -> skillId ([d5b21ac](https://github.com/sprucelabsai/spruce-event-utils/commit/d5b21ac))
+
 ## [8.1.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v8.1.1...v8.1.2) (2021-01-07)
 
 ## [8.1.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v8.1.0...v8.1.1) (2021-01-07)
