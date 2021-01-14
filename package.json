@@ -24,7 +24,7 @@
 		"build": "yarn build.babel && yarn build.types",
 		"build.types": "tsc --emitDeclarationOnly && echo 'TYPES PASS'",
 		"build.babel": "babel src --out-dir build --extensions \".ts,.tsx\" --source-maps --copy-files",
-		"rebuild": "yarn clean && yarn && yarn build",
+		"rebuild": "yarn clean.all && yarn && yarn build",
 		"clean": "rm -rf build",
 		"clean.all": "rm -rf node_modules && rm -f yarn.lock && yarn clean",
 		"lint": "eslint '**/*.ts' && echo 'LINT PASS'",
@@ -43,7 +43,7 @@
 		"@sprucelabs/mercury-types": "latest",
 		"@sprucelabs/schema": "latest",
 		"@sprucelabs/spruce-core-schemas": "latest",
-		"@sprucelabs/spruce-skill-utils": "^15.1.0",
+		"@sprucelabs/spruce-skill-utils": "latest",
 		"@sprucelabs/test": "latest",
 		"@sprucelabs/test-utils": "latest"
 	},
@@ -101,7 +101,8 @@
 			"@sprucelabs/schema",
 			"@sprucelabs/spruce-core-schemas",
 			"@sprucelabs/test",
-			"@sprucelabs/test-utils"
+			"@sprucelabs/test-utils",
+			"@sprucelabs/spruce-skill-utils"
 		]
 	}
 }
