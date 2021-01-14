@@ -1,21 +1,16 @@
-import { buildSchema, Schema, SchemaValues } from '@sprucelabs/schema'
+import {
+	buildSchema,
+	dropFields,
+	Schema,
+	SchemaValues,
+} from '@sprucelabs/schema'
+import { messageTargetSchema } from '@sprucelabs/spruce-core-schemas'
 import { namesUtil } from '@sprucelabs/spruce-skill-utils'
 
 export const eventTargetSchema = buildSchema({
 	id: 'eventTarget',
 	fields: {
-		locationId: {
-			type: 'id',
-		},
-		personId: {
-			type: 'id',
-		},
-		organizationId: {
-			type: 'id',
-		},
-		skillId: {
-			type: 'id',
-		},
+		...dropFields(messageTargetSchema.fields, ['phone']),
 	},
 })
 
