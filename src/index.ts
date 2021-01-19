@@ -7,3 +7,4 @@ export { default as buildEmitTargetAndPayloadSchema } from './utilities/buildEmi
 export * from './utilities/buildEmitTargetAndPayloadSchema'
 export * from './event.types'
 export * from './constants'
+export { default as plugin } from './plugins/event.plugin'

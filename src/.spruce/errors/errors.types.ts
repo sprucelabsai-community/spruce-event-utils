@@ -70,6 +70,27 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 export declare namespace SpruceErrors.SpruceEventUtils {
 
 	
+	export interface EventPluginError {
+		
+	}
+
+	export interface EventPluginErrorSchema extends SpruceSchema.Schema {
+		id: 'eventPluginError',
+		namespace: 'SpruceEventUtils',
+		name: 'event plugin error',
+		    fields: {
+		    }
+	}
+
+	export type EventPluginErrorEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.EventPluginErrorSchema>
+
+}
+
+
+
+export declare namespace SpruceErrors.SpruceEventUtils {
+
+	
 	export interface InvalidEventName {
 		
 			

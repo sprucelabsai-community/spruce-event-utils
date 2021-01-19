@@ -35,6 +35,10 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				message = `'${options.fullyQualifiedEventName}' event already exists.`
 				break
 
+			case 'EVENT_PLUGIN_ERROR':
+				message = 'A event plugin error just happened!'
+				break
+
 			default:
 				message = super.friendlyMessage()
 		}
