@@ -1,3 +1,10 @@
+# [10.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v9.1.2...v10.0.0) (2021-01-20)
+
+
+### Breaking Changes
+
+* drop event plugin ([ca73198](https://github.com/sprucelabsai/spruce-event-utils/commit/ca73198))
+
 ## [9.1.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v9.1.1...v9.1.2) (2021-01-19)
 
 ## [9.1.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v9.1.0...v9.1.1) (2021-01-19)
