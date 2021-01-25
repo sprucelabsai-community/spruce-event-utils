@@ -28,8 +28,7 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 			}
 
 			case 'EMPTY_MERCURY_RESPONSE':
-				message = 'Got no results back from the server! That was unexpected.'
-				break
+				return 'Got no results back from the server! That was unexpected.'
 
 			case 'DUPLICATE_EVENT':
 				message = `'${options.fullyQualifiedEventName}' event already exists.`
@@ -43,24 +42,12 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				message = super.friendlyMessage()
 		}
 
-		// Drop on code and friendly message
-		message = `${options.code}: ${message}`
 		const fullMessage = `${message}${
 			options.friendlyMessage && options.friendlyMessage !== message
 				? `\n\n${options.friendlyMessage}`
 				: ''
 		}`
 
-		// Handle repeating text from original message by remove it
-		return `${fullMessage}${
-			this.originalError &&
-			this.originalError.message !== fullMessage &&
-			this.originalError.message !== message
-				? `\n\nOriginal error: ${this.originalError.message.replace(
-						message,
-						''
-				  )}`
-				: ''
-		}`
+		return fullMessage
 	}
 }
