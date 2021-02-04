@@ -4,9 +4,7 @@ import {
 	EventSignature,
 	MercuryEventEmitter,
 } from '@sprucelabs/mercury-types'
-import { SpruceSchemas } from '@sprucelabs/spruce-core-schemas'
-
-type Skill = SpruceSchemas.Spruce.v2020_07_22.Skill
+import Skill, { Log } from '@sprucelabs/spruce-skill-utils'
 
 type OptionalApiClient<
 	IEventContract extends EventContract | undefined
@@ -29,6 +27,7 @@ export type SpruceEvent<
 	EmitPayload extends Record<string, any> | undefined = undefined
 > = {
 	skill: Skill
+	log: Log
 } & OptionalApiClient<IEventContract> &
 	OptionalPayload<EmitPayload>
 
