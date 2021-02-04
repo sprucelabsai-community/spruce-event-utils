@@ -1,3 +1,10 @@
+# [10.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.0.8...v10.1.0) (2021-02-04)
+
+
+### Features
+
+* skill and log added to SpruceEvent ([c2ad630](https://github.com/sprucelabsai/spruce-event-utils/commit/c2ad630))
+
 ## [10.0.8](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.0.7...v10.0.8) (2021-02-04)
 
 ## [10.0.7](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.0.6...v10.0.7) (2021-02-04)
