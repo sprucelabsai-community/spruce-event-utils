@@ -4,7 +4,7 @@ import {
 	EventSignature,
 	MercuryEventEmitter,
 } from '@sprucelabs/mercury-types'
-import Skill, { Log } from '@sprucelabs/spruce-skill-utils'
+import { Skill, Log } from '@sprucelabs/spruce-skill-utils'
 
 type OptionalApiClient<
 	IEventContract extends EventContract | undefined
