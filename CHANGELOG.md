@@ -1,3 +1,10 @@
+# [10.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.1.0...v10.2.0) (2021-02-08)
+
+
+### Features
+
+* new types pulled from skill ([cb1f722](https://github.com/sprucelabsai/spruce-event-utils/commit/cb1f722))
+
 # [10.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.0.8...v10.1.0) (2021-02-04)
 
 
