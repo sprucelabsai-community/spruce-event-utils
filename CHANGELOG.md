@@ -1,3 +1,17 @@
+# [10.3.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.2.0...v10.3.0) (2021-02-08)
+
+
+### Features
+
+* health check type mixin ([c83a9b7](https://github.com/sprucelabsai/spruce-event-utils/commit/c83a9b7))
+
+# [10.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.1.0...v10.2.0) (2021-02-08)
+
+
+### Features
+
+* new types pulled from skill ([cb1f722](https://github.com/sprucelabsai/spruce-event-utils/commit/cb1f722))
+
 # [10.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.0.8...v10.1.0) (2021-02-04)
 
 
