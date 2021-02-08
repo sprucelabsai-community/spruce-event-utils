@@ -61,3 +61,9 @@ export interface NamedEventSignature {
 	version: string
 	signature: EventSignature
 }
+
+declare module '@sprucelabs/spruce-skill-utils/build/skill.types' {
+	export interface HealthCheckResults {
+		event?: EventHealthCheckItem
+	}
+}
