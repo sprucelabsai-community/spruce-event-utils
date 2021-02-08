@@ -37,7 +37,7 @@ type OptionalPayload<
 	EmitPayload extends Record<string, any> | undefined
 > = EmitPayload extends Record<string, any>
 	? {
-			payload: EmitPayload
+			targetAndPayload: EmitPayload
 	  }
 	: {}
 
