@@ -4,7 +4,7 @@ import {
 	EventSignature,
 	MercuryEventEmitter,
 } from '@sprucelabs/mercury-types'
-import { Skill, Log } from '@sprucelabs/spruce-skill-utils'
+import { Skill, Log, HealthCheckItem } from '@sprucelabs/spruce-skill-utils'
 
 type OptionalApiClient<
 	IEventContract extends EventContract | undefined
@@ -13,6 +13,25 @@ type OptionalApiClient<
 			apiClient: MercuryEventEmitter<IEventContract>
 	  }
 	: {}
+
+export interface EventHealthCheckItem extends HealthCheckItem {
+	listeners: Omit<EventFeatureListener, 'callback'>[]
+	contracts: { fullyQualifiedEventName: string }[]
+	events: EventFeatureEvent[]
+}
+
+export interface EventFeatureListener {
+	eventName: string
+	eventNamespace: string
+	version: string
+	callback(event: SpruceEvent): Promise<void>
+}
+
+export interface EventFeatureEvent {
+	eventName: string
+	eventNamespace: string
+	version: string
+}
 
 type OptionalPayload<
 	EmitPayload extends Record<string, any> | undefined
