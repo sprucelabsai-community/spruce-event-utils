@@ -1,3 +1,10 @@
+# [11.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.3.0...v11.0.0) (2021-02-08)
+
+
+### Breaking Changes
+
+* payload -> targetAndPayload ([655be83](https://github.com/sprucelabsai/spruce-event-utils/commit/655be83))
+
 # [10.3.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v10.2.0...v10.3.0) (2021-02-08)
 
 
