@@ -46,9 +46,7 @@ const eventResponseUtil = {
 		}
 	>(response: R, ClassRef: T): R {
 		if (response.errors) {
-			response.errors = response.errors.map((err) =>
-				AbstractSpruceError.parse(err, ClassRef)
-			)
+			response.errors = response.errors.map((err) => mapError<T>(err, ClassRef))
 		}
 		return response
 	},
@@ -120,3 +118,19 @@ const eventResponseUtil = {
 }
 
 export default eventResponseUtil
+
+function mapError<
+	T extends {
+		prototype: any
+	}
+>(err: AbstractSpruceError<any>, ClassRef: T): T['prototype'] {
+	const spruceErr = AbstractSpruceError.parse(err, ClassRef)
+
+	if (spruceErr.options.code === 'MERCURY_RESPONSE_ERROR') {
+		spruceErr.options.responseErrors = spruceErr.options.responseErrors.map(
+			(err: any) => AbstractSpruceError.parse(err, ClassRef)
+		)
+	}
+
+	return spruceErr
+}
