@@ -62,7 +62,7 @@ export interface NamedEventSignature {
 	signature: EventSignature
 }
 
-declare module '@sprucelabs/spruce-skill-utils/build/skill.types' {
+declare module '@sprucelabs/spruce-skill-utils/build/types/skill.types' {
 	export interface HealthCheckResults {
 		event?: EventHealthCheckItem
 	}
