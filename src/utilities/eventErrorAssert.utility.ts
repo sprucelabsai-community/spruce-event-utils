@@ -4,7 +4,7 @@ import { assert, assertUtil } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
 import eventResponseUtil from './eventResponse.utility'
 
-const mercuryErrorAssertUtil = {
+const eventErrorAssertUtil = {
 	assertError(
 		error: Error | AbstractSpruceError<any>,
 		expectedCode: string,
@@ -39,4 +39,4 @@ const mercuryErrorAssertUtil = {
 	},
 }
 
-export default mercuryErrorAssertUtil
+export default eventErrorAssertUtil
