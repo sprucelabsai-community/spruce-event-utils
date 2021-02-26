@@ -31,9 +31,9 @@
 	},
 	"scripts": {
 		"build": "yarn build.tsc && yarn build.dist",
-		"build.copy-files": "cp -r ./src/.spruce build/",
+		"build.copy-files": "mkdir -p build/__tests__ && cp -r ./src/.spruce build/",
 		"build.dist": "tsc --project tsconfig.dist.json",
-		"build.tsc": "tsc && yarn build.copy-files",
+		"build.tsc": "yarn build.copy-files && tsc",
 		"build.types": "tsc --emitDeclarationOnly && echo 'TYPES PASS'",
 		"clean": "rm -rf build",
 		"clean.all": "rm -rf node_modules && rm -f yarn.lock && yarn clean",
@@ -45,7 +45,7 @@
 		"upgrade.packages": "yarn-upgrade-all && rm yarn.lock ; yarn ; yarn fix.lint | true",
 		"upgrade.packages.all": "yarn install && yarn upgrade.packages",
 		"upgrade.packages.test": "yarn upgrade.packages.all && yarn lint && yarn build && yarn test",
-		"watch.build": "concurrently 'yarn run build.tsc' \"chokidar 'src/**/*' -c 'clear ; yarn build.tsc'\"",
+		"watch.build": "yarn build.tsc -w",
 		"watch.lint": "chokidar 'src/**/*' -c 'yarn lint.tsc'",
 		"watch.tests": "jest --watch"
 	},
