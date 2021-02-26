@@ -30,9 +30,10 @@
 		"url": "https://github.com/sprucelabsai/spruce-event-utils/issues"
 	},
 	"scripts": {
-		"build": "yarn build.babel && yarn build.types && yarn build.dist",
+		"build": "yarn build.tsc && yarn build.dist",
+		"build.copy-files": "cp -r ./src/.spruce build/",
 		"build.dist": "tsc --project tsconfig.dist.json",
-		"build.babel": "babel src --out-dir build --extensions \".ts,.tsx\" --source-maps --copy-files",
+		"build.tsc": "tsc && yarn build.copy-files",
 		"build.types": "tsc --emitDeclarationOnly && echo 'TYPES PASS'",
 		"clean": "rm -rf build",
 		"clean.all": "rm -rf node_modules && rm -f yarn.lock && yarn clean",
@@ -44,7 +45,7 @@
 		"upgrade.packages": "yarn-upgrade-all && rm yarn.lock ; yarn ; yarn fix.lint | true",
 		"upgrade.packages.all": "yarn install && yarn upgrade.packages",
 		"upgrade.packages.test": "yarn upgrade.packages.all && yarn lint && yarn build && yarn test",
-		"watch.build": "concurrently 'yarn build.types' 'yarn lint' 'yarn run build.babel --watch' \"chokidar 'src/**/*' -c 'clear ; yarn build.types'\" \"chokidar 'src/**/*' -c 'yarn lint'\"",
+		"watch.build": "concurrently 'yarn run build.tsc' \"chokidar 'src/**/*' -c 'clear ; yarn build.tsc'\"",
 		"watch.lint": "chokidar 'src/**/*' -c 'yarn lint.tsc'",
 		"watch.tests": "jest --watch"
 	},
@@ -58,18 +59,10 @@
 		"@sprucelabs/test-utils": "latest"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.13.0",
-		"@babel/core": "^7.13.1",
-		"@babel/plugin-proposal-class-properties": "^7.13.0",
-		"@babel/plugin-proposal-decorators": "^7.13.5",
-		"@babel/plugin-transform-runtime": "^7.13.7",
-		"@babel/preset-env": "^7.13.5",
-		"@babel/preset-typescript": "^7.13.0",
 		"@sprucelabs/babel-plugin-schema": "latest",
 		"@sprucelabs/jest-json-reporter": "latest",
 		"@sprucelabs/semantic-release": "latest",
 		"@types/node": "^14.14.31",
-		"babel-plugin-module-resolver": "^4.1.0",
 		"chokidar-cli": "^2.1.0",
 		"concurrently": "^6.0.0",
 		"conventional-changelog-sprucelabs": "latest",
