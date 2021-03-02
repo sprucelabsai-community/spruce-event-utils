@@ -32,7 +32,8 @@
 	"scripts": {
 		"build": "yarn build.tsc && yarn build.dist",
 		"build.copy-files": "mkdir -p build/__tests__ && cp -r ./src/.spruce build/",
-		"build.dist": "tsc --project tsconfig.dist.json",
+		"build.dist": "tsc --project tsconfig.dist.json && yarn build.esm-postbuild",
+		"build.esm-postbuild": "esm-postbuild --target build/esm --patterns '**/*.js'",
 		"build.tsc": "yarn build.copy-files && tsc",
 		"build.types": "tsc --emitDeclarationOnly && echo 'TYPES PASS'",
 		"clean": "rm -rf build",
@@ -51,6 +52,7 @@
 	},
 	"dependencies": {
 		"@sprucelabs/error": "latest",
+		"@sprucelabs/esm-postbuild": "^1.0.0",
 		"@sprucelabs/mercury-types": "latest",
 		"@sprucelabs/schema": "latest",
 		"@sprucelabs/spruce-core-schemas": "latest",
