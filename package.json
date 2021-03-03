@@ -6,6 +6,7 @@
 	"version": "11.0.27",
 	"files": [
 		"build/**/*",
+		"!build/__tests__",
 		"tsconfig.json"
 	],
 	"main": "./build/index.js",
@@ -30,25 +31,23 @@
 		"url": "https://github.com/sprucelabsai/spruce-event-utils/issues"
 	},
 	"scripts": {
-		"build": "yarn build.tsc && yarn build.dist",
+		"build.dev": "yarn build.tsc",
 		"build.copy-files": "mkdir -p build/__tests__ && cp -r ./src/.spruce build/",
-		"build.dist": "tsc --project tsconfig.dist.json && yarn build.esm-postbuild",
+		"build.dist": "yarn build.tsc && tsc --project tsconfig.dist.json && yarn build.esm-postbuild",
 		"build.esm-postbuild": "esm-postbuild --target build/esm --patterns '**/*.js'",
 		"build.tsc": "yarn build.copy-files && tsc",
-		"build.types": "tsc --emitDeclarationOnly && echo 'TYPES PASS'",
 		"clean": "rm -rf build",
-		"clean.all": "rm -rf node_modules && rm -f yarn.lock && yarn clean",
+		"clean.all": "rm -rf node_modules yarn.lock && yarn clean",
 		"fix.lint": "eslint --fix '**/*.ts'",
 		"lint": "eslint '**/*.ts' && echo 'LINT PASS'",
-		"rebuild": "yarn clean.all && yarn && yarn build",
+		"rebuild": "yarn clean.all && yarn && yarn build.dev",
 		"release": "semantic-release",
 		"test": "jest",
-		"upgrade.packages": "yarn-upgrade-all && rm yarn.lock ; yarn ; yarn fix.lint | true",
+		"upgrade.packages": "yarn-upgrade-all && rm yarn.lock ; yarn ; yarn fix.lint ; true",
 		"upgrade.packages.all": "yarn install && yarn upgrade.packages",
-		"upgrade.packages.test": "yarn upgrade.packages.all && yarn lint && yarn build && yarn test",
-		"watch.build": "yarn build.tsc -w",
-		"watch.lint": "chokidar 'src/**/*' -c 'yarn lint.tsc'",
-		"watch.tests": "jest --watch"
+		"upgrade.packages.test": "yarn upgrade.packages.all && yarn lint && yarn build.dev && yarn test",
+		"watch.build.dev": "yarn build.tsc -w",
+		"watch.lint": "chokidar 'src/**/*' -c 'yarn lint.tsc'"
 	},
 	"dependencies": {
 		"@sprucelabs/error": "latest",
@@ -97,19 +96,17 @@
 	},
 	"yarn-upgrade-all": {
 		"ignore": [
-			"socket.io",
-			"socket.io-client",
 			"@sprucelabs/babel-plugin-schema",
-			"@sprucelabs/jest-json-reporter",
-			"@sprucelabs/semantic-release",
 			"@sprucelabs/error",
 			"@sprucelabs/esm-postbuild",
+			"@sprucelabs/jest-json-reporter",
 			"@sprucelabs/mercury-types",
 			"@sprucelabs/schema",
+			"@sprucelabs/semantic-release",
 			"@sprucelabs/spruce-core-schemas",
+			"@sprucelabs/spruce-skill-utils",
 			"@sprucelabs/test",
 			"@sprucelabs/test-utils",
-			"@sprucelabs/spruce-skill-utils",
 			"conventional-changelog-sprucelabs",
 			"eslint-config-spruce"
 		]
