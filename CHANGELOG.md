@@ -1,3 +1,10 @@
+# [12.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v11.0.31...v12.0.0) (2021-03-05)
+
+
+### Breaking Changes
+
+* apiCLient -> mercury and mixing in of SkillContext into the event ([7cdccdd](https://github.com/sprucelabsai/spruce-event-utils/commit/7cdccdd))
+
 ## [11.0.31](https://github.com/sprucelabsai/spruce-event-utils/compare/v11.0.30...v11.0.31) (2021-03-04)
 
 ## [11.0.30](https://github.com/sprucelabsai/spruce-event-utils/compare/v11.0.29...v11.0.30) (2021-03-03)
