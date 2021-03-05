@@ -11,14 +11,6 @@
 	],
 	"main": "./build/index.js",
 	"types": "./build/index.d.ts",
-	"exports": {
-		".": {
-			"node": "./build/index.js",
-			"require": "./build/index.js",
-			"import": "./build/esm/index.js",
-			"default": "./build/esm/index.js"
-		}
-	},
 	"module": "./build/esm/index.js",
 	"sideEffects": false,
 	"license": "MIT",
@@ -60,7 +52,7 @@
 		"@sprucelabs/test-utils": "latest"
 	},
 	"devDependencies": {
-		"@sprucelabs/babel-plugin-schema": "latest",
+		"@sprucelabs/resolve-path-aliases": "latest",
 		"@sprucelabs/esm-postbuild": "latest",
 		"@sprucelabs/jest-json-reporter": "latest",
 		"@sprucelabs/semantic-release": "latest",
@@ -97,7 +89,7 @@
 	},
 	"yarn-upgrade-all": {
 		"ignore": [
-			"@sprucelabs/babel-plugin-schema",
+			"@sprucelabs/resolve-path-aliases",
 			"@sprucelabs/error",
 			"@sprucelabs/esm-postbuild",
 			"@sprucelabs/jest-json-reporter",
