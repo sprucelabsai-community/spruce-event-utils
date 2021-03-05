@@ -4,13 +4,18 @@ import {
 	EventSignature,
 	MercuryEventEmitter,
 } from '@sprucelabs/mercury-types'
-import { Skill, Log, HealthCheckItem } from '@sprucelabs/spruce-skill-utils'
+import {
+	Skill,
+	Log,
+	HealthCheckItem,
+	SkillContext,
+} from '@sprucelabs/spruce-skill-utils'
 
-type OptionalApiClient<
+type OptionalMercuryClient<
 	IEventContract extends EventContract | undefined
 > = IEventContract extends EventContract
 	? {
-			apiClient: MercuryEventEmitter<IEventContract>
+			mercury: MercuryEventEmitter<IEventContract>
 	  }
 	: {}
 
@@ -47,7 +52,8 @@ export type SpruceEvent<
 > = {
 	skill: Skill
 	log: Log
-} & OptionalApiClient<IEventContract> &
+} & SkillContext &
+	OptionalMercuryClient<IEventContract> &
 	OptionalPayload<EmitPayload>
 
 export type SpruceEventResponse<
