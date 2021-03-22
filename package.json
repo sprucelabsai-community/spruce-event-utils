@@ -3,7 +3,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"version": "11.0.31",
+	"version": "12.0.7",
 	"files": [
 		"build/**/*",
 		"!build/__tests__",
@@ -11,14 +11,6 @@
 	],
 	"main": "./build/index.js",
 	"types": "./build/index.d.ts",
-	"exports": {
-		".": {
-			"node": "./build/index.js",
-			"require": "./build/index.js",
-			"import": "./build/esm/index.js",
-			"default": "./build/esm/index.js"
-		}
-	},
 	"module": "./build/esm/index.js",
 	"sideEffects": false,
 	"license": "MIT",
@@ -60,15 +52,15 @@
 		"@sprucelabs/test-utils": "latest"
 	},
 	"devDependencies": {
-		"@sprucelabs/babel-plugin-schema": "latest",
 		"@sprucelabs/esm-postbuild": "latest",
 		"@sprucelabs/jest-json-reporter": "latest",
+		"@sprucelabs/resolve-path-aliases": "latest",
 		"@sprucelabs/semantic-release": "latest",
-		"@types/node": "^14.14.31",
+		"@types/node": "^14.14.35",
 		"chokidar-cli": "^2.1.0",
 		"concurrently": "^6.0.0",
 		"conventional-changelog-sprucelabs": "latest",
-		"eslint": "^7.21.0",
+		"eslint": "^7.22.0",
 		"eslint-config-spruce": "latest",
 		"jest": "^26.6.3",
 		"jest-circus": "^26.6.3",
@@ -97,7 +89,7 @@
 	},
 	"yarn-upgrade-all": {
 		"ignore": [
-			"@sprucelabs/babel-plugin-schema",
+			"@sprucelabs/resolve-path-aliases",
 			"@sprucelabs/error",
 			"@sprucelabs/esm-postbuild",
 			"@sprucelabs/jest-json-reporter",
