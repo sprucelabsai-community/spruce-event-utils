@@ -1,3 +1,10 @@
+# [12.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.0.11...v12.1.0) (2021-03-31)
+
+
+### Features
+
+* buildEmitTargetAndPayload can make target optional ([17ba9b3](https://github.com/sprucelabsai/spruce-event-utils/commit/17ba9b3))
+
 ## [12.0.11](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.0.10...v12.0.11) (2021-03-27)
 
 ## [12.0.10](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.0.9...v12.0.10) (2021-03-26)
