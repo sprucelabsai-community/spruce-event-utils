@@ -34,15 +34,16 @@ type TargetAndPayload<PayloadSchema extends Schema> = {
 function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
 	eventName: string
 	emitPayloadSchema?: T
+	shouldRequireTarget?: boolean
 }): TargetAndPayload<T> {
-	const { eventName, emitPayloadSchema } = options
+	const { eventName, emitPayloadSchema, shouldRequireTarget = true } = options
 
 	const schema = {
 		id: `${namesUtil.toCamel(eventName)}EmitTargetAndPayload`,
 		fields: {
 			target: {
 				type: 'schema',
-				isRequired: true,
+				isRequired: shouldRequireTarget,
 				options: {
 					schema: eventTargetSchema,
 				},
