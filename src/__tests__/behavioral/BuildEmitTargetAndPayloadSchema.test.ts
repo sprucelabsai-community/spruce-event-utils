@@ -99,4 +99,25 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 
 		assert.isTruthy(payload)
 	}
+
+	@test()
+	protected static canMakeTargetOptional() {
+		const schema = buildEmitTargetPayloadSchema({
+			shouldRequireTarget: false,
+			eventName: 'will-book',
+			emitPayloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					textField: {
+						type: 'text',
+					},
+				},
+			},
+		})
+
+		assert.isFalse(schema.fields.target.isRequired)
+		type Schema = typeof schema
+
+		assert.isExactType<false, Schema['fields']['target']['isRequired']>(true)
+	}
 }
