@@ -103,7 +103,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	@test()
 	protected static canMakeTargetOptional() {
 		const schema = buildEmitTargetPayloadSchema({
-			shouldRequireTarget: false,
+			isTargetRequired: false,
 			eventName: 'will-book',
 			emitPayloadSchema: {
 				id: 'emitPayload',

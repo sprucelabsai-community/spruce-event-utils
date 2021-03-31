@@ -40,16 +40,16 @@ function buildEmitTargetAndPayloadSchema<
 >(options: {
 	eventName: string
 	emitPayloadSchema?: T
-	shouldRequireTarget?: IsTargetRequired
+	isTargetRequired?: IsTargetRequired
 }): TargetAndPayload<T, IsTargetRequired> {
-	const { eventName, emitPayloadSchema, shouldRequireTarget = true } = options
+	const { eventName, emitPayloadSchema, isTargetRequired = true } = options
 
 	const schema = {
 		id: `${namesUtil.toCamel(eventName)}EmitTargetAndPayload`,
 		fields: {
 			target: {
 				type: 'schema',
-				isRequired: shouldRequireTarget,
+				isRequired: isTargetRequired,
 				options: {
 					schema: eventTargetSchema,
 				},
