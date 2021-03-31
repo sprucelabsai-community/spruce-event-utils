@@ -12,12 +12,15 @@ export const eventTargetSchema = {
 export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
 
-type TargetAndPayload<PayloadSchema extends Schema> = {
+type TargetAndPayload<
+	PayloadSchema extends Schema,
+	IsTargetRequired extends boolean = true
+> = {
 	id: string
 	fields: {
 		target: {
 			type: 'schema'
-			isRequired: true
+			isRequired: IsTargetRequired
 			options: {
 				schema: EventTargetSchema
 			}
@@ -31,11 +34,14 @@ type TargetAndPayload<PayloadSchema extends Schema> = {
 	}
 }
 
-function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
+function buildEmitTargetAndPayloadSchema<
+	T extends Schema,
+	IsTargetRequired extends boolean = true
+>(options: {
 	eventName: string
 	emitPayloadSchema?: T
-	shouldRequireTarget?: boolean
-}): TargetAndPayload<T> {
+	shouldRequireTarget?: IsTargetRequired
+}): TargetAndPayload<T, IsTargetRequired> {
 	const { eventName, emitPayloadSchema, shouldRequireTarget = true } = options
 
 	const schema = {
@@ -64,7 +70,7 @@ function buildEmitTargetAndPayloadSchema<T extends Schema>(options: {
 		}
 	}
 
-	return schema as TargetAndPayload<T>
+	return schema as any
 }
 
 export default buildEmitTargetAndPayloadSchema
