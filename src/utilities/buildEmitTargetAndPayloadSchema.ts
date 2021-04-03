@@ -11,6 +11,7 @@ export const eventTargetSchema = {
 
 export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
+export type EventSource = EventTarget
 
 type TargetAndPayload<
 	PayloadSchema extends Schema,
