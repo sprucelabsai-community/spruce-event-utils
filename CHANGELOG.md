@@ -1,3 +1,10 @@
+# [12.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.1.1...v12.2.0) (2021-04-03)
+
+
+### Features
+
+* eventsource copy of event target ([344a14d](https://github.com/sprucelabsai/spruce-event-utils/commit/344a14d))
+
 ## [12.1.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.1.0...v12.1.1) (2021-03-31)
 
 # [12.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.0.11...v12.1.0) (2021-03-31)
