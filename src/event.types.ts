@@ -10,6 +10,7 @@ import {
 	HealthCheckItem,
 	SkillContext,
 } from '@sprucelabs/spruce-skill-utils'
+import { EventSource } from './utilities/buildEmitTargetAndPayloadSchema'
 
 type OptionalMercuryClient<
 	IEventContract extends EventContract | undefined
@@ -40,11 +41,7 @@ export interface EventFeatureEvent {
 
 type OptionalPayload<
 	EmitPayload extends Record<string, any> | undefined
-> = EmitPayload extends Record<string, any>
-	? {
-			targetAndPayload: EmitPayload
-	  }
-	: {}
+> = EmitPayload extends Record<string, any> ? EmitPayload : {}
 
 export type SpruceEvent<
 	IEventContract extends EventContract | undefined = undefined,
@@ -54,7 +51,7 @@ export type SpruceEvent<
 	log: Log
 } & SkillContext &
 	OptionalMercuryClient<IEventContract> &
-	OptionalPayload<EmitPayload>
+	OptionalPayload<EmitPayload> & { source: EventSource }
 
 export type SpruceEventResponse<
 	ResponsePayload extends any = undefined
