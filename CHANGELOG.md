@@ -1,3 +1,10 @@
+# [13.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.2.0...v13.0.0) (2021-04-05)
+
+
+### Breaking Changes
+
+* spruce event flattens payload, target, source ([129c7f1](https://github.com/sprucelabsai/spruce-event-utils/commit/129c7f1))
+
 # [12.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v12.1.1...v12.2.0) (2021-04-03)
 
 
