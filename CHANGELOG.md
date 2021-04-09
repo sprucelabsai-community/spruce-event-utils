@@ -1,3 +1,10 @@
+# [13.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.0.2...v13.1.0) (2021-04-08)
+
+
+### Features
+
+* event options support ([4a83fed](https://github.com/sprucelabsai/spruce-event-utils/commit/4a83fed))
+
 ## [13.0.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.0.1...v13.0.2) (2021-04-07)
 
 ## [13.0.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.0.0...v13.0.1) (2021-04-05)
