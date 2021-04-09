@@ -1,3 +1,10 @@
+# [13.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.1.0...v13.2.0) (2021-04-09)
+
+
+### Features
+
+* event contract util can get event names, filtering by namespace ([f7687df](https://github.com/sprucelabsai/spruce-event-utils/commit/f7687df))
+
 # [13.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.0.2...v13.1.0) (2021-04-08)
 
 
