@@ -5,8 +5,16 @@ import { NamedEventSignature } from '../event.types'
 import eventNameUtil from './eventName.utility'
 
 const eventContractUtil = {
-	getEventNames(contract: EventContract) {
-		return Object.keys(contract.eventSignatures)
+	getEventNames(contract: EventContract, namespace?: string) {
+		let names = Object.keys(contract.eventSignatures)
+
+		if (namespace) {
+			names = names.filter(
+				(n) => eventNameUtil.split(n).eventNamespace === namespace
+			)
+		}
+
+		return names
 	},
 
 	getNamedEventSignatures(contract: EventContract): NamedEventSignature[] {

@@ -148,4 +148,24 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 			fullyQualifiedEventName: 'good-event::3',
 		})
 	}
+
+	@test()
+	protected static canGetEventNamesByNamespace() {
+		const names = eventContractUtil.getEventNames(
+			{
+				eventSignatures: {
+					'appointments.book-appointment::v1': {},
+					'appointments.cancel-appointment::v1': {},
+					'get-skill-views::v1': {},
+					'heartwood.register-skill-views::v1': {},
+				},
+			},
+			'appointments'
+		)
+
+		assert.isEqualDeep(names, [
+			'appointments.book-appointment::v1',
+			'appointments.cancel-appointment::v1',
+		])
+	}
 }
