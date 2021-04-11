@@ -32,7 +32,16 @@ const eventNameUtil = {
 		eventNamespace?: string
 		version?: string
 	}): string {
-		const { eventName, eventNamespace, version } = options
+		const {
+			eventName: eventNameOptions,
+			eventNamespace: eventNamespaceOptions,
+			version: versionOptions,
+		} = options
+
+		let { eventName, eventNamespace, version } = this.split(eventNameOptions)
+
+		eventNamespace = eventNamespaceOptions ?? eventNamespace
+		version = versionOptions ?? version
 
 		function optionallyAttachversion(name: string) {
 			if (version) {
