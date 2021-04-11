@@ -47,7 +47,7 @@ const eventNameUtil = {
 
 		let fullyQualifiedEventName = !eventNamespace
 			? eventName
-			: `${eventNamespace}.${eventName}`
+			: `${eventNamespace}.${eventName.replace(eventNamespace + '.', '')}`
 
 		fullyQualifiedEventName = optionallyAttachversion(fullyQualifiedEventName)
 

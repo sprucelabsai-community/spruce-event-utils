@@ -42,6 +42,17 @@ export default class EventNameUtil extends AbstractSpruceTest {
 		assert.isEqual(name, 'test.event::v2020_02_02')
 	}
 
+	@test()
+	protected static wontDoubleAddNamespace() {
+		const name = eventNameUtil.join({
+			eventNamespace: 'test',
+			eventName: 'test.event',
+			version: 'v2020_02_02',
+		})
+
+		assert.isEqual(name, 'test.event::v2020_02_02')
+	}
+
 	@test(
 		'can generate response name from event',
 		'test-event',
