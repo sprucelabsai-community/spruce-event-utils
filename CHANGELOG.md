@@ -1,3 +1,10 @@
+# [13.3.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.2.4...v13.3.0) (2021-04-12)
+
+
+### Features
+
+* skill event contract is the default contract ([9b3ba2b](https://github.com/sprucelabsai/spruce-event-utils/commit/9b3ba2b))
+
 ## [13.2.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.2.3...v13.2.4) (2021-04-12)
 
 ## [13.2.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.2.2...v13.2.3) (2021-04-11)
