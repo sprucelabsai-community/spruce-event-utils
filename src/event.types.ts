@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import {
-	EventContract,
 	EventSignature,
 	MercuryEventEmitter,
+	SkillEventContract,
 } from '@sprucelabs/mercury-types'
 import {
 	Skill,
@@ -13,10 +13,11 @@ import {
 import { EventSource } from './utilities/buildEmitTargetAndPayloadSchema'
 
 type OptionalMercuryClient<
-	IEventContract extends EventContract | undefined
-> = IEventContract extends EventContract
+	Contract extends SkillEventContract | undefined
+> = Contract extends SkillEventContract
 	? {
-			mercury: MercuryEventEmitter<IEventContract>
+			//@ts-ignore
+			mercury: MercuryEventEmitter<Contract>
 	  }
 	: {}
 
@@ -44,13 +45,13 @@ type OptionalPayload<
 > = EmitPayload extends Record<string, any> ? EmitPayload : {}
 
 export type SpruceEvent<
-	IEventContract extends EventContract | undefined = undefined,
+	Contract extends SkillEventContract | undefined = undefined,
 	EmitPayload extends Record<string, any> | undefined = undefined
 > = {
 	skill: Skill
 	log: Log
 } & SkillContext &
-	OptionalMercuryClient<IEventContract> &
+	OptionalMercuryClient<Contract> &
 	OptionalPayload<EmitPayload> & { source: EventSource }
 
 export type SpruceEventResponse<
