@@ -25,10 +25,13 @@ const eventDiskUtil = {
 			)
 		}
 
+		const fqen = eventNameUtil.join(e)
+		const { eventName, eventNamespace, version } = eventNameUtil.split(fqen)
+
 		return [
 			destination,
-			e.eventNamespace,
-			e.eventName + '.' + e.version + '.listener.ts',
+			eventNamespace,
+			eventName + '.' + version + '.listener.ts',
 		].join(seperator)
 	},
 
