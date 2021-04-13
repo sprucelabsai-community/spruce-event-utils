@@ -16,7 +16,7 @@ type OptionalMercuryClient<
 	Contract extends SkillEventContract | undefined
 > = Contract extends SkillEventContract
 	? {
-			//@ts-ignore
+			/** @ts-ignore **/
 			mercury: MercuryEventEmitter<Contract>
 	  }
 	: {}
