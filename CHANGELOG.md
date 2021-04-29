@@ -1,3 +1,17 @@
+## [13.3.8](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.7...v13.3.8) (2021-04-27)
+
+## [13.3.7](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.6...v13.3.7) (2021-04-26)
+
+## [13.3.6](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.5...v13.3.6) (2021-04-23)
+
+## [13.3.5](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.4...v13.3.5) (2021-04-15)
+
+## [13.3.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.3...v13.3.4) (2021-04-15)
+
+## [13.3.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.2...v13.3.3) (2021-04-14)
+
+## [13.3.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.1...v13.3.2) (2021-04-13)
+
 ## [13.3.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.0...v13.3.1) (2021-04-12)
 
 # [13.3.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.2.4...v13.3.0) (2021-04-12)
