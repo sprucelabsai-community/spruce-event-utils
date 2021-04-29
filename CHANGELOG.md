@@ -1,3 +1,10 @@
+# [13.4.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.8...v13.4.0) (2021-04-29)
+
+
+### Features
+
+* export eventSourceSchema ([c9efa00](https://github.com/sprucelabsai/spruce-event-utils/commit/c9efa00))
+
 ## [13.3.8](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.7...v13.3.8) (2021-04-27)
 
 ## [13.3.7](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.3.6...v13.3.7) (2021-04-26)
