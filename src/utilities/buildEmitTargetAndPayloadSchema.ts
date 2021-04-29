@@ -9,6 +9,8 @@ export const eventTargetSchema = {
 	},
 }
 
+export const eventSourceSchema = eventTargetSchema
+
 export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
 export type EventSource = EventTarget
