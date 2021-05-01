@@ -82,7 +82,7 @@ const eventResponseUtil = {
 		R extends MercuryAggregateResponse<any>,
 		T extends new (...args: any) => any
 	>(emitResponse: R, ClassRef: T) {
-		type Payload = NonNullable<R['responses'][number]['payload']>
+		type Payload = R['responses'][number]['payload']
 
 		type Results = {
 			payloads: Payload[]
@@ -113,7 +113,10 @@ const eventResponseUtil = {
 			})
 		}
 
-		return results
+		return results as {
+			payloads: NonNullable<Payload>[]
+			errors?: InstanceType<T>[]
+		}
 	},
 }
 

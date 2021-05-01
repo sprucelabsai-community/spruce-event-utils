@@ -40,7 +40,8 @@
 		"upgrade.packages.all": "yarn install && yarn upgrade.packages",
 		"upgrade.packages.test": "yarn upgrade.packages.all && yarn lint && yarn build.dev && yarn test",
 		"watch.build.dev": "yarn build.tsc -w",
-		"watch.lint": "chokidar 'src/**/*' -c 'yarn lint.tsc'"
+		"watch.lint": "chokidar 'src/**/*' -c 'yarn lint.tsc'",
+		"watch.tsc": "tsc -w"
 	},
 	"dependencies": {
 		"@sprucelabs/error": "latest",
