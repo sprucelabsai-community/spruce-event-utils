@@ -1,3 +1,10 @@
+# [13.5.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.4.4...v13.5.0) (2021-05-04)
+
+
+### Features
+
+* emit payload schema builder makes payload optional if all fields are optional ([bada7eb](https://github.com/sprucelabsai/spruce-event-utils/commit/bada7eb))
+
 ## [13.4.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.4.3...v13.4.4) (2021-05-04)
 
 ## [13.4.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.4.2...v13.4.3) (2021-05-01)
