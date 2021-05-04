@@ -30,6 +30,7 @@ type TargetAndPayload<
 		}
 		payload: {
 			type: 'schema'
+			isRequired: boolean
 			options: {
 				schema: PayloadSchema
 			}
@@ -62,11 +63,16 @@ function buildEmitTargetAndPayloadSchema<
 
 	const hasPayloadFields =
 		emitPayloadSchema && Object.keys(emitPayloadSchema.fields ?? {}).length > 0
+
 	if (hasPayloadFields) {
+		const isRequired = !!Object.keys(emitPayloadSchema?.fields ?? {}).find(
+			(f) => emitPayloadSchema?.fields?.[f].isRequired
+		)
+
 		//@ts-ignore
 		schema.fields.payload = {
 			type: 'schema',
-			isRequired: true,
+			isRequired,
 			options: {
 				schema: emitPayloadSchema,
 			},

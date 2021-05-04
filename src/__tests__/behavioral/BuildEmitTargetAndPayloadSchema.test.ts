@@ -52,6 +52,23 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	}
 
 	@test()
+	protected static payloadOptionalIfAllFieldsAreOptional() {
+		const schema = buildEmitTargetPayloadSchema({
+			eventName: 'did-book',
+			emitPayloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					firstName: {
+						type: 'text',
+					},
+				},
+			},
+		})
+
+		assert.isFalse(schema.fields.payload.isRequired)
+	}
+
+	@test()
 	protected static buildsWithoutPayload() {
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 
