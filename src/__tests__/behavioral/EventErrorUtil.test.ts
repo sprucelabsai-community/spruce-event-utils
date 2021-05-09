@@ -115,10 +115,11 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 
 	@test()
 	protected static canAssertMercuryErrorFromRawResponse() {
-		const response = eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
-			this.errorWithoutErrorInstance,
-			SpruceError
-		)
+		const response =
+			eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
+				this.errorWithoutErrorInstance,
+				SpruceError
+			)
 
 		assert.doesThrow(() =>
 			eventErrorAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
@@ -133,10 +134,11 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 
 	@test()
 	protected static throwsWithTooManyErrors() {
-		const response = eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
-			this.twoErrorsWithoutErrorInstance,
-			SpruceError
-		)
+		const response =
+			eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
+				this.twoErrorsWithoutErrorInstance,
+				SpruceError
+			)
 
 		const err = assert.doesThrow(() =>
 			eventErrorAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
@@ -149,10 +151,11 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 
 	@test()
 	protected static mapsResponseErrorErrors() {
-		const response = eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
-			this.mercuryResponseError,
-			SpruceError
-		)
+		const response =
+			eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
+				this.mercuryResponseError,
+				SpruceError
+			)
 
 		const err = response.responses[0].errors?.[0]
 

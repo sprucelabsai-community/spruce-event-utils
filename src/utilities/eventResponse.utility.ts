@@ -28,14 +28,14 @@ const eventResponseUtil = {
 			prototype: any
 		}
 	>(results: R, ClassRef: T): MercuryAggregateResponse<any> {
-		results.responses = (results as MercuryAggregateResponseWithoutErrorInstances).responses.map(
-			(response) => {
-				return this.mutatingMapSingleResonseErrorsToSpruceErrors(
-					response,
-					ClassRef
-				)
-			}
-		)
+		results.responses = (
+			results as MercuryAggregateResponseWithoutErrorInstances
+		).responses.map((response) => {
+			return this.mutatingMapSingleResonseErrorsToSpruceErrors(
+				response,
+				ClassRef
+			)
+		})
 		return results
 	},
 

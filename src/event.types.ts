@@ -12,14 +12,13 @@ import {
 } from '@sprucelabs/spruce-skill-utils'
 import { EventSource } from './utilities/buildEmitTargetAndPayloadSchema'
 
-type OptionalMercuryClient<
-	Contract extends SkillEventContract | undefined
-> = Contract extends SkillEventContract
-	? {
-			/** @ts-ignore **/
-			mercury: MercuryEventEmitter<Contract>
-	  }
-	: {}
+type OptionalMercuryClient<Contract extends SkillEventContract | undefined> =
+	Contract extends SkillEventContract
+		? {
+				/** @ts-ignore **/
+				mercury: MercuryEventEmitter<Contract>
+		  }
+		: {}
 
 export interface EventHealthCheckItem extends HealthCheckItem {
 	listeners: Omit<EventFeatureListener, 'callback'>[]
@@ -40,9 +39,8 @@ export interface EventFeatureEvent {
 	version: string
 }
 
-type OptionalPayload<
-	EmitPayload extends Record<string, any> | undefined
-> = EmitPayload extends Record<string, any> ? EmitPayload : {}
+type OptionalPayload<EmitPayload extends Record<string, any> | undefined> =
+	EmitPayload extends Record<string, any> ? EmitPayload : {}
 
 export type SpruceEvent<
 	Contract extends SkillEventContract | undefined = undefined,
@@ -54,9 +52,8 @@ export type SpruceEvent<
 	OptionalMercuryClient<Contract> &
 	OptionalPayload<EmitPayload> & { source: EventSource }
 
-export type SpruceEventResponse<
-	ResponsePayload extends any = undefined
-> = Promise<ResponsePayload>
+export type SpruceEventResponse<ResponsePayload extends any = undefined> =
+	Promise<ResponsePayload>
 
 export interface NamedEventSignature {
 	fullyQualifiedEventName: string

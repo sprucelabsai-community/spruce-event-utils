@@ -1,9 +1,11 @@
 import { EVENT_VERSION_DIVIDER } from '../constants'
 
 const eventNameUtil = {
-	split(
-		name: string
-	): { eventName: string; eventNamespace?: string; version?: string } {
+	split(name: string): {
+		eventName: string
+		eventNamespace?: string
+		version?: string
+	} {
 		const versionParts = name.split('::')
 		const fullyQualifiedEventName = versionParts[0]
 		const version = versionParts[1]
