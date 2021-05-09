@@ -6,31 +6,32 @@ import SpruceError from '../../errors/SpruceError'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
 
 export default class EventResponseUtilTest extends AbstractSpruceTest {
-	private static readonly responseWithErrorAsObjectLiteral: MercuryAggregateResponse<any> = {
-		totalContracts: 3,
-		totalErrors: 1,
-		totalResponses: 3,
-		responses: [
-			{
-				errors: [
-					//@ts-ignore
-					{
-						options: { code: 'COOL_ERROR', foo: 'bar' },
+	private static readonly responseWithErrorAsObjectLiteral: MercuryAggregateResponse<any> =
+		{
+			totalContracts: 3,
+			totalErrors: 1,
+			totalResponses: 3,
+			responses: [
+				{
+					errors: [
+						//@ts-ignore
+						{
+							options: { code: 'COOL_ERROR', foo: 'bar' },
+						},
+					],
+				},
+				{
+					payload: {
+						hello: 'world',
 					},
-				],
-			},
-			{
-				payload: {
-					hello: 'world',
 				},
-			},
-			{
-				payload: {
-					hello: 'world2',
+				{
+					payload: {
+						hello: 'world2',
+					},
 				},
-			},
-		],
-	}
+			],
+		}
 
 	@test()
 	protected static canMapResponseErrorsToSpruceErrors() {
@@ -64,13 +65,11 @@ export default class EventResponseUtilTest extends AbstractSpruceTest {
 
 	@test()
 	protected static getsAllPayloadsAndErrors() {
-		const {
-			payloads,
-			errors,
-		} = eventResponseUtil.getAllResponsePayloadsAndErrors(
-			this.responseWithErrorAsObjectLiteral,
-			SpruceError
-		)
+		const { payloads, errors } =
+			eventResponseUtil.getAllResponsePayloadsAndErrors(
+				this.responseWithErrorAsObjectLiteral,
+				SpruceError
+			)
 
 		assert.isTruthy(errors)
 		assert.isLength(errors, 1)
