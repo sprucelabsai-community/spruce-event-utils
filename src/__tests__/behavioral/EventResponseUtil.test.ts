@@ -1,6 +1,6 @@
 import { MercuryAggregateResponse } from '@sprucelabs/mercury-types'
-import { errorAssertUtil } from '@sprucelabs/test-utils'
 import AbstractSpruceTest, { assert, test } from '@sprucelabs/test'
+import { errorAssertUtil } from '@sprucelabs/test-utils'
 import { eventErrorAssertUtil } from '../..'
 import SpruceError from '../../errors/SpruceError'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
