@@ -1,4 +1,4 @@
-import { SchemaRegistry, SchemaValues } from '@sprucelabs/schema'
+import { buildSchema, SchemaRegistry, SchemaValues } from '@sprucelabs/schema'
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
 import buildEmitTargetPayloadSchema from '../../utilities/buildEmitTargetAndPayloadSchema'
 
@@ -17,7 +17,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	protected static builderAddsInOptionalTarget() {
 		const schema = buildEmitTargetPayloadSchema({
 			eventName: 'did-book',
-			emitPayloadSchema: {
+			payloadSchema: {
 				id: 'emitPayload',
 				fields: {
 					textField: {
@@ -28,9 +28,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 		})
 
 		assert.isEqual(schema.id, 'didBookEmitTargetAndPayload')
-		assert.isTruthy(schema.fields.target)
-		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
-		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
+		assert.isFalsy(schema.fields.target)
 		assert.isTruthy(schema.fields.payload)
 		assert.isTruthy(schema.fields.payload.options.schema.id, 'emitPayload')
 	}
@@ -39,15 +37,13 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	protected static buildsWithoutPayloadForNoFields() {
 		const schema = buildEmitTargetPayloadSchema({
 			eventName: 'did-book',
-			emitPayloadSchema: {
+			payloadSchema: {
 				id: 'emitPayload',
 				fields: {},
 			},
 		})
 
-		assert.isTruthy(schema.fields.target)
-		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
-		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
+		assert.isFalsy(schema.fields.target)
 		assert.isFalsy(schema.fields.payload)
 	}
 
@@ -55,7 +51,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	protected static payloadOptionalIfAllFieldsAreOptional() {
 		const schema = buildEmitTargetPayloadSchema({
 			eventName: 'did-book',
-			emitPayloadSchema: {
+			payloadSchema: {
 				id: 'emitPayload',
 				fields: {
 					firstName: {
@@ -72,10 +68,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	protected static buildsWithoutPayload() {
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 
-		assert.isTruthy(schema.fields.target)
-		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
-		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
-		assert.isFalsy(schema.fields.payload)
+		assert.isEqualDeep(schema.fields, {})
 	}
 
 	@test()
@@ -83,17 +76,14 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 		buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 
-		assert.isTruthy(schema.fields.target)
-		assert.isTruthy(schema.fields.target.options.schema.fields.organizationId)
-		assert.isTruthy(schema.fields.target.options.schema.fields.locationId)
-		assert.isFalsy(schema.fields.payload)
+		assert.isEqualDeep(schema.fields, {})
 	}
 
 	@test('tests typing (tests always pass, types will fail)')
 	protected static typesTarget() {
 		const schema = buildEmitTargetPayloadSchema({
 			eventName: 'will-book',
-			emitPayloadSchema: {
+			payloadSchema: {
 				id: 'emitPayload',
 				fields: {
 					textField: {
@@ -118,11 +108,18 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	}
 
 	@test()
-	protected static canMakeTargetOptional() {
+	protected static targetOptionalIfNoRequiredFields() {
 		const schema = buildEmitTargetPayloadSchema({
-			isTargetRequired: false,
+			targetSchema: {
+				id: 'emitTarget',
+				fields: {
+					textField: {
+						type: 'text',
+					},
+				},
+			},
 			eventName: 'will-book',
-			emitPayloadSchema: {
+			payloadSchema: {
 				id: 'emitPayload',
 				fields: {
 					textField: {
@@ -136,5 +133,40 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 		type Schema = typeof schema
 
 		assert.isExactType<false, Schema['fields']['target']['isRequired']>(true)
+		assert.isExactType<false, Schema['fields']['payload']['isRequired']>(true)
+	}
+
+	@test()
+	protected static canCustomizeTarget() {
+		const targetSchema = buildSchema({
+			id: 'emitTarget',
+			fields: {
+				textField: {
+					type: 'text',
+					isRequired: true,
+				},
+			},
+		})
+
+		const schema = buildEmitTargetPayloadSchema({
+			eventName: 'will-book',
+			targetSchema,
+			payloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					textField: {
+						type: 'text',
+						isRequired: true,
+					},
+				},
+			},
+		})
+
+		type Schema = typeof schema
+		assert.isTrue(schema.fields.target.isRequired)
+		assert.isEqualDeep(schema.fields.target.options.schema, targetSchema)
+
+		assert.isExactType<true, Schema['fields']['target']['isRequired']>(true)
+		assert.isExactType<true, Schema['fields']['payload']['isRequired']>(true)
 	}
 }

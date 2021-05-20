@@ -1,4 +1,9 @@
-import { dropFields, Schema, SchemaValues } from '@sprucelabs/schema'
+import {
+	dropFields,
+	Schema,
+	SchemaRequiredFieldNames,
+	SchemaValues,
+} from '@sprucelabs/schema'
 import { messageTargetSchema } from '@sprucelabs/spruce-core-schemas'
 import { namesUtil } from '@sprucelabs/spruce-skill-utils'
 
@@ -15,22 +20,25 @@ export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
 export type EventSource = EventTarget
 
+type AreAnyFieldsRequired<S extends Schema> =
+	SchemaRequiredFieldNames<S> extends [] ? false : true
+
 type TargetAndPayload<
 	PayloadSchema extends Schema,
-	IsTargetRequired extends boolean = true
+	TargetSchema extends Schema
 > = {
 	id: string
 	fields: {
 		target: {
 			type: 'schema'
-			isRequired: IsTargetRequired
+			isRequired: AreAnyFieldsRequired<TargetSchema>
 			options: {
-				schema: EventTargetSchema
+				schema: TargetSchema
 			}
 		}
 		payload: {
 			type: 'schema'
-			isRequired: boolean
+			isRequired: AreAnyFieldsRequired<PayloadSchema>
 			options: {
 				schema: PayloadSchema
 			}
@@ -39,35 +47,38 @@ type TargetAndPayload<
 }
 
 function buildEmitTargetAndPayloadSchema<
-	T extends Schema,
-	IsTargetRequired extends boolean = true
+	Payload extends Schema,
+	Target extends Schema
 >(options: {
 	eventName: string
-	emitPayloadSchema?: T
-	isTargetRequired?: IsTargetRequired
-}): TargetAndPayload<T, IsTargetRequired> {
-	const { eventName, emitPayloadSchema, isTargetRequired = true } = options
+	payloadSchema?: Payload
+	targetSchema?: Target
+}): TargetAndPayload<Payload, Target> {
+	const { eventName, payloadSchema: emitPayloadSchema, targetSchema } = options
+
+	const targetField = {
+		type: 'schema',
+		isRequired: hasAnyRequiredFields(targetSchema),
+		options: {
+			schema: targetSchema,
+		},
+	}
 
 	const schema = {
 		id: `${namesUtil.toCamel(eventName)}EmitTargetAndPayload`,
-		fields: {
-			target: {
-				type: 'schema',
-				isRequired: isTargetRequired,
-				options: {
-					schema: eventTargetSchema,
-				},
-			},
-		},
+		fields: {},
+	}
+
+	if (targetSchema) {
+		//@ts-ignore
+		schema.fields.target = targetField
 	}
 
 	const hasPayloadFields =
 		emitPayloadSchema && Object.keys(emitPayloadSchema.fields ?? {}).length > 0
 
 	if (hasPayloadFields) {
-		const isRequired = !!Object.keys(emitPayloadSchema?.fields ?? {}).find(
-			(f) => emitPayloadSchema?.fields?.[f].isRequired
-		)
+		const isRequired = hasAnyRequiredFields<Payload>(emitPayloadSchema)
 
 		//@ts-ignore
 		schema.fields.payload = {
@@ -83,3 +94,8 @@ function buildEmitTargetAndPayloadSchema<
 }
 
 export default buildEmitTargetAndPayloadSchema
+function hasAnyRequiredFields<S extends Schema>(schema: S | undefined) {
+	return !!Object.keys(schema?.fields ?? {}).find(
+		(f) => schema?.fields?.[f].isRequired
+	)
+}
