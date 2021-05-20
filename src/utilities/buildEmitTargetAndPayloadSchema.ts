@@ -23,9 +23,9 @@ export type EventSource = EventTarget
 type AreAnyFieldsRequired<S extends Schema> =
 	SchemaRequiredFieldNames<S> extends [] ? false : true
 
-type TargetAndPayload<
-	PayloadSchema extends Schema,
-	TargetSchema extends Schema
+export type TargetAndPayload<
+	TargetSchema extends Schema,
+	PayloadSchema extends Schema
 > = {
 	id: string
 	fields: {
@@ -53,7 +53,7 @@ function buildEmitTargetAndPayloadSchema<
 	eventName: string
 	payloadSchema?: Payload
 	targetSchema?: Target
-}): TargetAndPayload<Payload, Target> {
+}): TargetAndPayload<Target, Payload> {
 	const { eventName, payloadSchema: emitPayloadSchema, targetSchema } = options
 
 	const targetField = {
