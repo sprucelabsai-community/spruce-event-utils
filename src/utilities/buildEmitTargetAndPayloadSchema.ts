@@ -20,7 +20,7 @@ export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
 export type EventSource = EventTarget
 
-type AreAnyFieldsRequired<S extends Schema> =
+export type AreAnyFieldsRequired<S extends Schema> =
 	SchemaRequiredFieldNames<S> extends [] ? false : true
 
 export type TargetAndPayload<
