@@ -1,3 +1,10 @@
+# [14.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.5.9...v14.0.0) (2021-05-20)
+
+
+### Breaking Changes
+
+* emitPayloadSchema key -> payloadSchema, added target schema support ([431b663](https://github.com/sprucelabsai/spruce-event-utils/commit/431b663))
+
 ## [13.5.9](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.5.8...v13.5.9) (2021-05-19)
 
 ## [13.5.8](https://github.com/sprucelabsai/spruce-event-utils/compare/v13.5.7...v13.5.8) (2021-05-15)
