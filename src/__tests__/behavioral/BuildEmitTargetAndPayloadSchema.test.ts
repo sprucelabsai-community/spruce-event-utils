@@ -67,7 +67,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	@test()
 	protected static buildsWithoutPayload() {
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
-
+		//@ts-ignore
 		assert.isEqualDeep(schema.fields, {})
 	}
 
@@ -75,7 +75,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	protected static buildsOverAndOverWithoutErroring() {
 		buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
-
+		//@ts-ignore
 		assert.isEqualDeep(schema.fields, {})
 	}
 
