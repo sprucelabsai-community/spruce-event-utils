@@ -31,22 +31,29 @@ export type TargetAndPayload<
 	PayloadSchema extends Schema | undefined
 > = {
 	id: string
-	fields: {
-		target: {
-			type: 'schema'
-			isRequired: AreAnyFieldsRequired<TargetSchema>
-			options: {
-				schema: TargetSchema
+	fields: Omit<
+		{
+			target: {
+				type: 'schema'
+				isRequired: AreAnyFieldsRequired<TargetSchema>
+				options: {
+					schema: TargetSchema
+				}
 			}
-		}
-		payload: {
-			type: 'schema'
-			isRequired: AreAnyFieldsRequired<PayloadSchema>
-			options: {
-				schema: PayloadSchema
+			payload: {
+				type: 'schema'
+				isRequired: AreAnyFieldsRequired<PayloadSchema>
+				options: {
+					schema: PayloadSchema
+				}
 			}
-		}
-	}
+		},
+		TargetSchema extends undefined
+			? 'target'
+			: '' | PayloadSchema extends undefined
+			? 'payload'
+			: ''
+	>
 }
 
 function buildEmitTargetAndPayloadSchema<
