@@ -48,11 +48,8 @@ export type TargetAndPayload<
 				}
 			}
 		},
-		TargetSchema extends undefined
-			? 'target'
-			: '' | PayloadSchema extends undefined
-			? 'payload'
-			: ''
+		| (TargetSchema extends undefined ? 'target' : '')
+		| (PayloadSchema extends undefined ? 'payload' : '')
 	>
 }
 
