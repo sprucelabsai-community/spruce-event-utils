@@ -76,7 +76,10 @@ function buildEmitTargetAndPayloadSchema<
 		fields: {},
 	}
 
-	if (targetSchema) {
+	const hasTargetFields =
+		targetSchema && Object.keys(targetSchema.fields ?? {}).length > 0
+
+	if (hasTargetFields) {
 		//@ts-ignore
 		schema.fields.target = targetField
 	}

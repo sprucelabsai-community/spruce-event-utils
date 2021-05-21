@@ -137,6 +137,27 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	}
 
 	@test()
+	protected static targetGoneIfNoFields() {
+		const schema = buildEmitTargetPayloadSchema({
+			targetSchema: {
+				id: 'emitTarget',
+				fields: {},
+			},
+			eventName: 'will-book',
+			payloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					textField: {
+						type: 'text',
+					},
+				},
+			},
+		})
+
+		assert.isFalsy(schema.fields.target)
+	}
+
+	@test()
 	protected static canCustomizeTarget() {
 		const targetSchema = buildSchema({
 			id: 'emitTarget',
