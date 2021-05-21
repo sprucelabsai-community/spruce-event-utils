@@ -150,6 +150,38 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 	}
 
 	@test()
+	protected static assertsDoesIncludeErrorThrowsIfItDoesNotInclude() {
+		const response =
+			eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
+				this.twoErrorsWithoutErrorInstance,
+				SpruceError
+			)
+
+		assert.doesThrow(() =>
+			eventErrorAssertUtil.assertResponseIncludesError(
+				response,
+				'COOL_ERROR_NOT_FOUND',
+				{
+					foo: 'bar',
+				}
+			)
+		)
+	}
+
+	@test()
+	protected static assertsDoesIncludeError() {
+		const response =
+			eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(
+				this.twoErrorsWithoutErrorInstance,
+				SpruceError
+			)
+
+		eventErrorAssertUtil.assertResponseIncludesError(response, 'COOL_ERROR', {
+			foo: 'bar',
+		})
+	}
+
+	@test()
 	protected static mapsResponseErrorErrors() {
 		const response =
 			eventResponseUtil.mutatingMapAggregateResponseErrorsToSpruceErrors(

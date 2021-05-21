@@ -26,6 +26,25 @@ const eventErrorAssertUtil = {
 		)
 	},
 
+	assertIncludesError(
+		error: Error | AbstractSpruceError<any>,
+		expectedCode: string,
+		expectedPartialOptions?: Record<string, any> | undefined
+	) {
+		errorAssertUtil.assertError(error, 'MERCURY_RESPONSE_ERROR')
+
+		for (const err of (error as any).options.responseErrors) {
+			if (err.options.code === expectedCode) {
+				errorAssertUtil.assertError(err, expectedCode, expectedPartialOptions)
+				return
+			}
+		}
+
+		assert.fail(
+			`The response does not include an error with the code: ${expectedCode}.`
+		)
+	},
+
 	assertErrorFromResponse(
 		response: MercuryAggregateResponse<any>,
 		expectedCode: string,
@@ -36,6 +55,18 @@ const eventErrorAssertUtil = {
 		)
 
 		this.assertError(err, expectedCode, expectedPartialOptions)
+	},
+
+	assertResponseIncludesError(
+		response: MercuryAggregateResponse<any>,
+		expectedCode: string,
+		expectedPartialOptions?: Record<string, any> | undefined
+	) {
+		const err = assert.doesThrow(() =>
+			eventResponseUtil.getFirstResponseOrThrow(response)
+		)
+
+		this.assertIncludesError(err, expectedCode, expectedPartialOptions)
 	},
 }
 
