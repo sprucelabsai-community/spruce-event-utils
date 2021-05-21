@@ -32,16 +32,19 @@ const eventErrorAssertUtil = {
 		expectedPartialOptions?: Record<string, any> | undefined
 	) {
 		errorAssertUtil.assertError(error, 'MERCURY_RESPONSE_ERROR')
-
+		const codes: string[] = []
 		for (const err of (error as any).options.responseErrors) {
 			if (err.options.code === expectedCode) {
 				errorAssertUtil.assertError(err, expectedCode, expectedPartialOptions)
 				return
 			}
+			codes.push(err.options.code)
 		}
 
 		assert.fail(
-			`The response does not include an error with the code: ${expectedCode}.`
+			`The response does not include an error with the code: ${expectedCode}.\n\nCodes found were:\n\n${codes.join(
+				'\n'
+			)}`
 		)
 	},
 
