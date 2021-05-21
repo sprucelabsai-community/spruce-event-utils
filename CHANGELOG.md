@@ -1,3 +1,10 @@
+# [14.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.0.5...v14.1.0) (2021-05-21)
+
+
+### Features
+
+* check if response includes error assertion ([1e11a28](https://github.com/sprucelabsai/spruce-event-utils/commit/1e11a28))
+
 ## [14.0.5](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.0.4...v14.0.5) (2021-05-21)
 
 ## [14.0.4](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.0.3...v14.0.4) (2021-05-20)
