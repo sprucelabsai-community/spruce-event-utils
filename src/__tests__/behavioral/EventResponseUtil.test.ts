@@ -91,4 +91,43 @@ export default class EventResponseUtilTest extends AbstractSpruceTest {
 
 		eventErrorAssertUtil.assertError(err, 'EMPTY_MERCURY_RESPONSE')
 	}
+
+	@test()
+	protected static printsTheStackIfItExists() {
+		assert.doesThrow(
+			() =>
+				eventResponseUtil.getFirstResponseOrThrow({
+					totalContracts: 3,
+					totalErrors: 1,
+					totalResponses: 3,
+					responses: [
+						{
+							errors: [
+								//@ts-ignore
+								{
+									stack: 'burrito',
+									options: { code: 'COOL_ERROR', foo: 'bar' },
+								},
+								//@ts-ignore
+								{
+									stack: 'taco',
+									options: { code: 'COOL_ERROR', foo: 'bar' },
+								},
+							],
+						},
+						{
+							payload: {
+								hello: 'world',
+							},
+						},
+						{
+							payload: {
+								hello: 'world2',
+							},
+						},
+					],
+				}),
+			/burrito|taco/
+		)
+	}
 }

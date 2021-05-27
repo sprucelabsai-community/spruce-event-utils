@@ -71,7 +71,9 @@ const eventResponseUtil = {
 		if (errors) {
 			throw new SpruceError({
 				code: 'MERCURY_RESPONSE_ERROR',
-				responseErrors: errors,
+				responseErrors: errors.map((err) =>
+					AbstractSpruceError.parse(err, SpruceError)
+				),
 			})
 		}
 
