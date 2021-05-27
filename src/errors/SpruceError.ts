@@ -20,7 +20,9 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				const errorMessages: string[] = []
 				for (const err of errors) {
 					errorMessages.push(
-						err.stack ?? err.options?.friendlyMessage ?? err.message
+						`${err.options?.friendlyMessage ?? err.message}${
+							err.stack ? `\n\n${err.stack}` : ''
+						}`
 					)
 				}
 
