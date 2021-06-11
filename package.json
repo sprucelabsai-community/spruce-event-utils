@@ -24,6 +24,7 @@
 		"url": "https://github.com/sprucelabsai/spruce-event-utils/issues"
 	},
 	"scripts": {
+		"build.ci": "yarn build.tsc",
 		"build.dev": "yarn build.tsc",
 		"build.copy-files": "mkdir -p build/__tests__ && cp -r ./src/.spruce build/",
 		"build.dist": "yarn build.tsc && tsc --project tsconfig.dist.json && yarn build.esm-postbuild",
