@@ -4,7 +4,6 @@ import SpruceError from '../errors/SpruceError'
 import { NamedEventSignature } from '../event.types'
 import eventNameUtil from './eventName.utility'
 
-// delete when found
 const eventContractUtil = {
 	getEventNames(contract: EventContract, namespace?: string) {
 		let names = Object.keys(contract.eventSignatures)
