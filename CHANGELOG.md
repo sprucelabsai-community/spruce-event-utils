@@ -1,3 +1,10 @@
+# [14.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.1.40...v14.2.0) (2021-07-02)
+
+
+### Features
+
+* resolve combievenent contractt on event util ([4480e02](https://github.com/sprucelabsai/spruce-event-utils/commit/4480e02))
+
 ## [14.1.40](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.1.39...v14.1.40) (2021-07-01)
 
 ## [14.1.39](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.1.38...v14.1.39) (2021-06-30)
