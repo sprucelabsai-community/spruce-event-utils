@@ -24,6 +24,8 @@ const eventErrorAssertUtil = {
 			expectedCode,
 			expectedPartialOptions
 		)
+
+		return (error as any).options.responseErrors[0]
 	},
 
 	assertIncludesError(
@@ -52,12 +54,12 @@ const eventErrorAssertUtil = {
 		response: MercuryAggregateResponse<any>,
 		expectedCode: string,
 		expectedPartialOptions?: Record<string, any> | undefined
-	) {
+	): AbstractSpruceError {
 		const err = assert.doesThrow(() =>
 			eventResponseUtil.getFirstResponseOrThrow(response)
 		)
 
-		this.assertError(err, expectedCode, expectedPartialOptions)
+		return this.assertError(err, expectedCode, expectedPartialOptions)
 	},
 
 	assertResponseIncludesError(

@@ -127,9 +127,15 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 			})
 		)
 
-		eventErrorAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
-			foo: 'bar',
-		})
+		const err = eventErrorAssertUtil.assertErrorFromResponse(
+			response,
+			'COOL_ERROR',
+			{
+				foo: 'bar',
+			}
+		)
+
+		assert.isEqual(err.options.code, 'COOL_ERROR')
 	}
 
 	@test()
