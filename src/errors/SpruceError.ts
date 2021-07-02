@@ -41,7 +41,7 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				break
 
 			case 'EVENT_CONTRACTS_NOT_SYNCED':
-				message = 'A EVENT_CONTRACTS_NOT_SYNCED just happened!'
+				message = `Events have not been synced locally. Try running \`spruce sync.events\`!`
 				break
 
 			default:
