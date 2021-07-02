@@ -1,4 +1,6 @@
 import pathUtil from 'path'
+import { diskUtil, HASH_SPRUCE_DIR_NAME } from '@sprucelabs/spruce-skill-utils'
+import SpruceError from '../errors/SpruceError'
 import eventNameUtil from './eventName.utility'
 
 interface Event {
@@ -102,6 +104,27 @@ const eventDiskUtil = {
 		}
 
 		return pathUtil.join(destination, e.eventName, e.version, e.fileName)
+	},
+
+	resolveCombinedEventsContractFile(cwd: string) {
+		const dirs = ['build', 'src']
+		const ext = ['js', 'ts']
+
+		for (let i = 0; i < dirs.length; i++) {
+			const combinedContractsFile = diskUtil.resolvePath(
+				cwd,
+				dirs[i],
+				HASH_SPRUCE_DIR_NAME,
+				'events',
+				`events.contract.${ext[i]}`
+			)
+
+			if (diskUtil.doesFileExist(combinedContractsFile)) {
+				return combinedContractsFile
+			}
+		}
+
+		throw new SpruceError({ code: 'EVENT_CONTRACTS_NOT_SYNCED' })
 	},
 }
 
