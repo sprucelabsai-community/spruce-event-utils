@@ -40,6 +40,10 @@ export default class SpruceError extends BaseSpruceError<ErrorOptions> {
 				message = 'A event plugin error just happened!'
 				break
 
+			case 'EVENT_CONTRACTS_NOT_SYNCED':
+				message = 'A EVENT_CONTRACTS_NOT_SYNCED just happened!'
+				break
+
 			default:
 				message = super.friendlyMessage()
 		}
