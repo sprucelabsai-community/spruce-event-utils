@@ -1,3 +1,10 @@
+# [14.3.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.2.13...v14.3.0) (2021-07-20)
+
+
+### Features
+
+* SkillMercuryEventEmitter ([d8ed53e](https://github.com/sprucelabsai/spruce-event-utils/commit/d8ed53e))
+
 ## [14.2.13](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.2.12...v14.2.13) (2021-07-20)
 
 ## [14.2.12](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.2.11...v14.2.12) (2021-07-17)
