@@ -12,6 +12,9 @@ import {
 } from '@sprucelabs/spruce-skill-utils'
 import { EventSource } from './utilities/buildEmitTargetAndPayloadSchema'
 
+/** @ts-ignore **/
+export type SkillMercuryEventEmitter = MercuryEventEmitter<SkillEventContract>
+
 type OptionalMercuryClient<Contract extends SkillEventContract | undefined> =
 	Contract extends SkillEventContract
 		? {
