@@ -1,3 +1,10 @@
+## [15.0.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.0.0...v15.0.1) (2021-07-22)
+
+
+### Bug Fixes
+
+* changed url for developer ([a1853b9](https://github.com/sprucelabsai/spruce-event-utils/commit/a1853b9))
+
 # [15.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v14.5.0...v15.0.0) (2021-07-22)
 
 
