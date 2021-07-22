@@ -7,7 +7,8 @@ export const HEARTWOOD_REMOTES: Record<Remote, string> = {
 	sandbox: 'https://sandbox.spruce.bot',
 	prod: 'https://spruce.bot',
 }
-export const heartwoodRemoteUtil = {
+
+const heartwoodRemoteUtil = {
 	buildViewWatchUrl(remote: Remote) {
 		if (HEARTWOOD_REMOTES[remote]) {
 			return HEARTWOOD_REMOTES[remote]
@@ -21,3 +22,5 @@ export const heartwoodRemoteUtil = {
 		})
 	},
 }
+
+export default heartwoodRemoteUtil
