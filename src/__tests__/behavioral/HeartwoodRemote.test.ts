@@ -15,7 +15,7 @@ export default class HeartwoodRemoteUtilTest extends AbstractSpruceTest {
 	protected static async cantSetBadRemote() {
 		const err = assert.doesThrow(() =>
 			//@ts-ignore
-			heartwoodRemoteUtil.buildViewWatchUrl('aoeuaoeu')
+			heartwoodRemoteUtil.buildUrl('aoeuaoeu')
 		)
 		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
 			parameters: ['remote'],
@@ -32,7 +32,7 @@ export default class HeartwoodRemoteUtilTest extends AbstractSpruceTest {
 				`HEARTWOOD_REMOTES does not have an entry for ${env}!`
 			)
 
-			const actual = heartwoodRemoteUtil.buildViewWatchUrl(env as any)
+			const actual = heartwoodRemoteUtil.buildUrl(env as any)
 			assert.isEqual(actual, expected)
 		}
 	}

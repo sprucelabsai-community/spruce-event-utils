@@ -9,7 +9,7 @@ export const HEARTWOOD_REMOTES: Record<Remote, string> = {
 }
 
 const heartwoodRemoteUtil = {
-	buildViewWatchUrl(remote: Remote) {
+	buildUrl(remote: Remote) {
 		if (HEARTWOOD_REMOTES[remote]) {
 			return HEARTWOOD_REMOTES[remote]
 		}
