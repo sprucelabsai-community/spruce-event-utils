@@ -1,5 +1,6 @@
 import { EnvService } from '@sprucelabs/spruce-skill-utils'
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import { errorAssertUtil } from '@sprucelabs/test-utils'
 import { REMOTE_LOCAL } from '../../constants'
 import RemoteService from '../../services/RemoteService'
 
@@ -16,11 +17,17 @@ class TestEnv extends EnvService {
 }
 
 export default class RemoteServiceTest extends AbstractSpruceTest {
-	@test()
-	protected static throwsErrorWithUnknownHost() {
-		const env = new TestEnv('aoeuaou')
+	@test('fails with bad 1', 'aoeuaou')
+	@test('fails with bad 2', 1)
+	@test('fails with bad 3', false)
+	@test('fails with bad 4', null)
+	protected static throwsErrorWithUnknownHost(host: string) {
+		const env = new TestEnv(host)
 		const remote = new RemoteService(env)
-		assert.doesThrow(() => remote.getRemote())
+		const err = assert.doesThrow(() => remote.getRemote())
+		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
+			parameters: ['env.HOST'],
+		})
 	}
 	@test()
 	protected static canMatchWithAndWithoutEndingSlash() {

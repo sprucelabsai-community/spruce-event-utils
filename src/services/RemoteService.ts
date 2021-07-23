@@ -1,3 +1,4 @@
+import { SpruceError } from '@sprucelabs/schema'
 import { EnvService } from '@sprucelabs/spruce-skill-utils'
 import { Remote, REMOTES } from '../constants'
 
@@ -22,12 +23,14 @@ export default class RemoteService {
 		// move to constants or some better mapping?
 		const values = Object.entries(REMOTES)
 		const host = this.getHost()
-		const match = values.find((v) => host.toString().indexOf(v[1]) > -1)
+		const match = values.find((v) => host?.toString?.().indexOf?.(v[1]) > -1)
 
 		if (!match) {
-			throw new Error(
-				`Mercury is set to ${host}, which I can't resolve to an environment.`
-			)
+			throw new SpruceError({
+				code: 'INVALID_PARAMETERS',
+				friendlyMessage: `Mercury is set to ${host}, which I can't resolve to an environment.`,
+				parameters: ['env.HOST'],
+			})
 		}
 		return match?.[0] as Remote
 	}
