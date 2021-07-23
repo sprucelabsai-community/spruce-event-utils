@@ -28,7 +28,7 @@ export default class RemoteService {
 		if (!match) {
 			throw new SpruceError({
 				code: 'INVALID_PARAMETERS',
-				friendlyMessage: `Mercury is set to ${host}, which I can't resolve to an environment.`,
+				friendlyMessage: `Mercury is set to '${host}', which I can't resolve to an environment.`,
 				parameters: ['env.HOST'],
 			})
 		}
