@@ -3,9 +3,9 @@ import { Remote, REMOTES } from '../constants'
 
 export const HEARTWOOD_REMOTES: Record<Remote, string> = {
 	local: 'http://localhost:6006',
-	dev: 'https://developer.spruce.bot',
+	developer: 'https://developer.spruce.bot',
 	sandbox: 'https://sandbox.spruce.bot',
-	prod: 'https://spruce.bot',
+	production: 'https://spruce.bot',
 }
 
 const heartwoodRemoteUtil = {

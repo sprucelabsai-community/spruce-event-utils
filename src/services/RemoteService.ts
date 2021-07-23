@@ -22,7 +22,13 @@ export default class RemoteService {
 		// move to constants or some better mapping?
 		const values = Object.entries(REMOTES)
 		const host = this.getHost()
-		const match = values.find((v) => v[1] === host)
+		const match = values.find((v) => host.toString().indexOf(v[1]) > -1)
+
+		if (!match) {
+			throw new Error(
+				`Mercury is set to ${host}, which I can't resolve to an environment.`
+			)
+		}
 		return match?.[0] as Remote
 	}
 }

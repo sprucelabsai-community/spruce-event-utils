@@ -7,9 +7,9 @@ export const REMOTE_PROD = 'https://mercury.spruce.ai'
 
 export const REMOTES = {
 	local: REMOTE_LOCAL,
-	dev: REMOTE_DEV,
+	developer: REMOTE_DEV,
 	sandbox: REMOTE_SANDBOX,
-	prod: REMOTE_PROD,
+	production: REMOTE_PROD,
 }
 
 export type Remote = keyof typeof REMOTES
