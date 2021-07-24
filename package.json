@@ -3,7 +3,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"version": "15.0.4",
+	"version": "15.0.6",
 	"files": [
 		"build/**/*",
 		"!build/__tests__",
@@ -64,7 +64,7 @@
 		"@sprucelabs/jest-json-reporter": "latest",
 		"@sprucelabs/resolve-path-aliases": "latest",
 		"@sprucelabs/semantic-release": "latest",
-		"@types/node": "^16.4.1",
+		"@types/node": "^16.4.2",
 		"chokidar-cli": "^2.1.0",
 		"concurrently": "^6.2.0",
 		"conventional-changelog-sprucelabs": "latest",
