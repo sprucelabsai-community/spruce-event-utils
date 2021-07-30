@@ -29,6 +29,19 @@ export default class RemoteServiceTest extends AbstractSpruceTest {
 			parameters: ['env.HOST'],
 		})
 	}
+
+	@test()
+	protected static throwsWithBadEnv() {
+		const env = new TestEnv('http://127.0.0.1')
+		const remote = new RemoteService(env)
+
+		//@ts-ignore
+		const err = assert.doesThrow(() => remote.set(`${Math.random() * 10}`))
+		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
+			parameters: ['remote'],
+		})
+	}
+
 	@test()
 	protected static canMatchWithAndWithoutEndingSlash() {
 		const env = new TestEnv(REMOTE_LOCAL + '/')

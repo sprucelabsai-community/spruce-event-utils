@@ -12,6 +12,15 @@ export default class RemoteService {
 
 	public set(remote: Remote) {
 		const host = REMOTES[remote]
+		if (!host) {
+			throw new SpruceError({
+				code: 'INVALID_PARAMETERS',
+				friendlyMessage: `${remote} is not a valid remote. Try:\n\n${Object.keys(
+					REMOTES
+				).join('\n')}`,
+				parameters: ['remote'],
+			})
+		}
 		this.env.set('HOST', host)
 	}
 
