@@ -32,6 +32,11 @@ export default class RemoteService {
 		// move to constants or some better mapping?
 		const values = Object.entries(REMOTES)
 		const host = this.getHost()
+
+		if (typeof host === 'undefined') {
+			return null
+		}
+
 		const match = values.find((v) => host?.toString?.().indexOf?.(v[1]) > -1)
 
 		if (!match) {

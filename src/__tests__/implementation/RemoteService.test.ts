@@ -5,8 +5,8 @@ import { REMOTE_LOCAL } from '../../constants'
 import RemoteService from '../../services/RemoteService'
 
 class TestEnv extends EnvService {
-	private host: string
-	public constructor(host: string) {
+	private host: string | undefined
+	public constructor(host: string | undefined) {
 		super('')
 		this.host = host
 	}
@@ -28,6 +28,14 @@ export default class RemoteServiceTest extends AbstractSpruceTest {
 		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
 			parameters: ['env.HOST'],
 		})
+	}
+
+	@test()
+	protected static returnsNullIfNoRemoteWasEverSet() {
+		const env = new TestEnv(undefined)
+		const remote = new RemoteService(env)
+		const r = remote.getRemote()
+		assert.isNull(r)
 	}
 
 	@test()
