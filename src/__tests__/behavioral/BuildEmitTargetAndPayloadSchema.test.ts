@@ -67,16 +67,18 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 	@test()
 	protected static buildsWithoutPayload() {
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
-		//@ts-ignore
-		assert.isEqualDeep(schema.fields, {})
+
+		assert.isFalsy(schema.fields.payload)
+		assert.isFalsy(schema.fields.target)
 	}
 
 	@test()
 	protected static buildsOverAndOverWithoutErroring() {
 		buildEmitTargetPayloadSchema({ eventName: 'did-book' })
 		const schema = buildEmitTargetPayloadSchema({ eventName: 'did-book' })
-		//@ts-ignore
-		assert.isEqualDeep(schema.fields, {})
+
+		assert.isFalsy(schema.fields.payload)
+		assert.isFalsy(schema.fields.target)
 	}
 
 	@test('tests typing (tests always pass, types will fail)')
@@ -189,5 +191,26 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 
 		assert.isExactType<true, Schema['fields']['target']['isRequired']>(true)
 		assert.isExactType<true, Schema['fields']['payload']['isRequired']>(true)
+	}
+
+	@test()
+	protected static comesWithOptionalSource() {
+		const schema = buildEmitTargetPayloadSchema({
+			eventName: 'will-book',
+			payloadSchema: {
+				id: 'emitPayload',
+				fields: {
+					textField: {
+						type: 'text',
+						isRequired: true,
+					},
+				},
+			},
+		})
+
+		assert.isEqual(schema.fields.source.type, 'schema')
+		assert.doesInclude(schema.fields.source.options.schema.fields.proxyToken, {
+			type: 'id',
+		})
 	}
 }

@@ -27,6 +27,21 @@ export type TargetAndPayload<
 	id: string
 	fields: Omit<
 		{
+			source: {
+				type: 'schema'
+				isRequired: false
+				options: {
+					schema: {
+						id: string
+						fields: {
+							proxyToken: {
+								type: 'id'
+								label: string
+							}
+						}
+					}
+				}
+			}
 			target: {
 				type: 'schema'
 				isRequired: AreAnyFieldsRequired<TargetSchema>
@@ -67,7 +82,23 @@ function buildEmitTargetAndPayloadSchema<
 
 	const schema = {
 		id: `${namesUtil.toCamel(eventName)}EmitTargetAndPayload`,
-		fields: {},
+		fields: {
+			source: {
+				type: 'schema',
+				label: 'Source',
+				options: {
+					schema: {
+						id: `${namesUtil.toCamel(eventName)}EmitSource`,
+						fields: {
+							proxyToken: {
+								type: 'id',
+								label: 'Proxy token',
+							},
+						},
+					},
+				},
+			},
+		},
 	}
 
 	const hasTargetFields =
