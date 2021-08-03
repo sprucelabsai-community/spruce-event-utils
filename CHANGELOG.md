@@ -1,3 +1,10 @@
+# [15.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.0.20...v15.1.0) (2021-08-03)
+
+
+### Features
+
+* source added to builder ([6e204d4](https://github.com/sprucelabsai/spruce-event-utils/commit/6e204d4))
+
 ## [15.0.20](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.0.19...v15.0.20) (2021-08-02)
 
 ## [15.0.19](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.0.18...v15.0.19) (2021-08-01)
