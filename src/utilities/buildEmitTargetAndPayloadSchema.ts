@@ -88,7 +88,7 @@ function buildEmitTargetAndPayloadSchema<
 				label: 'Source',
 				options: {
 					schema: {
-						id: `${namesUtil.toCamel(eventName)}EmitSource`,
+						id: `eventSource`,
 						fields: {
 							proxyToken: {
 								type: 'id',
