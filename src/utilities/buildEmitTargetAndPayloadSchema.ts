@@ -3,6 +3,7 @@ import {
 	Schema,
 	SchemaValues,
 	AreAnyFieldsRequired,
+	buildSchema,
 } from '@sprucelabs/schema'
 import { messageTargetSchema } from '@sprucelabs/spruce-core-schemas'
 import { namesUtil } from '@sprucelabs/spruce-skill-utils'
@@ -14,11 +15,20 @@ export const eventTargetSchema = {
 	},
 }
 
-export const eventSourceSchema = eventTargetSchema
+export const eventSourceSchema = buildSchema({
+	id: 'eventSource',
+	fields: {
+		...eventTargetSchema.fields,
+		proxyToken: {
+			type: 'id',
+		},
+	},
+})
 
 export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
-export type EventSource = EventTarget
+export type EventSourceSchema = typeof eventSourceSchema
+export type EventSource = SchemaValues<EventSourceSchema>
 
 export type TargetAndPayload<
 	TargetSchema extends Schema | undefined,
