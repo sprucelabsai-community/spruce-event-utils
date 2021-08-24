@@ -1,6 +1,5 @@
 import { SpruceErrors } from "#spruce/errors/errors.types"
-import { SpruceErrorOptions, ErrorOptions as ISpruceErrorOptions} from "@sprucelabs/error"
-import { SchemaErrorOptions } from '@sprucelabs/schema'
+import { ErrorOptions as ISpruceErrorOptions} from "@sprucelabs/error"
 
 export interface MercuryResponseErrorErrorOptions extends SpruceErrors.SpruceEventUtils.MercuryResponseError, ISpruceErrorOptions {
 	code: 'MERCURY_RESPONSE_ERROR'
@@ -21,6 +20,6 @@ export interface DuplicateEventErrorOptions extends SpruceErrors.SpruceEventUtil
 	code: 'DUPLICATE_EVENT'
 }
 
-type ErrorOptions = SchemaErrorOptions | SpruceErrorOptions | MercuryResponseErrorErrorOptions  | InvalidEventNameErrorOptions  | EventPluginErrorErrorOptions  | EventContractsNotSyncedErrorOptions  | EmptyMercuryResponseErrorOptions  | DuplicateEventErrorOptions 
+type ErrorOptions =  | MercuryResponseErrorErrorOptions  | InvalidEventNameErrorOptions  | EventPluginErrorErrorOptions  | EventContractsNotSyncedErrorOptions  | EmptyMercuryResponseErrorOptions  | DuplicateEventErrorOptions 
 
 export default ErrorOptions

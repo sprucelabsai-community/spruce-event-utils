@@ -1,4 +1,4 @@
-import { SpruceError } from '@sprucelabs/schema'
+import { SchemaError } from '@sprucelabs/schema'
 import { EnvService } from '@sprucelabs/spruce-skill-utils'
 import { Remote, REMOTES } from '../constants'
 
@@ -13,7 +13,7 @@ export default class RemoteService {
 	public set(remote: Remote) {
 		const host = REMOTES[remote]
 		if (!host) {
-			throw new SpruceError({
+			throw new SchemaError({
 				code: 'INVALID_PARAMETERS',
 				friendlyMessage: `${remote} is not a valid remote. Try:\n\n${Object.keys(
 					REMOTES
@@ -40,7 +40,7 @@ export default class RemoteService {
 		const match = values.find((v) => host?.toString?.().indexOf?.(v[1]) > -1)
 
 		if (!match) {
-			throw new SpruceError({
+			throw new SchemaError({
 				code: 'INVALID_PARAMETERS',
 				friendlyMessage: `Mercury's env.HOST is set to '${host}', which I can't resolve to an environment.`,
 				parameters: ['env.HOST'],

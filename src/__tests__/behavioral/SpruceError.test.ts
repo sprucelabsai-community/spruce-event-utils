@@ -1,3 +1,4 @@
+import { SchemaError } from '@sprucelabs/schema'
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
 import SpruceError from '../../errors/SpruceError'
 
@@ -38,13 +39,13 @@ export default class SpruceErrorTest extends AbstractSpruceTest {
 
 	@test()
 	protected static async canHandleSpruceErrorInstance() {
-		const error = new SpruceError({ code: 'UNKNOWN_ERROR' })
+		const error = new SchemaError({ code: 'DUPLICATE_SCHEMA', schemaId: 'yay' })
 		const result = new SpruceError({
 			code: 'MERCURY_RESPONSE_ERROR',
 			responseErrors: [error],
 		})
 
 		assert.isTruthy(result)
-		assert.doesInclude(result.message, 'UNKNOWN_ERROR')
+		assert.doesInclude(result.message, 'Duplicate schema')
 	}
 }
