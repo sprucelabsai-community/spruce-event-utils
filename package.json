@@ -65,7 +65,7 @@
 		"@sprucelabs/jest-json-reporter": "^6.0.27",
 		"@sprucelabs/resolve-path-aliases": "^1.0.67",
 		"@sprucelabs/semantic-release": "^4.0.6",
-		"@types/node": "^16.7.9",
+		"@types/node": "^16.7.10",
 		"chokidar-cli": "^3.0.0",
 		"conventional-changelog-sprucelabs": "^1.1.2",
 		"eslint": "^7.32.0",
