@@ -1,3 +1,10 @@
+## [16.0.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.0...v16.0.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* resolve paths properly ([ddc7898](https://github.com/sprucelabsai/spruce-event-utils/commit/ddc7898))
+
 # [16.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.2.93...v16.0.0) (2021-09-13)
 
 
