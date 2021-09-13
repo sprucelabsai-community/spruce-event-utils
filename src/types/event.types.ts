@@ -10,7 +10,7 @@ import {
 	HealthCheckItem,
 	SkillContext,
 } from '@sprucelabs/spruce-skill-utils'
-import { EventSource } from './utilities/buildEmitTargetAndPayloadSchema'
+import { EventSource } from '../utilities/buildEmitTargetAndPayloadSchema'
 
 /** @ts-ignore **/
 export type SkillMercuryEventEmitter = MercuryEventEmitter<SkillEventContract>

@@ -1,7 +1,7 @@
 import { EventContract, EventNames } from '@sprucelabs/mercury-types'
 import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
-import { NamedEventSignature } from '../event.types'
+import { NamedEventSignature } from '../types/event.types'
 import eventNameUtil from './eventName.utility'
 
 const eventContractUtil = {

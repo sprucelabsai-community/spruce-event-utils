@@ -1,36 +1,13 @@
-import {
-	dropFields,
-	Schema,
-	SchemaValues,
-	AreAnyFieldsRequired,
-	buildSchema,
-} from '@sprucelabs/schema'
-import { messageTargetSchema } from '@sprucelabs/spruce-core-schemas'
+import { Schema, SchemaValues, AreAnyFieldsRequired } from '@sprucelabs/schema'
 import { namesUtil } from '@sprucelabs/spruce-skill-utils'
-
-export const eventTargetSchema = {
-	id: 'eventTarget',
-	fields: {
-		...dropFields(messageTargetSchema.fields, ['phone']),
-	},
-}
-
-export const eventSourceSchema = buildSchema({
-	id: 'eventSource',
-	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
-	fields: {
-		...eventTargetSchema.fields,
-		proxyToken: {
-			type: 'id',
-			label: 'Proxy token',
-		},
-	},
-})
+import { SpruceSchemas } from '#spruce/schemas/schemas.types'
+import eventSourceSchema from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventSource.schema'
+import eventTargetSchema from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventTarget.schema'
 
 export type EventTargetSchema = typeof eventTargetSchema
 export type EventTarget = SchemaValues<EventTargetSchema>
 export type EventSourceSchema = typeof eventSourceSchema
-export type EventSource = SchemaValues<EventSourceSchema>
+export type EventSource = SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource
 
 export type TargetAndPayload<
 	TargetSchema extends Schema | undefined,
