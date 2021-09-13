@@ -17,10 +17,12 @@ export const eventTargetSchema = {
 
 export const eventSourceSchema = buildSchema({
 	id: 'eventSource',
+	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	fields: {
 		...eventTargetSchema.fields,
 		proxyToken: {
 			type: 'id',
+			label: 'Proxy token',
 		},
 	},
 })
@@ -41,15 +43,7 @@ export type TargetAndPayload<
 				type: 'schema'
 				isRequired: false
 				options: {
-					schema: {
-						id: string
-						fields: {
-							proxyToken: {
-								type: 'id'
-								label: string
-							}
-						}
-					}
+					schema: EventSourceSchema
 				}
 			}
 			target: {
@@ -97,15 +91,7 @@ function buildEmitTargetAndPayloadSchema<
 				type: 'schema',
 				label: 'Source',
 				options: {
-					schema: {
-						id: `eventSource`,
-						fields: {
-							proxyToken: {
-								type: 'id',
-								label: 'Proxy token',
-							},
-						},
-					},
+					schema: eventSourceSchema,
 				},
 			},
 		},
