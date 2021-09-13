@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "15.2.93",
+  "version": "16.0.3",
   "files": [
     "build/**/*",
     "!build/__tests__",
@@ -33,8 +33,9 @@
     "build.ci": "yarn build.tsc && yarn build.resolve-paths && yarn lint",
     "build.copy-files": "mkdir -p build && rsync -avzq --exclude='*.ts' ./src/ ./build/",
     "build.dev": "yarn build.tsc --sourceMap ; yarn resolve-paths.lint",
-    "build.dist": "yarn build.tsc && tsc --project tsconfig.dist.json && yarn build.esm-postbuild",
+    "build.dist": "yarn build.tsc && tsc --project tsconfig.dist.json && yarn build.resolve-paths && yarn build.esm-postbuild",
     "build.esm-postbuild": "esm-postbuild --target build/esm --patterns '**/*.js'",
+    "build.resolve-paths": "resolve-path-aliases --target build --patterns '**/*.js,**/*.d.ts'",
     "build.tsc": "yarn build.copy-files && tsc",
     "clean": "yarn clean.build",
     "clean.all": "yarn clean.dependencies && yarn clean.build",
@@ -42,8 +43,11 @@
     "clean.dependencies": "rm -rf node_modules/ package-lock.json yarn.lock",
     "fix.lint": "eslint --fix --cache '**/*.ts'",
     "lint": "eslint --cache '**/*.ts'",
+    "lint.tsc": "tsc -p . --noEmit",
+    "post.watch.build": "yarn build.copy-files && yarn build.resolve-paths",
     "rebuild": "yarn clean.all && yarn && yarn build.dev",
     "release": "semantic-release",
+    "resolve-paths.lint": "yarn build.resolve-paths ; yarn lint",
     "test": "jest",
     "update.dependencies": "yarn clean.dependencies && yarn",
     "upgrade.packages": "yarn-upgrade-all && rm -f yarn.lock ; yarn ; yarn fix.lint ; true",
@@ -51,12 +55,8 @@
     "upgrade.packages.test": "yarn upgrade.packages.all && yarn lint && yarn build.dev && yarn test",
     "watch.build.dev": "tsc-watch --sourceMap --onCompilationComplete 'yarn post.watch.build'",
     "watch.lint": "concurrently 'yarn lint' \"chokidar 'src/**/*' -c 'yarn lint.tsc'\"",
-    "watch.tsc": "tsc -w",
-    "build.resolve-paths": "resolve-path-aliases --target build --patterns '**/*.js,**/*.d.ts'",
-    "lint.tsc": "tsc -p . --noEmit",
-    "post.watch.build": "yarn build.copy-files && yarn build.resolve-paths",
-    "resolve-paths.lint": "yarn build.resolve-paths ; yarn lint",
-    "watch.rebuild": "yarn clean.all && yarn && yarn watch.build.dev"
+    "watch.rebuild": "yarn clean.all && yarn && yarn watch.build.dev",
+    "watch.tsc": "tsc -w"
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.3",

@@ -1,3 +1,21 @@
+## [16.0.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.2...v16.0.3) (2021-09-13)
+
+## [16.0.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.1...v16.0.2) (2021-09-13)
+
+## [16.0.1](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.0...v16.0.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* resolve paths properly ([ddc7898](https://github.com/sprucelabsai/spruce-event-utils/commit/ddc7898))
+
+# [16.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.2.93...v16.0.0) (2021-09-13)
+
+
+### Breaking Changes
+
+* namespace event source ([4573972](https://github.com/sprucelabsai/spruce-event-utils/commit/4573972))
+
 ## [15.2.93](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.2.92...v15.2.93) (2021-09-13)
 
 ## [15.2.92](https://github.com/sprucelabsai/spruce-event-utils/compare/v15.2.91...v15.2.92) (2021-09-13)
