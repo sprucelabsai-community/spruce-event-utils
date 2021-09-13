@@ -16,7 +16,9 @@
   "license": "MIT",
   "skill": {
     "namespace": "spruceEventUtils",
-    "upgradeIgnoreList": []
+    "upgradeIgnoreList": [
+      "@sprucelabs/spruce-test-fixtures"
+    ]
   },
   "description": "Some helpful utilities to speed up working with Mercury! 🚅",
   "keywords": [
@@ -58,10 +60,10 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.3",
-    "@sprucelabs/mercury-types": "^26.1.0",
+    "@sprucelabs/mercury-types": "^26.1.2",
     "@sprucelabs/schema": "^25.3.1",
-    "@sprucelabs/spruce-core-schemas": "^22.5.48",
-    "@sprucelabs/spruce-skill-utils": "^20.5.59",
+    "@sprucelabs/spruce-core-schemas": "^22.5.49",
+    "@sprucelabs/spruce-skill-utils": "^20.5.61",
     "@sprucelabs/test": "^7.7.60",
     "@sprucelabs/test-utils": "^3.0.55"
   },
@@ -70,7 +72,6 @@
     "@sprucelabs/jest-json-reporter": "^6.0.33",
     "@sprucelabs/resolve-path-aliases": "^1.0.74",
     "@sprucelabs/semantic-release": "^4.0.6",
-    "@sprucelabs/spruce-test-fixtures": "^5.4.49",
     "@types/node": "^16.9.1",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^6.2.1",
