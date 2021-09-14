@@ -9,6 +9,7 @@ const eventTargetSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventTargetS
 	namespace: 'SpruceEventUtils',
 	name: 'event target',
 	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
+	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
 	            /** . */
 	            'locationId': {

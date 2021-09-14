@@ -36,6 +36,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			namespace: 'SpruceEventUtils',
 			name: 'event target',
 			importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
+			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 			    fields: {
 			            /** . */
 			            'locationId': {
