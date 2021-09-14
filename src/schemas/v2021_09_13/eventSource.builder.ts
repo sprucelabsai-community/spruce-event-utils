@@ -5,6 +5,7 @@ export default buildSchema({
 	id: 'eventSource',
 	name: 'event source',
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
+	importsWhenRemote: ["import '@sprucelabs/spruce-event-utils'"],
 	fields: {
 		...eventTargetBuilder.fields,
 		proxyToken: {

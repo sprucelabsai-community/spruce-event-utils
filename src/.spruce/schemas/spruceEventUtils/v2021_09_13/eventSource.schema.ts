@@ -8,6 +8,7 @@ const eventSourceSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceS
 	version: 'v2021_09_13',
 	namespace: 'SpruceEventUtils',
 	name: 'event source',
+	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
 	            /** . */
