@@ -59,11 +59,11 @@
     "watch.tsc": "tsc -w"
   },
   "dependencies": {
-    "@sprucelabs/error": "^5.0.25",
+    "@sprucelabs/error": "^5.0.26",
     "@sprucelabs/mercury-types": "^26.1.52",
-    "@sprucelabs/schema": "^25.3.34",
-    "@sprucelabs/spruce-core-schemas": "^22.5.97",
-    "@sprucelabs/spruce-skill-utils": "^20.5.113",
+    "@sprucelabs/schema": "^25.3.35",
+    "@sprucelabs/spruce-core-schemas": "^22.5.98",
+    "@sprucelabs/spruce-skill-utils": "^20.5.114",
     "@sprucelabs/test": "^7.7.63",
     "@sprucelabs/test-utils": "^3.0.56"
   },
