@@ -59,17 +59,17 @@
     "watch.tsc": "tsc -w"
   },
   "dependencies": {
-    "@sprucelabs/error": "^5.0.30",
-    "@sprucelabs/mercury-types": "^26.1.62",
-    "@sprucelabs/schema": "^25.3.41",
-    "@sprucelabs/spruce-core-schemas": "^22.5.105",
-    "@sprucelabs/spruce-skill-utils": "^20.5.121",
+    "@sprucelabs/error": "^5.0.31",
+    "@sprucelabs/mercury-types": "^26.1.64",
+    "@sprucelabs/schema": "^25.3.42",
+    "@sprucelabs/spruce-core-schemas": "^22.5.106",
+    "@sprucelabs/spruce-skill-utils": "^20.5.122",
     "@sprucelabs/test": "^7.7.64",
     "@sprucelabs/test-utils": "^3.0.56"
   },
   "devDependencies": {
-    "@sprucelabs/esm-postbuild": "^1.0.74",
-    "@sprucelabs/jest-json-reporter": "^6.0.47",
+    "@sprucelabs/esm-postbuild": "^1.0.75",
+    "@sprucelabs/jest-json-reporter": "^6.0.48",
     "@sprucelabs/resolve-path-aliases": "^1.0.81",
     "@sprucelabs/semantic-release": "^4.0.6",
     "@types/node": "^16.9.4",
