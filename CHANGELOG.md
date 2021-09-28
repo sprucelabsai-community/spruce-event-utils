@@ -1,3 +1,5 @@
+## [16.0.212](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.211...v16.0.212) (2021-09-28)
+
 ## [16.0.211](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.210...v16.0.211) (2021-09-28)
 
 ## [16.0.210](https://github.com/sprucelabsai/spruce-event-utils/compare/v16.0.209...v16.0.210) (2021-09-28)
