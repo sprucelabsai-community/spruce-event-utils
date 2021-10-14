@@ -55,7 +55,7 @@ export type SpruceEvent<
 	OptionalMercuryClient<Contract> &
 	OptionalPayload<EmitPayload> & { source: EventSource }
 
-export type SpruceEventResponse<ResponsePayload extends any = void> =
+export type SpruceEventResponse<ResponsePayload = void> =
 	Promise<ResponsePayload>
 
 export interface NamedEventSignature {
