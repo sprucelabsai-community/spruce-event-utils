@@ -61,7 +61,7 @@
   "dependencies": {
     "@sprucelabs/error": "^5.0.232",
     "@sprucelabs/mercury-types": "^26.1.391",
-    "@sprucelabs/schema": "^25.3.306",
+    "@sprucelabs/schema": "^25.3.307",
     "@sprucelabs/spruce-core-schemas": "^22.5.382",
     "@sprucelabs/spruce-skill-utils": "^20.6.247",
     "@sprucelabs/test": "^7.7.194",
