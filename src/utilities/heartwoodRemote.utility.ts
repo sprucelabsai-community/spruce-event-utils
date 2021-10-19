@@ -6,6 +6,7 @@ export const HEARTWOOD_REMOTES: Record<Remote, string> = {
 	developer: 'https://developer.spruce.bot',
 	sandbox: 'https://sandbox.spruce.bot',
 	production: 'https://spruce.bot',
+	heartwood_test: 'https://heartwood-test.spruce.bot',
 }
 
 const heartwoodRemoteUtil = {
