@@ -1,5 +1,5 @@
 export { default as eventContractUtil } from './utilities/eventContract.utility'
-export { default as eventAssertUtil } from './utilities/eventErrorAssert.utility'
+export { default as eventAssertUtil } from './tests/utilities/eventErrorAssert.utility'
 export { default as eventResponseUtil } from './utilities/eventResponse.utility'
 export { default as eventDiskUtil } from './utilities/eventDisk.utility'
 export { default as eventNameUtil } from './utilities/eventName.utility'

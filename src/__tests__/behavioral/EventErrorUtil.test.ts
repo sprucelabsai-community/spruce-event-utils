@@ -1,6 +1,6 @@
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
 import SpruceError from '../../errors/SpruceError'
-import eventAssertUtil from '../../utilities/eventErrorAssert.utility'
+import eventAssertUtil from '../../tests/utilities/eventErrorAssert.utility'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
 
 export default class EventErrorUtilTest extends AbstractSpruceTest {
