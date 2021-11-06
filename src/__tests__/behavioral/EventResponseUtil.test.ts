@@ -1,7 +1,7 @@
 import { MercuryAggregateResponse } from '@sprucelabs/mercury-types'
 import AbstractSpruceTest, { assert, test } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
-import { eventErrorAssertUtil } from '../..'
+import { eventAssertUtil } from '../..'
 import SpruceError from '../../errors/SpruceError'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
 
@@ -60,7 +60,7 @@ export default class EventResponseUtilTest extends AbstractSpruceTest {
 			)
 		)
 
-		eventErrorAssertUtil.assertError(err, 'COOL_ERROR')
+		eventAssertUtil.assertError(err, 'COOL_ERROR')
 	}
 
 	@test()
@@ -89,7 +89,7 @@ export default class EventResponseUtilTest extends AbstractSpruceTest {
 			})
 		)
 
-		eventErrorAssertUtil.assertError(err, 'EMPTY_MERCURY_RESPONSE')
+		eventAssertUtil.assertError(err, 'EMPTY_MERCURY_RESPONSE')
 	}
 
 	@test()

@@ -1,6 +1,6 @@
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
 import SpruceError from '../../errors/SpruceError'
-import eventErrorAssertUtil from '../../utilities/eventErrorAssert.utility'
+import eventAssertUtil from '../../utilities/eventErrorAssert.utility'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
 
 export default class EventErrorUtilTest extends AbstractSpruceTest {
@@ -103,12 +103,12 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 		)
 
 		assert.doesThrow(() =>
-			eventErrorAssertUtil.assertError(err, 'COOL_ERROR', {
+			eventAssertUtil.assertError(err, 'COOL_ERROR', {
 				foo: 'bar2',
 			})
 		)
 
-		eventErrorAssertUtil.assertError(err, 'COOL_ERROR', {
+		eventAssertUtil.assertError(err, 'COOL_ERROR', {
 			foo: 'bar',
 		})
 	}
@@ -122,12 +122,12 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 			)
 
 		assert.doesThrow(() =>
-			eventErrorAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
+			eventAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
 				foo: 'bar2',
 			})
 		)
 
-		const err = eventErrorAssertUtil.assertErrorFromResponse(
+		const err = eventAssertUtil.assertErrorFromResponse(
 			response,
 			'COOL_ERROR',
 			{
@@ -147,7 +147,7 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 			)
 
 		const err = assert.doesThrow(() =>
-			eventErrorAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
+			eventAssertUtil.assertErrorFromResponse(response, 'COOL_ERROR', {
 				foo: 'bar',
 			})
 		)
@@ -164,7 +164,7 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 			)
 
 		assert.doesThrow(() =>
-			eventErrorAssertUtil.assertResponseIncludesError(
+			eventAssertUtil.assertResponseIncludesError(
 				response,
 				'COOL_ERROR_NOT_FOUND',
 				{
@@ -182,7 +182,7 @@ export default class EventErrorUtilTest extends AbstractSpruceTest {
 				SpruceError
 			)
 
-		eventErrorAssertUtil.assertResponseIncludesError(response, 'COOL_ERROR', {
+		eventAssertUtil.assertResponseIncludesError(response, 'COOL_ERROR', {
 			foo: 'bar',
 		})
 	}
