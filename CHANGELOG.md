@@ -1,3 +1,10 @@
+# [17.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.0.30...v17.1.0) (2021-11-10)
+
+
+### Features
+
+* expose event errors for others to throw ([6a01aaa](https://github.com/sprucelabsai/spruce-event-utils/commit/6a01aaa))
+
 ## [17.0.30](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.0.29...v17.0.30) (2021-11-09)
 
 ## [17.0.29](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.0.28...v17.0.29) (2021-11-09)
