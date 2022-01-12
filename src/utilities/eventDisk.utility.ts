@@ -46,14 +46,13 @@ const eventDiskUtil = {
 
 		const listener: any = {}
 
-		listener.eventNamespace = matches[1]
+		listener.eventNamespace =
+			matches[1] === 'listeners' ? undefined : matches[1]
+
 		listener.version = matches[3]
 		listener.eventName = matches[2]
-		listener.fullyQualifiedEventName = eventNameUtil.join({
-			eventName: listener.eventName,
-			eventNamespace: listener.eventNamespace,
-			version: listener.version,
-		})
+
+		listener.fullyQualifiedEventName = eventNameUtil.join({ ...listener })
 
 		return listener
 	},

@@ -11,6 +11,14 @@ export default class EventDiskUtilTest extends AbstractSpruceTest {
 		assert.isEqual(version, 'v2020_01_01')
 	}
 
+	@test()
+	protected static coreEventListenersHaveNoNamespace() {
+		const { eventNamespace } = eventDiskUtil.splitPathToListener(
+			'/path/to/skill/src/listeners/did-install.v2020_01_10.listener.ts'
+		)
+		assert.isUndefined(eventNamespace)
+	}
+
 	@test('listener resolves with eventName', 'register-skill-views')
 	@test(
 		'listener resolves with eventName and namespace',
