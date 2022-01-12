@@ -154,13 +154,6 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 				eventNamespace: 'test',
 			})
 		)
-		assert.doesThrow(() =>
-			//@ts-ignore
-			eventDiskUtil.resolveListenerPath(this.cwd, {
-				eventName: 'my-event',
-				version: '123',
-			})
-		)
 
 		assert.doesThrow(() =>
 			//@ts-ignore

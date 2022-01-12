@@ -3,7 +3,7 @@ import eventDiskUtil from '../../utilities/eventDisk.utility'
 
 export default class EventDiskUtilTest extends AbstractSpruceTest {
 	@test()
-	protected static async passesWithOptions() {
+	protected static passesWithOptions() {
 		const { eventName, version } = eventDiskUtil.splitPathToEvent(
 			'src/events/event-name/v2020_01_01/event.options.ts'
 		)
@@ -24,7 +24,7 @@ export default class EventDiskUtilTest extends AbstractSpruceTest {
 		'listener resolves with eventName, namespace and version',
 		'heartwood.register-skill-views::v2020_01_01'
 	)
-	protected static async resolveListenerAsExpected(eventName: string) {
+	protected static resolveListenerAsExpected(eventName: string) {
 		const resolvedDestination = eventDiskUtil.resolveListenerPath(this.cwd, {
 			eventName,
 			eventNamespace: 'heartwood',
@@ -34,6 +34,19 @@ export default class EventDiskUtilTest extends AbstractSpruceTest {
 		assert.isEqual(
 			resolvedDestination,
 			this.resolvePath('heartwood/register-skill-views.v2020_01_01.listener.ts')
+		)
+	}
+
+	@test()
+	protected static canResolvePathsWithoutNamespaces() {
+		const resolvedDestination = eventDiskUtil.resolveListenerPath(this.cwd, {
+			eventName: 'did-install',
+			version: 'v2020_01_01',
+		})
+
+		assert.isEqual(
+			resolvedDestination,
+			this.resolvePath('did-install.v2020_01_01.listener.ts')
 		)
 	}
 }

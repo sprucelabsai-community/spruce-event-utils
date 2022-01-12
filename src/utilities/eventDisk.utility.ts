@@ -1,4 +1,5 @@
 import pathUtil from 'path'
+import { assertOptions } from '@sprucelabs/schema'
 import { diskUtil, HASH_SPRUCE_DIR_NAME } from '@sprucelabs/spruce-skill-utils'
 import SpruceError from '../errors/SpruceError'
 import eventNameUtil from './eventName.utility'
@@ -18,23 +19,18 @@ interface Listener {
 const eventDiskUtil = {
 	resolveListenerPath(
 		destination: string,
-		e: { eventNamespace: string; eventName: string; version: string },
-		seperator = '/'
+		e: { eventNamespace?: string; eventName: string; version: string }
 	) {
-		if (!e || !e.eventName || !e.eventNamespace || !e.version) {
-			throw new Error(
-				"Can't resolve path to listener without eventName, eventNamespace, version"
-			)
-		}
+		assertOptions(e, ['eventName', 'version'])
 
 		const fqen = eventNameUtil.join(e)
 		const { eventName, eventNamespace, version } = eventNameUtil.split(fqen)
 
-		return [
+		return diskUtil.resolvePath(
 			destination,
-			eventNamespace,
-			eventName + '.' + version + '.listener.ts',
-		].join(seperator)
+			eventNamespace ?? '',
+			eventName + '.' + version + '.listener.ts'
+		)
 	},
 
 	splitPathToListener(match: string, seperator = '/'): Listener {
