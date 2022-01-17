@@ -1,3 +1,5 @@
+## [17.1.533](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.1.532...v17.1.533) (2022-01-17)
+
 ## [17.1.532](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.1.531...v17.1.532) (2022-01-16)
 
 ## [17.1.531](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.1.530...v17.1.531) (2022-01-16)
