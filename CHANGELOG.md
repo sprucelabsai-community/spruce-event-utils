@@ -1,3 +1,10 @@
+# [18.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.1.597...v18.0.0) (2022-01-31)
+
+
+### Breaking Changes
+
+* upgrade ([f9c03d5](https://github.com/sprucelabsai/spruce-event-utils/commit/f9c03d5))
+
 ## [17.1.597](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.1.596...v17.1.597) (2022-01-29)
 
 ## [17.1.596](https://github.com/sprucelabsai/spruce-event-utils/compare/v17.1.595...v17.1.596) (2022-01-29)
