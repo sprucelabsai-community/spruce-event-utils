@@ -1,5 +1,7 @@
 version: 2.1
 orbs:
+  hub: yasuhiroki/hub@0.0.2
+  jq: circleci/jq@2.2.0
   spruce: sprucelabsai/utils@dev:alpha
 jobs:
   test:
