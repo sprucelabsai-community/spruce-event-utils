@@ -19,7 +19,7 @@ type OptionalMercuryClient<Contract extends SkillEventContract | undefined> =
 	Contract extends SkillEventContract
 		? {
 				/** @ts-ignore **/
-				mercury: MercuryEventEmitter<Contract>
+				client: MercuryEventEmitter<Contract>
 		  }
 		: {}
 
@@ -51,6 +51,7 @@ export type SpruceEvent<
 > = {
 	skill: Skill
 	log: Log
+	connectToApiAsSkill: () => Promise<MercuryEventEmitter<Contract>>
 } & SkillContext &
 	OptionalMercuryClient<Contract> &
 	OptionalPayload<EmitPayload> & { source: EventSource }
