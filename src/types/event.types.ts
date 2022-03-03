@@ -51,6 +51,7 @@ export type SpruceEvent<
 > = {
 	skill: Skill
 	log: Log
+	/** @ts-ignore */
 	connectToApiAsSkill: () => Promise<MercuryEventEmitter<Contract>>
 } & SkillContext &
 	OptionalMercuryClient<Contract> &
