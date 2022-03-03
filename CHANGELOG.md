@@ -1,3 +1,10 @@
+# [19.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.0.3...v19.1.0) (2022-03-03)
+
+
+### Features
+
+* new event paging schema for paging EVERYWHERE! ([98d83ab](https://github.com/sprucelabsai/spruce-event-utils/commit/98d83ab))
+
 ## [19.0.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.0.2...v19.0.3) (2022-03-03)
 
 ## [19.0.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.0.1...v19.0.2) (2022-03-03)
