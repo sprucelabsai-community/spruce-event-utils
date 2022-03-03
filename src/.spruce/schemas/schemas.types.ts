@@ -151,6 +151,8 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			version: 'v2021_09_13',
 			namespace: 'SpruceEventUtils',
 			name: 'Event Paging',
+			importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
+			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 			    fields: {
 			            /** . */
 			            'pageSize': {

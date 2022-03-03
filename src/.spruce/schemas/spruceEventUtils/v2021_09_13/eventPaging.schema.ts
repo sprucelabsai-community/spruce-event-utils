@@ -8,6 +8,8 @@ const eventPagingSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingS
 	version: 'v2021_09_13',
 	namespace: 'SpruceEventUtils',
 	name: 'Event Paging',
+	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
+	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
 	            /** . */
 	            'pageSize': {
