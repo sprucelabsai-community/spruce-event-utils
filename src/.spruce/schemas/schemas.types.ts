@@ -136,4 +136,32 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 
 	}
 
+
+	namespace SpruceSchemas.SpruceEventUtils.v2021_09_13 {
+
+		
+		interface EventPaging {
+			
+				
+				'pageSize'?: number| undefined | null
+		}
+
+		interface EventPagingSchema extends SpruceSchema.Schema {
+			id: 'eventPaging',
+			version: 'v2021_09_13',
+			namespace: 'SpruceEventUtils',
+			name: 'Event Paging',
+			    fields: {
+			            /** . */
+			            'pageSize': {
+			                type: 'number',
+			                options: undefined
+			            },
+			    }
+		}
+
+		type EventPagingEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSchema>
+
+	}
+
 }
