@@ -1,3 +1,10 @@
+# [19.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v18.0.153...v19.0.0) (2022-03-03)
+
+
+### Breaking Changes
+
+* type changes for consistency and new easy way to connect to the api as a client ([ab21739](https://github.com/sprucelabsai/spruce-event-utils/commit/ab21739))
+
 ## [18.0.153](https://github.com/sprucelabsai/spruce-event-utils/compare/v18.0.152...v18.0.153) (2022-03-01)
 
 ## [18.0.152](https://github.com/sprucelabsai/spruce-event-utils/compare/v18.0.151...v18.0.152) (2022-03-01)
