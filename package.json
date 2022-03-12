@@ -60,13 +60,13 @@
     "watch.tsc": "tsc -w"
   },
   "dependencies": {
-    "@sprucelabs/error": "^5.0.417",
-    "@sprucelabs/mercury-types": "^27.0.165",
-    "@sprucelabs/schema": "^27.1.14",
-    "@sprucelabs/spruce-core-schemas": "^25.0.31",
-    "@sprucelabs/spruce-skill-utils": "^25.0.26",
+    "@sprucelabs/error": "^5.0.418",
+    "@sprucelabs/mercury-types": "^27.0.166",
+    "@sprucelabs/schema": "^27.1.15",
+    "@sprucelabs/spruce-core-schemas": "^25.0.32",
+    "@sprucelabs/spruce-skill-utils": "^25.0.27",
     "@sprucelabs/test": "^7.7.288",
-    "@sprucelabs/test-utils": "^3.0.494"
+    "@sprucelabs/test-utils": "^3.0.495"
   },
   "devDependencies": {
     "@sprucelabs/esm-postbuild": "^1.0.417",
