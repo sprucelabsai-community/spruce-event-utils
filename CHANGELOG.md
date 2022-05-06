@@ -1,3 +1,10 @@
+# [20.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v20.0.0...v20.1.0) (2022-05-06)
+
+
+### Features
+
+* exporting event paging responses chema! ([c30af94](https://github.com/sprucelabsai/spruce-event-utils/commit/c30af94))
+
 # [20.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.2.2...v20.0.0) (2022-05-06)
 
 
