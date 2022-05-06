@@ -1,3 +1,10 @@
+# [19.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.1.118...v19.2.0) (2022-05-06)
+
+
+### Features
+
+* new paging fields to make paging in mercury even more POWERFUL! ([61a7873](https://github.com/sprucelabsai/spruce-event-utils/commit/61a7873))
+
 ## [19.1.118](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.1.117...v19.1.118) (2022-05-05)
 
 ## [19.1.117](https://github.com/sprucelabsai/spruce-event-utils/compare/v19.1.116...v19.1.117) (2022-05-03)
