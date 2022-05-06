@@ -1,12 +1,13 @@
-import { Schema, SchemaValues, AreAnyFieldsRequired } from '@sprucelabs/schema'
+import { Schema, AreAnyFieldsRequired } from '@sprucelabs/schema'
 import { namesUtil } from '@sprucelabs/spruce-skill-utils'
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
 import eventSourceSchema from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventSource.schema'
-import eventTargetSchema from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventTarget.schema'
 
-export type EventTargetSchema = typeof eventTargetSchema
-export type EventTarget = SchemaValues<EventTargetSchema>
-export type EventSourceSchema = typeof eventSourceSchema
+export type EventTargetSchema =
+	SpruceSchemas.SpruceEventUtils.v2021_09_13.EventTargetSchema
+export type EventTarget = SpruceSchemas.SpruceEventUtils.v2021_09_13.EventTarget
+export type EventSourceSchema =
+	SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource
 export type EventSource = SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource
 
 export type TargetAndPayload<
