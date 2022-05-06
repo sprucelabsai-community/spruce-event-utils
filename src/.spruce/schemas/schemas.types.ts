@@ -140,10 +140,80 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.SpruceEventUtils.v2021_09_13 {
 
 		
+		interface EventPagingResponse {
+			
+				
+				'cursorId': string
+		}
+
+		interface EventPagingResponseSchema extends SpruceSchema.Schema {
+			id: 'eventPagingResponse',
+			version: 'v2021_09_13',
+			namespace: 'SpruceEventUtils',
+			name: 'eventPagingResponse',
+			    fields: {
+			            /** . */
+			            'cursorId': {
+			                type: 'id',
+			                isRequired: true,
+			                options: undefined
+			            },
+			    }
+		}
+
+		type EventPagingResponseEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingResponseSchema>
+
+	}
+
+
+	namespace SpruceSchemas.SpruceEventUtils.v2021_09_13 {
+
+		
+		interface EventPagingSort {
+			
+				
+				'field': string
+				
+				'direction'?: ("asc" | "desc")| undefined | null
+		}
+
+		interface EventPagingSortSchema extends SpruceSchema.Schema {
+			id: 'eventPagingSort',
+			version: 'v2021_09_13',
+			namespace: 'SpruceEventUtils',
+			name: '',
+			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
+			    fields: {
+			            /** . */
+			            'field': {
+			                type: 'id',
+			                isRequired: true,
+			                options: undefined
+			            },
+			            /** . */
+			            'direction': {
+			                type: 'select',
+			                options: {choices: [{"value":"asc","label":"Ascending"},{"value":"desc","label":"Descending"}],}
+			            },
+			    }
+		}
+
+		type EventPagingSortEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSortSchema>
+
+	}
+
+
+	namespace SpruceSchemas.SpruceEventUtils.v2021_09_13 {
+
+		
 		interface EventPaging {
 			
 				
 				'pageSize'?: number| undefined | null
+				
+				'cursorId'?: string| undefined | null
+				
+				'sort'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSort[]| undefined | null
 		}
 
 		interface EventPagingSchema extends SpruceSchema.Schema {
@@ -158,6 +228,17 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			            'pageSize': {
 			                type: 'number',
 			                options: undefined
+			            },
+			            /** . */
+			            'cursorId': {
+			                type: 'id',
+			                options: undefined
+			            },
+			            /** . */
+			            'sort': {
+			                type: 'schema',
+			                isArray: true,
+			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSortSchema,}
 			            },
 			    }
 		}

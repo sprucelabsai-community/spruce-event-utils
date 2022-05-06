@@ -1,7 +1,7 @@
 import { SchemaRegistry } from '@sprucelabs/schema'
 import { SpruceSchemas } from '../../schemas.types'
 
-
+import eventPagingSortSchema_v2021_09_13 from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventPagingSort.schema'
 
 const eventPagingSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSchema  = {
 	id: 'eventPaging',
@@ -15,6 +15,17 @@ const eventPagingSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingS
 	            'pageSize': {
 	                type: 'number',
 	                options: undefined
+	            },
+	            /** . */
+	            'cursorId': {
+	                type: 'id',
+	                options: undefined
+	            },
+	            /** . */
+	            'sort': {
+	                type: 'schema',
+	                isArray: true,
+	                options: {schema: eventPagingSortSchema_v2021_09_13,}
 	            },
 	    }
 }
