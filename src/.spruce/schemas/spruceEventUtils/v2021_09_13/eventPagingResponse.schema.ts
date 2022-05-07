@@ -8,6 +8,8 @@ const eventPagingResponseSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.Even
 	version: 'v2021_09_13',
 	namespace: 'SpruceEventUtils',
 	name: 'eventPagingResponse',
+	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
+	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
 	            /** . */
 	            'cursorId': {

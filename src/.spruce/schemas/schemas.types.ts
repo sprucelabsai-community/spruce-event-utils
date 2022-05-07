@@ -151,6 +151,8 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			version: 'v2021_09_13',
 			namespace: 'SpruceEventUtils',
 			name: 'eventPagingResponse',
+			importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
+			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 			    fields: {
 			            /** . */
 			            'cursorId': {
@@ -182,6 +184,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			version: 'v2021_09_13',
 			namespace: 'SpruceEventUtils',
 			name: '',
+			importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 			    fields: {
 			            /** . */

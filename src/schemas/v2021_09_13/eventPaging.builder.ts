@@ -2,6 +2,8 @@ import { buildSchema } from '@sprucelabs/schema'
 
 const sortSchema = buildSchema({
 	id: 'eventPagingSort',
+	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
+	importsWhenRemote: ["import '@sprucelabs/spruce-event-utils'"],
 	fields: {
 		field: {
 			type: 'id',

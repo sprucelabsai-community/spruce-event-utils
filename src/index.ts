@@ -14,4 +14,5 @@ export { default as eventSourceSchema } from '#spruce/schemas/spruceEventUtils/v
 export { default as eventTargetSchema } from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventTarget.schema'
 export { default as eventPagingSchema } from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventPaging.schema'
 export { default as eventPagingResponseSchema } from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventPagingResponse.schema'
+export { default as eventPagingSortSchema } from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventPagingSort.schema'
 export { default as EventError } from './errors/SpruceError'

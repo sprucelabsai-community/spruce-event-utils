@@ -8,6 +8,7 @@ const eventPagingSortSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPag
 	version: 'v2021_09_13',
 	namespace: 'SpruceEventUtils',
 	name: '',
+	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
 	            /** . */
