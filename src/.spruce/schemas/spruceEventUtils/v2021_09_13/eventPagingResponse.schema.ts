@@ -7,14 +7,18 @@ const eventPagingResponseSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.Even
 	id: 'eventPagingResponse',
 	version: 'v2021_09_13',
 	namespace: 'SpruceEventUtils',
-	name: 'eventPagingResponse',
+	name: 'Event paging response',
 	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
 	            /** . */
-	            'cursorId': {
+	            'next': {
 	                type: 'id',
-	                isRequired: true,
+	                options: undefined
+	            },
+	            /** . */
+	            'previous': {
+	                type: 'id',
 	                options: undefined
 	            },
 	    }

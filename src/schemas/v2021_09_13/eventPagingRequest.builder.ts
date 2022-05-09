@@ -28,15 +28,18 @@ const sortSchema = buildSchema({
 })
 
 export default buildSchema({
-	id: 'eventPaging',
-	name: 'Event Paging',
+	id: 'eventPagingRequest',
+	name: 'Event paging request',
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	importsWhenRemote: ["import '@sprucelabs/spruce-event-utils'"],
 	fields: {
 		pageSize: {
 			type: 'number',
 		},
-		cursorId: {
+		next: {
+			type: 'id',
+		},
+		previous: {
 			type: 'id',
 		},
 		sort: {

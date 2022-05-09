@@ -3,11 +3,11 @@ import { SpruceSchemas } from '../../schemas.types'
 
 import eventPagingSortSchema_v2021_09_13 from '#spruce/schemas/spruceEventUtils/v2021_09_13/eventPagingSort.schema'
 
-const eventPagingSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSchema  = {
-	id: 'eventPaging',
+const eventPagingRequestSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingRequestSchema  = {
+	id: 'eventPagingRequest',
 	version: 'v2021_09_13',
 	namespace: 'SpruceEventUtils',
-	name: 'Event Paging',
+	name: 'Event paging request',
 	importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	    fields: {
@@ -17,7 +17,12 @@ const eventPagingSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingS
 	                options: undefined
 	            },
 	            /** . */
-	            'cursorId': {
+	            'next': {
+	                type: 'id',
+	                options: undefined
+	            },
+	            /** . */
+	            'previous': {
 	                type: 'id',
 	                options: undefined
 	            },
@@ -30,6 +35,6 @@ const eventPagingSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingS
 	    }
 }
 
-SchemaRegistry.getInstance().trackSchema(eventPagingSchema)
+SchemaRegistry.getInstance().trackSchema(eventPagingRequestSchema)
 
-export default eventPagingSchema
+export default eventPagingRequestSchema

@@ -143,21 +143,27 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		interface EventPagingResponse {
 			
 				
-				'cursorId': string
+				'next'?: string| undefined | null
+				
+				'previous'?: string| undefined | null
 		}
 
 		interface EventPagingResponseSchema extends SpruceSchema.Schema {
 			id: 'eventPagingResponse',
 			version: 'v2021_09_13',
 			namespace: 'SpruceEventUtils',
-			name: 'eventPagingResponse',
+			name: 'Event paging response',
 			importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 			    fields: {
 			            /** . */
-			            'cursorId': {
+			            'next': {
 			                type: 'id',
-			                isRequired: true,
+			                options: undefined
+			            },
+			            /** . */
+			            'previous': {
+			                type: 'id',
 			                options: undefined
 			            },
 			    }
@@ -209,21 +215,23 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.SpruceEventUtils.v2021_09_13 {
 
 		
-		interface EventPaging {
+		interface EventPagingRequest {
 			
 				
 				'pageSize'?: number| undefined | null
 				
-				'cursorId'?: string| undefined | null
+				'next'?: string| undefined | null
+				
+				'previous'?: string| undefined | null
 				
 				'sort'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSort[]| undefined | null
 		}
 
-		interface EventPagingSchema extends SpruceSchema.Schema {
-			id: 'eventPaging',
+		interface EventPagingRequestSchema extends SpruceSchema.Schema {
+			id: 'eventPagingRequest',
 			version: 'v2021_09_13',
 			namespace: 'SpruceEventUtils',
-			name: 'Event Paging',
+			name: 'Event paging request',
 			importsWhenRemote: ['import \'@sprucelabs/spruce-event-utils\'',],
 			moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 			    fields: {
@@ -233,7 +241,12 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			                options: undefined
 			            },
 			            /** . */
-			            'cursorId': {
+			            'next': {
+			                type: 'id',
+			                options: undefined
+			            },
+			            /** . */
+			            'previous': {
 			                type: 'id',
 			                options: undefined
 			            },
@@ -246,7 +259,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			    }
 		}
 
-		type EventPagingEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSchema>
+		type EventPagingRequestEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingRequestSchema>
 
 	}
 

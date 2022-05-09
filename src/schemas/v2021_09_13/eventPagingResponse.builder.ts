@@ -2,13 +2,15 @@ import { buildSchema } from '@sprucelabs/schema'
 
 export default buildSchema({
 	id: 'eventPagingResponse',
-	name: 'eventPagingResponse',
+	name: 'Event paging response',
 	moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
 	importsWhenRemote: ["import '@sprucelabs/spruce-event-utils'"],
 	fields: {
-		cursorId: {
+		next: {
 			type: 'id',
-			isRequired: true,
+		},
+		previous: {
+			type: 'id',
 		},
 	},
 })
