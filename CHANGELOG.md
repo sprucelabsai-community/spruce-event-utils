@@ -1,3 +1,10 @@
+# [21.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v20.1.53...v21.0.0) (2022-05-24)
+
+
+### Breaking Changes
+
+* upgrade ([647ac1f](https://github.com/sprucelabsai/spruce-event-utils/commit/647ac1f))
+
 ## [20.1.53](https://github.com/sprucelabsai/spruce-event-utils/compare/v20.1.52...v20.1.53) (2022-05-24)
 
 ## [20.1.52](https://github.com/sprucelabsai/spruce-event-utils/compare/v20.1.51...v20.1.52) (2022-05-24)
