@@ -1,3 +1,10 @@
+# [25.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v24.0.0...v25.0.0) (2022-06-01)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([987ce66](https://github.com/sprucelabsai/spruce-event-utils/commit/987ce66))
+
 # [24.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v23.0.0...v24.0.0) (2022-06-01)
 
 
