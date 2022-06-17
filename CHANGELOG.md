@@ -1,3 +1,10 @@
+# [27.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v26.0.51...v27.0.0) (2022-06-17)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([30f5f88](https://github.com/sprucelabsai/spruce-event-utils/commit/30f5f88))
+
 ## [26.0.51](https://github.com/sprucelabsai/spruce-event-utils/compare/v26.0.50...v26.0.51) (2022-06-16)
 
 ## [26.0.50](https://github.com/sprucelabsai/spruce-event-utils/compare/v26.0.49...v26.0.50) (2022-06-16)
