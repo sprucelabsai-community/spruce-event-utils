@@ -66,7 +66,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			    }
 		}
 
-		type EventTargetEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventTargetSchema>
+		interface EventTargetEntity extends SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventTargetSchema> {}
 
 	}
 
@@ -132,7 +132,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			    }
 		}
 
-		type EventSourceEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema>
+		interface EventSourceEntity extends SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema> {}
 
 	}
 
@@ -169,7 +169,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			    }
 		}
 
-		type EventPagingResponseEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingResponseSchema>
+		interface EventPagingResponseEntity extends SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingResponseSchema> {}
 
 	}
 
@@ -207,7 +207,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			    }
 		}
 
-		type EventPagingSortEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSortSchema>
+		interface EventPagingSortEntity extends SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSortSchema> {}
 
 	}
 
@@ -259,7 +259,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			    }
 		}
 
-		type EventPagingRequestEntity = SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingRequestSchema>
+		interface EventPagingRequestEntity extends SchemaEntity<SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingRequestSchema> {}
 
 	}
 
