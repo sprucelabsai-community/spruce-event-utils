@@ -64,7 +64,7 @@
     "@sprucelabs/mercury-types": "^35.0.71",
     "@sprucelabs/schema": "^28.4.2",
     "@sprucelabs/spruce-core-schemas": "^34.2.29",
-    "@sprucelabs/spruce-skill-utils": "^26.4.0",
+    "@sprucelabs/spruce-skill-utils": "^26.4.1",
     "@sprucelabs/test": "^7.7.340",
     "@sprucelabs/test-utils": "^3.1.43"
   },
