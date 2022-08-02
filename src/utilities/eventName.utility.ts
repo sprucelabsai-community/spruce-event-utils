@@ -1,32 +1,40 @@
 import { EVENT_VERSION_DIVIDER } from '../constants'
 
+const splitCache: Record<string, SplitEventName> = {}
+
+interface SplitEventName {
+	eventName: string
+	eventNamespace?: string
+	version?: string
+}
+
 const eventNameUtil = {
-	split(name: string): {
-		eventName: string
-		eventNamespace?: string
-		version?: string
-	} {
-		const versionParts = name.split('::')
-		const fullyQualifiedEventName = versionParts[0]
-		const version = versionParts[1]
+	split(name: string): SplitEventName {
+		if (!splitCache[name]) {
+			const versionParts = name.split('::')
+			const fullyQualifiedEventName = versionParts[0]
+			const version = versionParts[1]
 
-		const parts = fullyQualifiedEventName.split('.')
-		const eventNamespace = parts[1] ? parts[0] : undefined
-		const eventName = parts[1] || parts[0]
+			const parts = fullyQualifiedEventName.split('.')
+			const eventNamespace = parts[1] ? parts[0] : undefined
+			const eventName = parts[1] || parts[0]
 
-		const e: any = {
-			eventName,
+			const e: any = {
+				eventName,
+			}
+
+			if (eventNamespace) {
+				e.eventNamespace = eventNamespace
+			}
+
+			if (version) {
+				e.version = version
+			}
+
+			splitCache[name] = e
 		}
 
-		if (eventNamespace) {
-			e.eventNamespace = eventNamespace
-		}
-
-		if (version) {
-			e.version = version
-		}
-
-		return e
+		return splitCache[name]
 	},
 
 	join(options: {
