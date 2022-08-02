@@ -1,5 +1,4 @@
 import { EventContract, EventNames } from '@sprucelabs/mercury-types'
-import memoize from 'memoizee'
 import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
 import { NamedEventSignature } from '../types/event.types'
@@ -146,7 +145,7 @@ function getEventNames(
 	return names
 }
 
-const getNamedEventSignatures = memoize((contract: EventContract) => {
+const getNamedEventSignatures = (contract: EventContract) => {
 	const names = getEventNames(contract)
 
 	const sigs = names.map((name) => {
@@ -161,4 +160,4 @@ const getNamedEventSignatures = memoize((contract: EventContract) => {
 	})
 
 	return sigs
-})
+}

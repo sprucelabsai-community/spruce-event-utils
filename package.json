@@ -66,8 +66,7 @@
     "@sprucelabs/spruce-core-schemas": "^34.2.29",
     "@sprucelabs/spruce-skill-utils": "^26.4.1",
     "@sprucelabs/test": "^7.7.340",
-    "@sprucelabs/test-utils": "^3.1.43",
-    "memoizee": "^0.4.15"
+    "@sprucelabs/test-utils": "^3.1.43"
   },
   "devDependencies": {
     "@sprucelabs/esm-postbuild": "^1.0.538",
