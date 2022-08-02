@@ -1,5 +1,6 @@
+import { buildEventContract } from '@sprucelabs/mercury-types'
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import { errorAssertUtil } from '@sprucelabs/test-utils'
+import { errorAssertUtil, generateId } from '@sprucelabs/test-utils'
 import eventContractUtil from '../../utilities/eventContract.utility'
 
 export default class EventContractUtilityTest extends AbstractSpruceTest {
@@ -167,5 +168,21 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 			'appointments.book-appointment::v1',
 			'appointments.cancel-appointment::v1',
 		])
+	}
+
+	@test()
+	protected static getNamedEventSignaturesGoesFast() {
+		const contract = buildEventContract({
+			eventSignatures: {},
+		})
+
+		new Array(2000).fill(0).forEach(() => {
+			//@ts-ignore
+			contract.eventSignatures[generateId()] = { isGlobal: true }
+		})
+
+		new Array(1000).fill(0).forEach(() => {
+			eventContractUtil.getNamedEventSignatures(contract)
+		})
 	}
 }

@@ -1,4 +1,5 @@
 import { EventContract, EventNames } from '@sprucelabs/mercury-types'
+import memoize from 'memoizee'
 import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
 import { NamedEventSignature } from '../types/event.types'
@@ -6,30 +7,12 @@ import eventNameUtil from './eventName.utility'
 
 const eventContractUtil = {
 	getEventNames(contract: EventContract, namespace?: string) {
-		let names = Object.keys(contract.eventSignatures)
-
-		if (namespace) {
-			names = names.filter(
-				(n) => eventNameUtil.split(n).eventNamespace === namespace
-			)
-		}
-
+		const names = getEventNames(contract, namespace)
 		return names
 	},
 
 	getNamedEventSignatures(contract: EventContract): NamedEventSignature[] {
-		const names = this.getEventNames(contract)
-
-		return names.map((name) => {
-			const nameParts = eventNameUtil.split(name)
-			return {
-				fullyQualifiedEventName: name,
-				eventName: nameParts.eventName,
-				eventNamespace: nameParts.eventNamespace,
-				signature: contract.eventSignatures[name],
-				version: nameParts.version,
-			} as NamedEventSignature
-		})
+		return getNamedEventSignatures(contract)
 	},
 
 	unifyContracts<Contract extends EventContract = EventContract>(
@@ -148,3 +131,34 @@ const eventContractUtil = {
 }
 
 export default eventContractUtil
+
+function getEventNames(
+	contract: EventContract,
+	namespace?: string | undefined
+) {
+	let names = Object.keys(contract.eventSignatures)
+
+	if (namespace) {
+		names = names.filter(
+			(n) => eventNameUtil.split(n).eventNamespace === namespace
+		)
+	}
+	return names
+}
+
+const getNamedEventSignatures = memoize((contract: EventContract) => {
+	const names = getEventNames(contract)
+
+	const sigs = names.map((name) => {
+		const nameParts = eventNameUtil.split(name)
+		return {
+			fullyQualifiedEventName: name,
+			eventName: nameParts.eventName,
+			eventNamespace: nameParts.eventNamespace,
+			signature: contract.eventSignatures[name],
+			version: nameParts.version,
+		} as NamedEventSignature
+	})
+
+	return sigs
+})
