@@ -53,10 +53,7 @@ const eventContractUtil = {
 		contract: Contract,
 		fullyQualifiedEventName: string
 	) {
-		const sigs = this.getNamedEventSignatures(contract)
-		let match = sigs.find(
-			(event) => event.fullyQualifiedEventName === fullyQualifiedEventName
-		)
+		let match = getNamedSignature(fullyQualifiedEventName, contract)
 
 		if (match) {
 			return fullyQualifiedEventName
@@ -88,9 +85,7 @@ const eventContractUtil = {
 
 		const latestVersion = matchesOnVersion.pop()
 
-		match = sigs.find(
-			(event) => event.fullyQualifiedEventName === latestVersion
-		)
+		match = getNamedSignature(latestVersion!, contract)
 
 		if (match) {
 			return latestVersion
@@ -107,15 +102,11 @@ const eventContractUtil = {
 		contract: Contract,
 		fullyQualifiedEventName: EventNames<Contract>
 	) {
-		const sigs = this.getNamedEventSignatures(contract)
 		const resolvedName = this.resolveToLatestEventName(
 			contract,
 			fullyQualifiedEventName
 		)
-
-		let match = sigs.find(
-			(event) => event.fullyQualifiedEventName === resolvedName
-		)
+		let match = getNamedSignature(resolvedName!, contract)
 
 		if (!match) {
 			throw new SpruceError({
@@ -149,15 +140,21 @@ const getNamedEventSignatures = (contract: EventContract) => {
 	const names = getEventNames(contract)
 
 	const sigs = names.map((name) => {
-		const nameParts = eventNameUtil.split(name)
-		return {
-			fullyQualifiedEventName: name,
-			eventName: nameParts.eventName,
-			eventNamespace: nameParts.eventNamespace,
-			signature: contract.eventSignatures[name],
-			version: nameParts.version,
-		} as NamedEventSignature
+		return getNamedSignature(name, contract)!
 	})
 
 	return sigs
+}
+function getNamedSignature(name: string, contract: EventContract) {
+	if (!contract.eventSignatures[name]) {
+		return undefined
+	}
+	const nameParts = eventNameUtil.split(name)
+	return {
+		fullyQualifiedEventName: name,
+		eventName: nameParts.eventName,
+		eventNamespace: nameParts.eventNamespace,
+		signature: contract.eventSignatures[name],
+		version: nameParts.version,
+	} as NamedEventSignature
 }
