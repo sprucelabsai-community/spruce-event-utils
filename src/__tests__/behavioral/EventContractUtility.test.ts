@@ -1,6 +1,6 @@
 import { buildEventContract } from '@sprucelabs/mercury-types'
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import { errorAssertUtil, generateId } from '@sprucelabs/test-utils'
+import { errorAssert, generateId } from '@sprucelabs/test-utils'
 import eventContractUtil from '../../utilities/eventContract.utility'
 
 export default class EventContractUtilityTest extends AbstractSpruceTest {
@@ -124,7 +124,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 			])
 		)
 
-		errorAssertUtil.assertError(err, 'DUPLICATE_EVENT', {
+		errorAssert.assertError(err, 'DUPLICATE_EVENT', {
 			fullyQualifiedEventName: 'good-event::1',
 		})
 	}
@@ -145,7 +145,7 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
 			])
 		)
 
-		errorAssertUtil.assertError(err, 'DUPLICATE_EVENT', {
+		errorAssert.assertError(err, 'DUPLICATE_EVENT', {
 			fullyQualifiedEventName: 'good-event::3',
 		})
 	}

@@ -1,6 +1,6 @@
 import { EnvService } from '@sprucelabs/spruce-skill-utils'
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import { errorAssertUtil } from '@sprucelabs/test-utils'
+import { errorAssert } from '@sprucelabs/test-utils'
 import { REMOTE_LOCAL } from '../../constants'
 import RemoteService from '../../services/RemoteService'
 
@@ -25,7 +25,7 @@ export default class RemoteServiceTest extends AbstractSpruceTest {
 		const env = new TestEnv(host)
 		const remote = new RemoteService(env)
 		const err = assert.doesThrow(() => remote.getRemote())
-		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
+		errorAssert.assertError(err, 'INVALID_PARAMETERS', {
 			parameters: ['env.HOST'],
 		})
 	}
@@ -45,7 +45,7 @@ export default class RemoteServiceTest extends AbstractSpruceTest {
 
 		//@ts-ignore
 		const err = assert.doesThrow(() => remote.set(`${Math.random() * 10}`))
-		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
+		errorAssert.assertError(err, 'INVALID_PARAMETERS', {
 			parameters: ['remote'],
 		})
 	}

@@ -1,7 +1,7 @@
 import AbstractSpruceError from '@sprucelabs/error'
 import { MercuryAggregateResponse } from '@sprucelabs/mercury-types'
 import { assert, assertUtil } from '@sprucelabs/test'
-import { errorAssertUtil } from '@sprucelabs/test-utils'
+import { errorAssert } from '@sprucelabs/test-utils'
 import eventResponseUtil from '../../utilities/eventResponse.utility'
 
 const eventAssertUtil = {
@@ -10,7 +10,7 @@ const eventAssertUtil = {
 		expectedCode: string,
 		expectedPartialOptions?: Record<string, any> | undefined
 	) {
-		errorAssertUtil.assertError(error, 'MERCURY_RESPONSE_ERROR')
+		errorAssert.assertError(error, 'MERCURY_RESPONSE_ERROR')
 		if ((error as any)?.options?.responseErrors?.length > 1) {
 			assert.fail(
 				`Mercury response has more than 1 error and I was expecting only 1.\n\nReceived:\n\n${assertUtil.stringify(
@@ -19,7 +19,7 @@ const eventAssertUtil = {
 			)
 		}
 
-		errorAssertUtil.assertError(
+		errorAssert.assertError(
 			(error as any).options.responseErrors[0],
 			expectedCode,
 			expectedPartialOptions
@@ -33,11 +33,11 @@ const eventAssertUtil = {
 		expectedCode: string,
 		expectedPartialOptions?: Record<string, any> | undefined
 	) {
-		errorAssertUtil.assertError(error, 'MERCURY_RESPONSE_ERROR')
+		errorAssert.assertError(error, 'MERCURY_RESPONSE_ERROR')
 		const codes: string[] = []
 		for (const err of (error as any).options.responseErrors) {
 			if (err.options.code === expectedCode) {
-				errorAssertUtil.assertError(err, expectedCode, expectedPartialOptions)
+				errorAssert.assertError(err, expectedCode, expectedPartialOptions)
 				return
 			}
 			codes.push(err.options.code)
