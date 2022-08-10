@@ -1,5 +1,5 @@
 import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import { errorAssertUtil } from '@sprucelabs/test-utils'
+import { errorAssert } from '@sprucelabs/test-utils'
 import { REMOTES } from '../../constants'
 import heartwoodRemoteUtil, {
 	HEARTWOOD_REMOTES,
@@ -17,7 +17,7 @@ export default class HeartwoodRemoteUtilTest extends AbstractSpruceTest {
 			//@ts-ignore
 			heartwoodRemoteUtil.buildUrl('aoeuaoeu')
 		)
-		errorAssertUtil.assertError(err, 'INVALID_PARAMETERS', {
+		errorAssert.assertError(err, 'INVALID_PARAMETERS', {
 			parameters: ['remote'],
 		})
 	}

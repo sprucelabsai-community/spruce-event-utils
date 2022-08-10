@@ -5,6 +5,7 @@ export const REMOTE_DEV = 'https://developer.mercury.spruce.ai'
 export const REMOTE_DEMO = 'https://demo.mercury.spruce.ai'
 export const REMOTE_HEARTWOOD_TEST = 'https://heartwood.mercury.spruce.ai'
 export const REMOTE_SANDBOX = 'https://sandbox.mercury.spruce.ai'
+export const REMOTE_POLISH = 'https://polish.mercury.spruce.ai'
 export const REMOTE_PROD = 'https://mercury.spruce.ai'
 
 export const REMOTES = {
@@ -12,6 +13,7 @@ export const REMOTES = {
 	developer: REMOTE_DEV,
 	demo: REMOTE_DEMO,
 	sandbox: REMOTE_SANDBOX,
+	polish: REMOTE_POLISH,
 	production: REMOTE_PROD,
 	heartwood_test: REMOTE_HEARTWOOD_TEST,
 }
