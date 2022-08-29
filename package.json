@@ -17,8 +17,7 @@
   "skill": {
     "namespace": "spruceEventUtils",
     "upgradeIgnoreList": [
-      "@sprucelabs/spruce-test-fixtures",
-      "typescript"
+      "@sprucelabs/spruce-test-fixtures"
     ]
   },
   "description": "Some helpful utilities to speed up working with Mercury! 🚅",
