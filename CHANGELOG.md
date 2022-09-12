@@ -1,3 +1,19 @@
+## [27.0.170](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.169...v27.0.170) (2022-09-12)
+
+## [27.0.169](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.168...v27.0.169) (2022-09-12)
+
+## [27.0.168](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.167...v27.0.168) (2022-09-11)
+
+## [27.0.167](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.166...v27.0.167) (2022-09-11)
+
+## [27.0.166](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.165...v27.0.166) (2022-09-11)
+
+## [27.0.165](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.164...v27.0.165) (2022-09-10)
+
+## [27.0.164](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.163...v27.0.164) (2022-09-10)
+
+## [27.0.163](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.162...v27.0.163) (2022-09-08)
+
 ## [27.0.162](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.161...v27.0.162) (2022-09-08)
 
 ## [27.0.161](https://github.com/sprucelabsai/spruce-event-utils/compare/v27.0.160...v27.0.161) (2022-09-07)
