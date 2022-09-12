@@ -1,5 +1,5 @@
 import { SchemaError } from '@sprucelabs/schema'
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import AbstractSpruceTest, { test, assert } from '@sprucelabs/test-utils'
 import SpruceError from '../../errors/SpruceError'
 
 export default class SpruceErrorTest extends AbstractSpruceTest {

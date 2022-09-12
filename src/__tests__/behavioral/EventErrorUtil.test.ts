@@ -1,4 +1,4 @@
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import AbstractSpruceTest, { test, assert } from '@sprucelabs/test-utils'
 import SpruceError from '../../errors/SpruceError'
 import eventAssertUtil from '../../tests/utilities/eventErrorAssert.utility'
 import eventResponseUtil from '../../utilities/eventResponse.utility'

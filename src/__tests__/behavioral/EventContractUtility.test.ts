@@ -1,6 +1,10 @@
 import { buildEventContract } from '@sprucelabs/mercury-types'
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import { errorAssert, generateId } from '@sprucelabs/test-utils'
+import AbstractSpruceTest, {
+	assert,
+	errorAssert,
+	generateId,
+	test,
+} from '@sprucelabs/test-utils'
 import eventContractUtil from '../../utilities/eventContract.utility'
 
 export default class EventContractUtilityTest extends AbstractSpruceTest {

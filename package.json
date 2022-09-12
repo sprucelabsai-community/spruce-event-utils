@@ -65,7 +65,6 @@
     "@sprucelabs/schema": "^28.4.37",
     "@sprucelabs/spruce-core-schemas": "^34.2.89",
     "@sprucelabs/spruce-skill-utils": "^26.4.65",
-    "@sprucelabs/test": "^7.7.354",
     "@sprucelabs/test-utils": "^3.1.76"
   },
   "devDependencies": {

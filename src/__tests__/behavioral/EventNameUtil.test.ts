@@ -1,4 +1,4 @@
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import AbstractSpruceTest, { test, assert } from '@sprucelabs/test-utils'
 import eventNameUtil from '../../utilities/eventName.utility'
 
 export default class EventNameUtil extends AbstractSpruceTest {

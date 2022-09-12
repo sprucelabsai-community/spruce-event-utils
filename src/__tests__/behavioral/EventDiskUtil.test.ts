@@ -1,4 +1,4 @@
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import AbstractSpruceTest, { test, assert } from '@sprucelabs/test-utils'
 import eventDiskUtil from '../../utilities/eventDisk.utility'
 
 export default class EventDiskUtilTest extends AbstractSpruceTest {

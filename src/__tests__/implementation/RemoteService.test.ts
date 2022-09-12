@@ -1,6 +1,9 @@
 import { EnvService } from '@sprucelabs/spruce-skill-utils'
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
-import { errorAssert } from '@sprucelabs/test-utils'
+import AbstractSpruceTest, {
+	assert,
+	errorAssert,
+	test,
+} from '@sprucelabs/test-utils'
 import { REMOTE_LOCAL } from '../../constants'
 import RemoteService from '../../services/RemoteService'
 

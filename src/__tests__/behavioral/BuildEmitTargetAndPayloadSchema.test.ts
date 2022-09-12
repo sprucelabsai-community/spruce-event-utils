@@ -1,5 +1,5 @@
 import { buildSchema, SchemaRegistry, SchemaValues } from '@sprucelabs/schema'
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test'
+import AbstractSpruceTest, { test, assert } from '@sprucelabs/test-utils'
 import buildEmitTargetPayloadSchema from '../../utilities/buildEmitTargetAndPayloadSchema'
 
 export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceTest {
