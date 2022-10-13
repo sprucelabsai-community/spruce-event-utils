@@ -34,6 +34,7 @@ export interface EventFeatureListener {
 	eventNamespace: string
 	version: string
 	callback(event: SpruceEvent): Promise<void>
+	isGlobal?: boolean
 }
 
 export interface EventFeatureEvent {

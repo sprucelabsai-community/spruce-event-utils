@@ -7,18 +7,6 @@ import AbstractSpruceTest, {
 import { REMOTE_LOCAL } from '../../constants'
 import RemoteService from '../../services/RemoteService'
 
-class TestEnv extends EnvService {
-	private host: string | undefined
-	public constructor(host: string | undefined) {
-		super('')
-		this.host = host
-	}
-	public set(_name: string, _value: any) {}
-	public get(_name: string) {
-		return this.host
-	}
-}
-
 export default class RemoteServiceTest extends AbstractSpruceTest {
 	@test('fails with bad 1', 'aoeuaou')
 	@test('fails with bad 2', 1)
@@ -58,5 +46,17 @@ export default class RemoteServiceTest extends AbstractSpruceTest {
 		const env = new TestEnv(REMOTE_LOCAL + '/')
 		const remote = new RemoteService(env)
 		assert.isEqual(remote.getRemote(), 'local')
+	}
+}
+
+class TestEnv extends EnvService {
+	private host: string | undefined
+	public constructor(host: string | undefined) {
+		super('')
+		this.host = host
+	}
+	public set(_name: string, _value: any) {}
+	public get(_name: string) {
+		return this.host
 	}
 }
