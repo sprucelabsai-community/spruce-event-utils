@@ -1,3 +1,10 @@
+# [29.1.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.0.3...v29.1.0) (2022-10-13)
+
+
+### Features
+
+* isGlobal flag on event feature listener ([6fba458](https://github.com/sprucelabsai/spruce-event-utils/commit/6fba458))
+
 ## [29.0.3](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.0.2...v29.0.3) (2022-10-12)
 
 ## [29.0.2](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.0.1...v29.0.2) (2022-10-12)
