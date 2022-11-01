@@ -1,3 +1,5 @@
+## [29.1.32](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.1.31...v29.1.32) (2022-11-01)
+
 ## [29.1.31](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.1.30...v29.1.31) (2022-11-01)
 
 ## [29.1.30](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.1.29...v29.1.30) (2022-11-01)
