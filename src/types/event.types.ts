@@ -74,3 +74,7 @@ declare module '@sprucelabs/spruce-skill-utils/build/types/skill.types' {
 		event?: EventHealthCheckItem
 	}
 }
+
+export interface PermissionContractMap {
+	[contractName: string]: string[]
+}
