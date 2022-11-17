@@ -1,3 +1,10 @@
+# [29.2.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.1.61...v29.2.0) (2022-11-17)
+
+
+### Features
+
+* permission contract map ([f96088e](https://github.com/sprucelabsai/spruce-event-utils/commit/f96088e))
+
 ## [29.1.61](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.1.60...v29.1.61) (2022-11-17)
 
 ## [29.1.60](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.1.59...v29.1.60) (2022-11-16)
