@@ -3,7 +3,7 @@ import AbstractSpruceTest, {
 	errorAssert,
 	test,
 } from '@sprucelabs/test-utils'
-import { REMOTES } from '../../constants'
+import { Remote, REMOTES } from '../../constants'
 import heartwoodRemoteUtil, {
 	HEARTWOOD_REMOTES,
 } from '../../utilities/heartwoodRemote.utility'
@@ -35,7 +35,7 @@ export default class HeartwoodRemoteUtilTest extends AbstractSpruceTest {
 				`HEARTWOOD_REMOTES does not have an entry for ${env}!`
 			)
 
-			const actual = heartwoodRemoteUtil.buildUrl(env as any)
+			const actual = heartwoodRemoteUtil.buildUrl(env as Remote)
 			assert.isEqual(actual, expected)
 		}
 	}
