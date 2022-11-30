@@ -1,4 +1,9 @@
-import AbstractSpruceTest, { test, assert } from '@sprucelabs/test-utils'
+import { diskUtil } from '@sprucelabs/spruce-skill-utils'
+import AbstractSpruceTest, {
+	test,
+	assert,
+	errorAssert,
+} from '@sprucelabs/test-utils'
 import eventDiskUtil from '../../utilities/eventDisk.utility'
 
 export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
@@ -211,5 +216,14 @@ export default class SplittingPathsIntoEventTest extends AbstractSpruceTest {
 		)
 
 		assert.isEqual(eventDiskUtil.resolveEventPath(this.cwd, e), expected)
+	}
+
+	@test()
+	protected static async throwsExpectedWhenMissingCombinedPath() {
+		const err = assert.doesThrow(() =>
+			eventDiskUtil.resolveCombinedEventsContractFile('/aoeu')
+		)
+
+		errorAssert.assertError(err, 'EVENT_CONTRACTS_NOT_SYNCED')
 	}
 }

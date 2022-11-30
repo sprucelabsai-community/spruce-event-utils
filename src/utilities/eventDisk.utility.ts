@@ -1,6 +1,7 @@
 import pathUtil from 'path'
 import { assertOptions } from '@sprucelabs/schema'
 import { diskUtil } from '@sprucelabs/spruce-skill-utils'
+import SpruceError from '../errors/SpruceError'
 import eventNameUtil from './eventName.utility'
 
 interface Event {
@@ -101,7 +102,15 @@ const eventDiskUtil = {
 	},
 
 	resolveCombinedEventsContractFile(cwd: string) {
-		return diskUtil.resolveFileInHashSpruceDir(cwd, 'events', 'events.contract')
+		try {
+			return diskUtil.resolveFileInHashSpruceDir(
+				cwd,
+				'events',
+				'events.contract'
+			)
+		} catch {
+			throw new SpruceError({ code: 'EVENT_CONTRACTS_NOT_SYNCED' })
+		}
 	},
 }
 
