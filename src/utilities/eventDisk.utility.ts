@@ -1,7 +1,6 @@
 import pathUtil from 'path'
 import { assertOptions } from '@sprucelabs/schema'
-import { diskUtil, HASH_SPRUCE_DIR_NAME } from '@sprucelabs/spruce-skill-utils'
-import SpruceError from '../errors/SpruceError'
+import { diskUtil } from '@sprucelabs/spruce-skill-utils'
 import eventNameUtil from './eventName.utility'
 
 interface Event {
