@@ -102,24 +102,7 @@ const eventDiskUtil = {
 	},
 
 	resolveCombinedEventsContractFile(cwd: string) {
-		const dirs = ['build', 'src']
-		const ext = ['js', 'ts']
-
-		for (let i = 0; i < dirs.length; i++) {
-			const combinedContractsFile = diskUtil.resolvePath(
-				cwd,
-				dirs[i],
-				HASH_SPRUCE_DIR_NAME,
-				'events',
-				`events.contract.${ext[i]}`
-			)
-
-			if (diskUtil.doesFileExist(combinedContractsFile)) {
-				return combinedContractsFile
-			}
-		}
-
-		throw new SpruceError({ code: 'EVENT_CONTRACTS_NOT_SYNCED' })
+		return diskUtil.resolveFileInHashSpruceDir(cwd, 'events', 'events.contract')
 	},
 }
 
