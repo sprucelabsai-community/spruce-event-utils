@@ -1,4 +1,3 @@
-import { diskUtil } from '@sprucelabs/spruce-skill-utils'
 import AbstractSpruceTest, {
 	test,
 	assert,
