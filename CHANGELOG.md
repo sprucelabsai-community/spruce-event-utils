@@ -1,3 +1,10 @@
+# [30.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.2.27...v30.0.0) (2022-12-01)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([b24472e](https://github.com/sprucelabsai/spruce-event-utils/commit/b24472e))
+
 ## [29.2.27](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.2.26...v29.2.27) (2022-12-01)
 
 ## [29.2.26](https://github.com/sprucelabsai/spruce-event-utils/compare/v29.2.25...v29.2.26) (2022-12-01)
