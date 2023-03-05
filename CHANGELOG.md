@@ -1,3 +1,10 @@
+# [33.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v32.0.0...v33.0.0) (2023-03-05)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([03aed29](https://github.com/sprucelabsai/spruce-event-utils/commit/03aed29))
+
 # [32.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v31.0.0...v32.0.0) (2023-03-05)
 
 
