@@ -1,3 +1,10 @@
+# [32.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v31.0.0...v32.0.0) (2023-03-05)
+
+
+### Breaking Changes
+
+* upgrade ([1129de2](https://github.com/sprucelabsai/spruce-event-utils/commit/1129de2))
+
 # [31.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v30.0.152...v31.0.0) (2023-03-05)
 
 
