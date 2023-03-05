@@ -1,3 +1,10 @@
+# [34.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v33.0.0...v34.0.0) (2023-03-05)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([9311ab1](https://github.com/sprucelabsai/spruce-event-utils/commit/9311ab1))
+
 # [33.0.0](https://github.com/sprucelabsai/spruce-event-utils/compare/v32.0.0...v33.0.0) (2023-03-05)
 
 
