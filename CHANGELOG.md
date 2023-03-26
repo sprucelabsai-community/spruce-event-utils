@@ -1,3 +1,5 @@
+## [34.0.38](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.37...v34.0.38) (2023-03-26)
+
 ## [34.0.37](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.36...v34.0.37) (2023-03-24)
 
 ## [34.0.36](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.35...v34.0.36) (2023-03-24)
