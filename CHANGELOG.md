@@ -1,3 +1,10 @@
+# [35.0.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.39...v35.0.0) (2023-03-27)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([48a3b81](https://github.com/sprucelabsai-community/spruce-event-utils/commit/48a3b81))
+
 ## [34.0.39](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.38...v34.0.39) (2023-03-27)
 
 ## [34.0.38](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.37...v34.0.38) (2023-03-26)
