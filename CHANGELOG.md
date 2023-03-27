@@ -1,3 +1,10 @@
+# [36.0.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v35.0.0...v36.0.0) (2023-03-27)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([ddb2da7](https://github.com/sprucelabsai-community/spruce-event-utils/commit/ddb2da7))
+
 # [35.0.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v34.0.39...v35.0.0) (2023-03-27)
 
 
