@@ -26,7 +26,7 @@ const eventResponseUtil = {
 			| MercuryAggregateResponseWithoutErrorInstances,
 		T extends {
 			prototype: any
-		}
+		},
 	>(results: R, ClassRef: T): MercuryAggregateResponse<any> {
 		results.responses = (
 			results as MercuryAggregateResponseWithoutErrorInstances
@@ -43,7 +43,7 @@ const eventResponseUtil = {
 		R extends MercurySingleResponse<any>,
 		T extends {
 			prototype: any
-		}
+		},
 	>(response: R, ClassRef: T): R {
 		if (response.errors) {
 			response.errors = response.errors.map((err) => mapError<T>(err, ClassRef))
@@ -82,7 +82,7 @@ const eventResponseUtil = {
 
 	getAllResponsePayloadsAndErrors<
 		R extends MercuryAggregateResponse<any>,
-		T extends new (...args: any) => any
+		T extends new (...args: any) => any,
 	>(emitResponse: R, ClassRef: T) {
 		type Payload = R['responses'][number]['payload']
 
@@ -127,7 +127,7 @@ export default eventResponseUtil
 function mapError<
 	T extends {
 		prototype: any
-	}
+	},
 >(err: AbstractSpruceError<any>, ClassRef: T): T['prototype'] {
 	const spruceErr = AbstractSpruceError.parse(err, ClassRef)
 
