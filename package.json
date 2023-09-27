@@ -73,7 +73,7 @@
     "@sprucelabs/resolve-path-aliases": "^1.1.247",
     "@sprucelabs/semantic-release": "^4.0.8",
     "@sprucelabs/test": "^8.0.17",
-    "@types/memoizee": "^0.4.8",
+    "@types/memoizee": "^0.4.9",
     "@types/node": "^20.7.0",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^8.2.1",
