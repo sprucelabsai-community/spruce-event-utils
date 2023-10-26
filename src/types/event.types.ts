@@ -39,7 +39,7 @@ type OptionalPayload<EmitPayload extends Record<string, any> | undefined> =
 
 export type SpruceEvent<
 	Contract extends SkillEventContract | undefined = undefined,
-	EmitPayload extends Record<string, any> | undefined = undefined
+	EmitPayload extends Record<string, any> | undefined = undefined,
 > = {
 	skill: Skill
 	log: Log

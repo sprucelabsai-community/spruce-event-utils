@@ -12,7 +12,7 @@ export type EventSource = SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource
 
 export type TargetAndPayload<
 	TargetSchema extends Schema | undefined,
-	PayloadSchema extends Schema | undefined
+	PayloadSchema extends Schema | undefined,
 > = {
 	id: string
 	fields: Omit<
@@ -46,7 +46,7 @@ export type TargetAndPayload<
 
 function buildEmitTargetAndPayloadSchema<
 	Payload extends Schema,
-	Target extends Schema
+	Target extends Schema,
 >(options: {
 	eventName: string
 	payloadSchema?: Payload

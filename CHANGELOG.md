@@ -1,3 +1,252 @@
+## [38.0.121](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.120...v38.0.121) (2023-10-26)
+
+## [38.0.120](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.119...v38.0.120) (2023-10-26)
+
+## [38.0.119](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.118...v38.0.119) (2023-10-25)
+
+## [38.0.118](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.117...v38.0.118) (2023-10-24)
+
+## [38.0.117](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.116...v38.0.117) (2023-10-24)
+
+## [38.0.116](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.115...v38.0.116) (2023-10-24)
+
+## [38.0.115](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.114...v38.0.115) (2023-10-22)
+
+## [38.0.114](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.113...v38.0.114) (2023-10-21)
+
+## [38.0.113](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.112...v38.0.113) (2023-10-21)
+
+## [38.0.112](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.111...v38.0.112) (2023-10-19)
+
+## [38.0.111](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.110...v38.0.111) (2023-10-19)
+
+## [38.0.110](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.109...v38.0.110) (2023-10-18)
+
+## [38.0.109](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.108...v38.0.109) (2023-10-18)
+
+## [38.0.108](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.107...v38.0.108) (2023-10-18)
+
+## [38.0.107](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.106...v38.0.107) (2023-10-18)
+
+## [38.0.106](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.105...v38.0.106) (2023-10-18)
+
+## [38.0.105](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.104...v38.0.105) (2023-10-18)
+
+## [38.0.104](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.103...v38.0.104) (2023-10-14)
+
+## [38.0.103](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.102...v38.0.103) (2023-10-14)
+
+## [38.0.102](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.101...v38.0.102) (2023-10-03)
+
+## [38.0.101](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.100...v38.0.101) (2023-10-03)
+
+## [38.0.100](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.99...v38.0.100) (2023-09-30)
+
+## [38.0.99](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.98...v38.0.99) (2023-09-30)
+
+## [38.0.98](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.97...v38.0.98) (2023-09-30)
+
+## [38.0.97](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.96...v38.0.97) (2023-09-29)
+
+## [38.0.96](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.95...v38.0.96) (2023-09-28)
+
+## [38.0.95](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.94...v38.0.95) (2023-09-28)
+
+## [38.0.94](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.93...v38.0.94) (2023-09-28)
+
+## [38.0.93](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.92...v38.0.93) (2023-09-27)
+
+## [38.0.92](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.91...v38.0.92) (2023-09-26)
+
+## [38.0.91](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.90...v38.0.91) (2023-09-25)
+
+## [38.0.90](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.89...v38.0.90) (2023-09-25)
+
+## [38.0.89](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.88...v38.0.89) (2023-09-25)
+
+## [38.0.88](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.87...v38.0.88) (2023-09-24)
+
+## [38.0.87](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.86...v38.0.87) (2023-09-23)
+
+## [38.0.86](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.85...v38.0.86) (2023-09-23)
+
+## [38.0.85](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.84...v38.0.85) (2023-09-23)
+
+## [38.0.84](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.83...v38.0.84) (2023-09-23)
+
+## [38.0.83](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.82...v38.0.83) (2023-09-20)
+
+## [38.0.82](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.81...v38.0.82) (2023-09-20)
+
+## [38.0.81](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.80...v38.0.81) (2023-09-16)
+
+## [38.0.80](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.79...v38.0.80) (2023-09-16)
+
+## [38.0.79](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.78...v38.0.79) (2023-09-16)
+
+## [38.0.78](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.77...v38.0.78) (2023-09-16)
+
+## [38.0.77](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.76...v38.0.77) (2023-09-15)
+
+## [38.0.76](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.75...v38.0.76) (2023-09-15)
+
+## [38.0.75](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.74...v38.0.75) (2023-09-15)
+
+## [38.0.74](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.73...v38.0.74) (2023-09-15)
+
+## [38.0.73](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.72...v38.0.73) (2023-09-14)
+
+## [38.0.72](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.71...v38.0.72) (2023-09-14)
+
+## [38.0.71](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.70...v38.0.71) (2023-09-12)
+
+## [38.0.70](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.69...v38.0.70) (2023-09-12)
+
+## [38.0.69](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.68...v38.0.69) (2023-09-09)
+
+## [38.0.68](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.67...v38.0.68) (2023-09-09)
+
+## [38.0.67](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.66...v38.0.67) (2023-09-08)
+
+## [38.0.66](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.65...v38.0.66) (2023-09-06)
+
+## [38.0.65](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.64...v38.0.65) (2023-09-06)
+
+## [38.0.64](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.63...v38.0.64) (2023-09-06)
+
+## [38.0.63](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.62...v38.0.63) (2023-09-05)
+
+## [38.0.62](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.61...v38.0.62) (2023-09-03)
+
+## [38.0.61](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.60...v38.0.61) (2023-09-03)
+
+## [38.0.60](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.59...v38.0.60) (2023-09-02)
+
+## [38.0.59](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.58...v38.0.59) (2023-09-02)
+
+## [38.0.58](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.57...v38.0.58) (2023-09-01)
+
+## [38.0.57](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.56...v38.0.57) (2023-08-30)
+
+## [38.0.56](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.55...v38.0.56) (2023-08-30)
+
+## [38.0.55](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.54...v38.0.55) (2023-08-30)
+
+## [38.0.54](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.53...v38.0.54) (2023-08-24)
+
+## [38.0.53](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.52...v38.0.53) (2023-08-24)
+
+## [38.0.52](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.51...v38.0.52) (2023-08-24)
+
+## [38.0.51](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.50...v38.0.51) (2023-08-24)
+
+## [38.0.50](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.49...v38.0.50) (2023-08-23)
+
+## [38.0.49](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.48...v38.0.49) (2023-08-22)
+
+## [38.0.48](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.47...v38.0.48) (2023-08-22)
+
+## [38.0.47](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.46...v38.0.47) (2023-08-22)
+
+## [38.0.46](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.45...v38.0.46) (2023-08-22)
+
+## [38.0.45](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.44...v38.0.45) (2023-08-22)
+
+## [38.0.44](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.43...v38.0.44) (2023-08-22)
+
+## [38.0.43](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.42...v38.0.43) (2023-08-21)
+
+## [38.0.42](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.41...v38.0.42) (2023-08-21)
+
+## [38.0.41](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.40...v38.0.41) (2023-08-21)
+
+## [38.0.40](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.39...v38.0.40) (2023-08-21)
+
+## [38.0.39](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.38...v38.0.39) (2023-08-21)
+
+## [38.0.38](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.37...v38.0.38) (2023-08-14)
+
+## [38.0.37](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.36...v38.0.37) (2023-08-13)
+
+## [38.0.36](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.35...v38.0.36) (2023-08-13)
+
+## [38.0.35](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.34...v38.0.35) (2023-08-11)
+
+## [38.0.34](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.33...v38.0.34) (2023-08-11)
+
+## [38.0.33](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.32...v38.0.33) (2023-08-11)
+
+## [38.0.32](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.31...v38.0.32) (2023-08-10)
+
+## [38.0.31](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.30...v38.0.31) (2023-08-10)
+
+## [38.0.30](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.29...v38.0.30) (2023-08-09)
+
+## [38.0.29](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.28...v38.0.29) (2023-08-09)
+
+## [38.0.28](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.27...v38.0.28) (2023-08-08)
+
+## [38.0.27](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.26...v38.0.27) (2023-08-05)
+
+## [38.0.26](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.25...v38.0.26) (2023-08-05)
+
+## [38.0.25](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.24...v38.0.25) (2023-08-04)
+
+## [38.0.24](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.23...v38.0.24) (2023-08-04)
+
+## [38.0.23](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.22...v38.0.23) (2023-08-03)
+
+## [38.0.22](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.21...v38.0.22) (2023-07-28)
+
+## [38.0.21](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.20...v38.0.21) (2023-07-28)
+
+## [38.0.20](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.19...v38.0.20) (2023-07-28)
+
+## [38.0.19](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.18...v38.0.19) (2023-07-27)
+
+## [38.0.18](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.17...v38.0.18) (2023-07-27)
+
+## [38.0.17](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.16...v38.0.17) (2023-07-26)
+
+## [38.0.16](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.15...v38.0.16) (2023-07-26)
+
+## [38.0.15](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.14...v38.0.15) (2023-07-26)
+
+## [38.0.14](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.13...v38.0.14) (2023-07-25)
+
+## [38.0.13](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.12...v38.0.13) (2023-07-23)
+
+## [38.0.12](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.11...v38.0.12) (2023-07-23)
+
+## [38.0.11](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.10...v38.0.11) (2023-07-23)
+
+## [38.0.10](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.9...v38.0.10) (2023-07-15)
+
+## [38.0.9](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.8...v38.0.9) (2023-07-14)
+
+## [38.0.8](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.7...v38.0.8) (2023-07-13)
+
+## [38.0.7](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.6...v38.0.7) (2023-07-13)
+
+## [38.0.6](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.5...v38.0.6) (2023-07-11)
+
+## [38.0.5](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.4...v38.0.5) (2023-07-10)
+
+## [38.0.4](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.3...v38.0.4) (2023-07-10)
+
+## [38.0.3](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.2...v38.0.3) (2023-07-08)
+
+## [38.0.2](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.1...v38.0.2) (2023-07-08)
+
+## [38.0.1](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.0...v38.0.1) (2023-07-08)
+
+# [38.0.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v37.0.76...v38.0.0) (2023-07-08)
+
+
+### Breaking Changes
+
+* upgrade ([81d3c29](https://github.com/sprucelabsai-community/spruce-event-utils/commit/81d3c29))
+
 ## [37.0.76](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v37.0.75...v37.0.76) (2023-07-08)
 
 ## [37.0.75](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v37.0.74...v37.0.75) (2023-07-07)
