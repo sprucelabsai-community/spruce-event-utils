@@ -1,3 +1,10 @@
+# [38.1.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.303...v38.1.0) (2024-03-17)
+
+
+### Features
+
+* can handle local with other ports ([03cd817](https://github.com/sprucelabsai-community/spruce-event-utils/commit/03cd817))
+
 ## [38.0.303](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.302...v38.0.303) (2024-03-15)
 
 ## [38.0.302](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.0.301...v38.0.302) (2024-03-15)
