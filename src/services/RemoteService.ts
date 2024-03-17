@@ -40,6 +40,10 @@ export default class RemoteService {
 		const match = values.find((v) => host?.toString?.().indexOf?.(v[1]) > -1)
 
 		if (!match) {
+			if (host?.toString?.().startsWith?.('http://127.0.0.1')) {
+				return 'local'
+			}
+
 			throw new SchemaError({
 				code: 'INVALID_PARAMETERS',
 				friendlyMessage: `Mercury's env.HOST is set to '${host}', which I can't resolve to an environment.`,
