@@ -1,3 +1,10 @@
+# [39.0.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.1.42...v39.0.0) (2024-04-16)
+
+
+### Breaking Changes
+
+* upgrade ([304104e](https://github.com/sprucelabsai-community/spruce-event-utils/commit/304104e))
+
 ## [38.1.42](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.1.41...v38.1.42) (2024-04-05)
 
 ## [38.1.41](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v38.1.40...v38.1.41) (2024-04-04)
