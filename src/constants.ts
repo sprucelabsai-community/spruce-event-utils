@@ -9,13 +9,13 @@ export const REMOTE_POLISH = 'https://polish.mercury.spruce.ai'
 export const REMOTE_PROD = 'https://mercury.spruce.ai'
 
 export const REMOTES = {
-	local: REMOTE_LOCAL,
-	developer: REMOTE_DEV,
-	demo: REMOTE_DEMO,
-	sandbox: REMOTE_SANDBOX,
-	polish: REMOTE_POLISH,
-	production: REMOTE_PROD,
-	heartwood_test: REMOTE_HEARTWOOD_TEST,
+    local: REMOTE_LOCAL,
+    developer: REMOTE_DEV,
+    demo: REMOTE_DEMO,
+    sandbox: REMOTE_SANDBOX,
+    polish: REMOTE_POLISH,
+    production: REMOTE_PROD,
+    heartwood_test: REMOTE_HEARTWOOD_TEST,
 }
 
 export type Remote = keyof typeof REMOTES

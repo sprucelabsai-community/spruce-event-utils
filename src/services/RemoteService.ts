@@ -4,52 +4,54 @@ import { Remote, REMOTES } from '../constants'
 
 //extracted from cli, local testing going forward
 export default class RemoteService {
-	private env: EnvService
+    private env: EnvService
 
-	public constructor(env: EnvService) {
-		this.env = env
-	}
+    public constructor(env: EnvService) {
+        this.env = env
+    }
 
-	public set(remote: Remote) {
-		const host = REMOTES[remote]
-		if (!host) {
-			throw new SchemaError({
-				code: 'INVALID_PARAMETERS',
-				friendlyMessage: `${remote} is not a valid remote. Try:\n\n${Object.keys(
-					REMOTES
-				).join('\n')}`,
-				parameters: ['remote'],
-			})
-		}
-		this.env.set('HOST', host)
-	}
+    public set(remote: Remote) {
+        const host = REMOTES[remote]
+        if (!host) {
+            throw new SchemaError({
+                code: 'INVALID_PARAMETERS',
+                friendlyMessage: `${remote} is not a valid remote. Try:\n\n${Object.keys(
+                    REMOTES
+                ).join('\n')}`,
+                parameters: ['remote'],
+            })
+        }
+        this.env.set('HOST', host)
+    }
 
-	public getHost() {
-		return this.env.get('HOST')
-	}
+    public getHost() {
+        return this.env.get('HOST')
+    }
 
-	public getRemote() {
-		// move to constants or some better mapping?
-		const values = Object.entries(REMOTES)
-		const host = this.getHost()
+    public getRemote() {
+        // move to constants or some better mapping?
+        const values = Object.entries(REMOTES)
+        const host = this.getHost()
 
-		if (typeof host === 'undefined') {
-			return null
-		}
+        if (typeof host === 'undefined') {
+            return null
+        }
 
-		const match = values.find((v) => host?.toString?.().indexOf?.(v[1]) > -1)
+        const match = values.find(
+            (v) => host?.toString?.().indexOf?.(v[1]) > -1
+        )
 
-		if (!match) {
-			if (host?.toString?.().startsWith?.('http://127.0.0.1')) {
-				return 'local'
-			}
+        if (!match) {
+            if (host?.toString?.().startsWith?.('http://127.0.0.1')) {
+                return 'local'
+            }
 
-			throw new SchemaError({
-				code: 'INVALID_PARAMETERS',
-				friendlyMessage: `Mercury's env.HOST is set to '${host}', which I can't resolve to an environment.`,
-				parameters: ['env.HOST'],
-			})
-		}
-		return match?.[0] as Remote
-	}
+            throw new SchemaError({
+                code: 'INVALID_PARAMETERS',
+                friendlyMessage: `Mercury's env.HOST is set to '${host}', which I can't resolve to an environment.`,
+                parameters: ['env.HOST'],
+            })
+        }
+        return match?.[0] as Remote
+    }
 }
