@@ -1,123 +1,168 @@
-import AbstractSpruceError from '@sprucelabs/error'
 import { default as SchemaEntity } from '@sprucelabs/schema'
 import * as SpruceSchema from '@sprucelabs/schema'
 
-export declare namespace SpruceErrors.SpruceEventUtils {
-    export interface MercuryResponseError {
-        responseErrors: AbstractSpruceError<any>[]
-    }
+import AbstractSpruceError from '@sprucelabs/error'
 
-    export interface MercuryResponseErrorSchema extends SpruceSchema.Schema {
-        id: 'mercuryResponseError'
-        namespace: 'SpruceEventUtils'
-        name: 'Mercury response error'
-        fields: {
-            /** . */
-            responseErrors: {
-                type: 'raw'
-                isRequired: true
-                isArray: true
-                options: { valueType: `AbstractSpruceError<any>` }
-            }
-        }
-    }
 
-    export type MercuryResponseErrorEntity =
-        SchemaEntity<SpruceErrors.SpruceEventUtils.MercuryResponseErrorSchema>
-}
+
+
+
+
+
+
 
 export declare namespace SpruceErrors.SpruceEventUtils {
-    export interface InvalidEventName {
-        fullyQualifiedEventName: string
 
-        validNames: string[]
-    }
+	
+	export interface MercuryResponseError {
+		
+			
+			'responseErrors': (AbstractSpruceError<any>)[]
+	}
 
-    export interface InvalidEventNameSchema extends SpruceSchema.Schema {
-        id: 'invalidEventName'
-        namespace: 'SpruceEventUtils'
-        name: 'Invalid event name'
-        fields: {
-            /** . */
-            fullyQualifiedEventName: {
-                type: 'text'
-                isRequired: true
-                options: undefined
-            }
-            /** . */
-            validNames: {
-                type: 'text'
-                isRequired: true
-                isArray: true
-                options: undefined
-            }
-        }
-    }
+	export interface MercuryResponseErrorSchema extends SpruceSchema.Schema {
+		id: 'mercuryResponseError',
+		namespace: 'SpruceEventUtils',
+		name: 'Mercury response error',
+		    fields: {
+		            /** . */
+		            'responseErrors': {
+		                type: 'raw',
+		                isRequired: true,
+		                isArray: true,
+		                options: {valueType: `AbstractSpruceError<any>`,}
+		            },
+		    }
+	}
 
-    export type InvalidEventNameEntity =
-        SchemaEntity<SpruceErrors.SpruceEventUtils.InvalidEventNameSchema>
+	export type MercuryResponseErrorEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.MercuryResponseErrorSchema>
+
 }
+
 
 export declare namespace SpruceErrors.SpruceEventUtils {
-    export interface EventPluginError {}
 
-    export interface EventPluginErrorSchema extends SpruceSchema.Schema {
-        id: 'eventPluginError'
-        namespace: 'SpruceEventUtils'
-        name: 'event plugin error'
-        fields: {}
-    }
+	
+	export interface InvalidEventName {
+		
+			
+			'fullyQualifiedEventName': string
+			
+			'validNames': string[]
+	}
 
-    export type EventPluginErrorEntity =
-        SchemaEntity<SpruceErrors.SpruceEventUtils.EventPluginErrorSchema>
+	export interface InvalidEventNameSchema extends SpruceSchema.Schema {
+		id: 'invalidEventName',
+		namespace: 'SpruceEventUtils',
+		name: 'Invalid event name',
+		    fields: {
+		            /** . */
+		            'fullyQualifiedEventName': {
+		                type: 'text',
+		                isRequired: true,
+		                options: undefined
+		            },
+		            /** . */
+		            'validNames': {
+		                type: 'text',
+		                isRequired: true,
+		                isArray: true,
+		                options: undefined
+		            },
+		    }
+	}
+
+	export type InvalidEventNameEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.InvalidEventNameSchema>
+
 }
+
 
 export declare namespace SpruceErrors.SpruceEventUtils {
-    export interface EventContractsNotSynced {}
 
-    export interface EventContractsNotSyncedSchema extends SpruceSchema.Schema {
-        id: 'eventContractsNotSynced'
-        namespace: 'SpruceEventUtils'
-        name: 'EVENT_CONTRACTS_NOT_SYNCED'
-        fields: {}
-    }
+	
+	export interface EventPluginError {
+		
+	}
 
-    export type EventContractsNotSyncedEntity =
-        SchemaEntity<SpruceErrors.SpruceEventUtils.EventContractsNotSyncedSchema>
+	export interface EventPluginErrorSchema extends SpruceSchema.Schema {
+		id: 'eventPluginError',
+		namespace: 'SpruceEventUtils',
+		name: 'event plugin error',
+		    fields: {
+		    }
+	}
+
+	export type EventPluginErrorEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.EventPluginErrorSchema>
+
 }
+
 
 export declare namespace SpruceErrors.SpruceEventUtils {
-    export interface EmptyMercuryResponse {}
 
-    export interface EmptyMercuryResponseSchema extends SpruceSchema.Schema {
-        id: 'emptyMercuryResponse'
-        namespace: 'SpruceEventUtils'
-        name: 'empty mercury response'
-        fields: {}
-    }
+	
+	export interface EventContractsNotSynced {
+		
+	}
 
-    export type EmptyMercuryResponseEntity =
-        SchemaEntity<SpruceErrors.SpruceEventUtils.EmptyMercuryResponseSchema>
+	export interface EventContractsNotSyncedSchema extends SpruceSchema.Schema {
+		id: 'eventContractsNotSynced',
+		namespace: 'SpruceEventUtils',
+		name: 'EVENT_CONTRACTS_NOT_SYNCED',
+		    fields: {
+		    }
+	}
+
+	export type EventContractsNotSyncedEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.EventContractsNotSyncedSchema>
+
 }
+
 
 export declare namespace SpruceErrors.SpruceEventUtils {
-    export interface DuplicateEvent {
-        fullyQualifiedEventName?: string | undefined | null
-    }
 
-    export interface DuplicateEventSchema extends SpruceSchema.Schema {
-        id: 'duplicateEvent'
-        namespace: 'SpruceEventUtils'
-        name: 'Duplicate event'
-        fields: {
-            /** . */
-            fullyQualifiedEventName: {
-                type: 'text'
-                options: undefined
-            }
-        }
-    }
+	
+	export interface EmptyMercuryResponse {
+		
+	}
 
-    export type DuplicateEventEntity =
-        SchemaEntity<SpruceErrors.SpruceEventUtils.DuplicateEventSchema>
+	export interface EmptyMercuryResponseSchema extends SpruceSchema.Schema {
+		id: 'emptyMercuryResponse',
+		namespace: 'SpruceEventUtils',
+		name: 'empty mercury response',
+		    fields: {
+		    }
+	}
+
+	export type EmptyMercuryResponseEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.EmptyMercuryResponseSchema>
+
 }
+
+
+export declare namespace SpruceErrors.SpruceEventUtils {
+
+	
+	export interface DuplicateEvent {
+		
+			
+			'fullyQualifiedEventName'?: string| undefined | null
+	}
+
+	export interface DuplicateEventSchema extends SpruceSchema.Schema {
+		id: 'duplicateEvent',
+		namespace: 'SpruceEventUtils',
+		name: 'Duplicate event',
+		    fields: {
+		            /** . */
+		            'fullyQualifiedEventName': {
+		                type: 'text',
+		                options: undefined
+		            },
+		    }
+	}
+
+	export type DuplicateEventEntity = SchemaEntity<SpruceErrors.SpruceEventUtils.DuplicateEventSchema>
+
+}
+
+
+
+
