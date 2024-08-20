@@ -1,3 +1,10 @@
+# [40.1.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.0.294...v40.1.0) (2024-08-20)
+
+
+### Features
+
+* remote serve now supports custcom remotes (in getting, not settings) ([a0d002a](https://github.com/sprucelabsai-community/spruce-event-utils/commit/a0d002a))
+
 ## [40.0.294](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.0.293...v40.0.294) (2024-08-20)
 
 ## [40.0.293](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.0.292...v40.0.293) (2024-08-20)
