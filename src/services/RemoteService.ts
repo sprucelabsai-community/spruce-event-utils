@@ -2,7 +2,6 @@ import { SchemaError } from '@sprucelabs/schema'
 import { EnvService } from '@sprucelabs/spruce-skill-utils'
 import { Remote, REMOTES } from '../constants'
 
-//extracted from cli, local testing going forward
 export default class RemoteService {
     private env: EnvService
 
@@ -37,13 +36,12 @@ export default class RemoteService {
             return null
         }
 
-        const match = values.find(
-            (v) => host?.toString?.().indexOf?.(v[1]) > -1
-        )
+        const hostStr = host?.toString?.()
+        const match = values.find((v) => hostStr?.indexOf?.(v[1]) > -1)
 
         if (!match) {
-            if (host?.toString?.().startsWith?.('http://127.0.0.1')) {
-                return 'local'
+            if (hostStr?.startsWith?.('http')) {
+                return 'custom'
             }
 
             throw new SchemaError({

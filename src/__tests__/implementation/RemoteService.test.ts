@@ -50,14 +50,20 @@ export default class RemoteServiceTest extends AbstractSpruceTest {
 
     @test()
     protected static async canHandleLocalWithDifferentPort() {
-        this.assertResolvesToLocal('http://127.0.0.1:8082')
-        this.assertResolvesToLocal('http://127.0.0.1:8083')
+        this.assertUrlResolvesTo('http://127.0.0.1:8082', 'custom')
+        this.assertUrlResolvesTo('http://127.0.0.1:8083', 'custom')
+        this.assertUrlResolvesTo('http://127.0.0.1:1234', 'custom')
     }
 
     private static assertResolvesToLocal(url: string) {
+        const expected = 'local'
+        this.assertUrlResolvesTo(url, expected)
+    }
+
+    private static assertUrlResolvesTo(url: string, expected: string) {
         const env = new HostOnlyEnv(url)
         const remote = new RemoteService(env)
-        assert.isEqual(remote.getRemote(), 'local')
+        assert.isEqual(remote.getRemote(), expected)
     }
 }
 
