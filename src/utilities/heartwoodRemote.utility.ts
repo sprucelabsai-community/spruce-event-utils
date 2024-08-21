@@ -1,7 +1,7 @@
 import { SchemaError } from '@sprucelabs/schema'
 import { Remote, REMOTES } from '../constants'
 
-export const HEARTWOOD_REMOTES: Record<Remote, string> = {
+export const HEARTWOOD_REMOTES: Omit<Record<Remote, string>, 'custom'> = {
     local: 'http://localhost:8080',
     developer: 'https://dev.spruce.bot',
     demo: 'https://demo.spruce.bot',
@@ -13,7 +13,9 @@ export const HEARTWOOD_REMOTES: Record<Remote, string> = {
 
 const heartwoodRemoteUtil = {
     buildUrl(remote: Remote) {
+        //@ts-ignore
         if (HEARTWOOD_REMOTES[remote]) {
+            //@ts-ignore
             return HEARTWOOD_REMOTES[remote]
         }
         throw new SchemaError({

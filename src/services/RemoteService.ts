@@ -10,6 +10,7 @@ export default class RemoteService {
     }
 
     public set(remote: Remote) {
+        //@ts-ignore
         const host = REMOTES[remote]
         if (!host) {
             throw new SchemaError({

@@ -18,4 +18,4 @@ export const REMOTES = {
     heartwood_test: REMOTE_HEARTWOOD_TEST,
 }
 
-export type Remote = keyof typeof REMOTES
+export type Remote = keyof typeof REMOTES | 'custom'
