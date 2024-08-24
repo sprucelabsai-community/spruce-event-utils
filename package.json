@@ -57,16 +57,16 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^6.0.251",
-    "@sprucelabs/mercury-types": "^47.0.299",
-    "@sprucelabs/schema": "^30.0.301",
-    "@sprucelabs/spruce-core-schemas": "^40.1.242",
-    "@sprucelabs/spruce-skill-utils": "^31.0.315",
-    "@sprucelabs/test-utils": "^5.1.193"
+    "@sprucelabs/mercury-types": "^47.0.300",
+    "@sprucelabs/schema": "^30.0.302",
+    "@sprucelabs/spruce-core-schemas": "^40.1.243",
+    "@sprucelabs/spruce-skill-utils": "^31.0.316",
+    "@sprucelabs/test-utils": "^5.1.194"
   },
   "devDependencies": {
-    "@sprucelabs/esm-postbuild": "^6.0.234",
-    "@sprucelabs/jest-json-reporter": "^8.0.252",
-    "@sprucelabs/resolve-path-aliases": "^2.0.229",
+    "@sprucelabs/esm-postbuild": "^6.0.235",
+    "@sprucelabs/jest-json-reporter": "^8.0.253",
+    "@sprucelabs/resolve-path-aliases": "^2.0.230",
     "@sprucelabs/semantic-release": "^5.0.2",
     "@sprucelabs/test": "^9.0.42",
     "@types/memoizee": "^0.4.11",
