@@ -21,15 +21,15 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		interface EventTarget {
 			
 				
-				'locationId'?: string| undefined | null
+				'locationId'?: string | undefined | null
 				
-				'personId'?: string| undefined | null
+				'personId'?: string | undefined | null
 				
-				'organizationId'?: string| undefined | null
+				'organizationId'?: string | undefined | null
 				
-				'skillId'?: string| undefined | null
+				'skillId'?: string | undefined | null
 				
-				'roleId'?: string| undefined | null
+				'roleId'?: string | undefined | null
 		}
 
 		interface EventTargetSchema extends SpruceSchema.Schema {
@@ -79,17 +79,17 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		interface EventSource {
 			
 				
-				'locationId'?: string| undefined | null
+				'locationId'?: string | undefined | null
 				
-				'personId'?: string| undefined | null
+				'personId'?: string | undefined | null
 				
-				'organizationId'?: string| undefined | null
+				'organizationId'?: string | undefined | null
 				
-				'skillId'?: string| undefined | null
+				'skillId'?: string | undefined | null
 				
-				'roleId'?: string| undefined | null
+				'roleId'?: string | undefined | null
 				/** Proxy token. */
-				'proxyToken'?: string| undefined | null
+				'proxyToken'?: string | undefined | null
 		}
 
 		interface EventSourceSchema extends SpruceSchema.Schema {
@@ -145,9 +145,9 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		interface EventPagingResponse {
 			
 				
-				'next'?: string| undefined | null
+				'next'?: string | undefined | null
 				
-				'previous'?: string| undefined | null
+				'previous'?: string | undefined | null
 		}
 
 		interface EventPagingResponseSchema extends SpruceSchema.Schema {
@@ -184,7 +184,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				
 				'field': string
 				
-				'direction'?: ("asc" | "desc")| undefined | null
+				'direction'?: ("asc" | "desc") | undefined | null
 		}
 
 		interface EventPagingSortSchema extends SpruceSchema.Schema {
@@ -220,13 +220,13 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		interface EventPagingRequest {
 			
 				
-				'pageSize'?: number| undefined | null
+				'pageSize'?: number | undefined | null
 				
-				'next'?: string| undefined | null
+				'next'?: string | undefined | null
 				
-				'previous'?: string| undefined | null
+				'previous'?: string | undefined | null
 				
-				'sort'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSort[]| undefined | null
+				'sort'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventPagingSort[] | undefined | null
 		}
 
 		interface EventPagingRequestSchema extends SpruceSchema.Schema {
