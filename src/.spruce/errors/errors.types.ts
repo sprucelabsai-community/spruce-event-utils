@@ -143,7 +143,7 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 	export interface DuplicateEvent {
 		
 			
-			'fullyQualifiedEventName'?: string| undefined | null
+			'fullyQualifiedEventName'?: string | undefined | null
 	}
 
 	export interface DuplicateEventSchema extends SpruceSchema.Schema {
