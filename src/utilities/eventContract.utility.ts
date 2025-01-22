@@ -1,4 +1,4 @@
-import { EventContract, EventNames } from '@sprucelabs/mercury-types'
+import { EventContract, EventName } from '@sprucelabs/mercury-types'
 import { EVENT_VERSION_DIVIDER } from '../constants'
 import SpruceError from '../errors/SpruceError'
 import { NamedEventSignature } from '../types/event.types'
@@ -15,11 +15,14 @@ const eventContractUtil = {
     },
 
     unifyContracts<Contract extends EventContract = EventContract>(
-        contracts: Contract[]
+        contracts: Contract[],
+        options?: { shouldUpsert?: boolean }
     ) {
         if (!contracts || contracts.length === 0) {
             return undefined
         }
+
+        const { shouldUpsert = false } = options ?? {}
 
         const unifiedContract: EventContract = {
             eventSignatures: {},
@@ -28,17 +31,19 @@ const eventContractUtil = {
         let existingNames: string[] = []
 
         for (const contract of contracts ?? []) {
-            const names = Object.keys(contract.eventSignatures)
-            for (const name of names) {
-                if (existingNames.indexOf(name) > -1) {
-                    throw new SpruceError({
-                        code: 'DUPLICATE_EVENT',
-                        fullyQualifiedEventName: name,
-                    })
+            if (!shouldUpsert) {
+                const names = Object.keys(contract.eventSignatures)
+                for (const name of names) {
+                    if (existingNames.indexOf(name) > -1) {
+                        throw new SpruceError({
+                            code: 'DUPLICATE_EVENT',
+                            fullyQualifiedEventName: name,
+                        })
+                    }
                 }
-            }
 
-            existingNames.push(...names)
+                existingNames.push(...names)
+            }
 
             unifiedContract.eventSignatures = {
                 ...unifiedContract.eventSignatures,
@@ -100,7 +105,7 @@ const eventContractUtil = {
 
     getSignatureByName<Contract extends EventContract>(
         contract: Contract,
-        fullyQualifiedEventName: EventNames<Contract>
+        fullyQualifiedEventName: EventName<Contract>
     ) {
         const resolvedName = this.resolveToLatestEventName(
             contract,
@@ -145,6 +150,7 @@ const getNamedEventSignatures = (contract: EventContract) => {
 
     return sigs
 }
+
 function getNamedSignature(name: string, contract: EventContract) {
     if (!contract.eventSignatures[name]) {
         return undefined

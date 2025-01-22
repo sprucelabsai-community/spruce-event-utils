@@ -195,4 +195,76 @@ export default class EventContractUtilityTest extends AbstractSpruceTest {
             eventContractUtil.getNamedEventSignatures(contract)
         })
     }
+
+    @test()
+    protected static async unifyingContractsCanUpsert() {
+        const aiInstructions = generateId()
+
+        const firstContract = buildEventContract({
+            eventSignatures: {
+                'good-event::1': {},
+                'good-event::2': {},
+            },
+        })
+
+        const secondContract = buildEventContract({
+            eventSignatures: {
+                'good-event::1': {
+                    aiInstructions,
+                },
+            },
+        })
+
+        const contract = eventContractUtil.unifyContracts(
+            [firstContract, secondContract],
+            { shouldUpsert: true }
+        )
+
+        assert.isEqualDeep(contract, {
+            eventSignatures: {
+                'good-event::1': {
+                    aiInstructions,
+                },
+                'good-event::2': {},
+            },
+        })
+    }
+
+    @test()
+    protected static async unifyingCanUpsertWithDifferentEvents() {
+        const description1 = generateId()
+        const description2 = generateId()
+        const firstContract = buildEventContract({
+            eventSignatures: {
+                'another-event::100': {
+                    description: description1,
+                },
+                'a-third-event::200': {},
+            },
+        })
+
+        const secondContract = buildEventContract({
+            eventSignatures: {
+                'another-event::100': {
+                    description: description2,
+                },
+                'a-fourth-event::300': {},
+            },
+        })
+
+        const contract = eventContractUtil.unifyContracts(
+            [firstContract, secondContract],
+            { shouldUpsert: true }
+        )
+
+        assert.isEqualDeep(contract, {
+            eventSignatures: {
+                'another-event::100': {
+                    description: description2,
+                },
+                'a-third-event::200': {},
+                'a-fourth-event::300': {},
+            },
+        })
+    }
 }
