@@ -1,3 +1,5 @@
+## [40.2.38](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.2.37...v40.2.38) (2025-02-22)
+
 ## [40.2.37](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.2.36...v40.2.37) (2025-02-22)
 
 ## [40.2.36](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.2.35...v40.2.36) (2025-02-22)
