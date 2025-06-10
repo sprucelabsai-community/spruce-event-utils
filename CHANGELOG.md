@@ -1,3 +1,10 @@
+# [41.0.0](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.2.107...v41.0.0) (2025-06-10)
+
+
+### Breaking Changes
+
+* jest update ([48c3924](https://github.com/sprucelabsai-community/spruce-event-utils/commit/48c3924))
+
 ## [40.2.107](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.2.106...v40.2.107) (2025-06-06)
 
 ## [40.2.106](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v40.2.105...v40.2.106) (2025-06-06)
