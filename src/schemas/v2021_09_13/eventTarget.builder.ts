@@ -7,6 +7,6 @@ export default buildSchema({
     moduleToImportFromWhenRemote: '@sprucelabs/spruce-event-utils',
     importsWhenRemote: ["import '@sprucelabs/spruce-event-utils'"],
     fields: {
-        ...dropFields(messageTargetSchema.fields, ['phone']),
+        ...dropFields(messageTargetSchema.fields, ['phone', 'email']),
     },
 })

@@ -36,11 +36,6 @@ const eventTargetSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventTargetS
 	                type: 'id',
 	                options: undefined
 	            },
-	            /** . */
-	            'email': {
-	                type: 'email',
-	                options: undefined
-	            },
 	    }
 }
 

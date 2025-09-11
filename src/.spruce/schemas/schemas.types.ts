@@ -30,8 +30,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				'skillId'?: string | undefined | null
 				
 				'roleId'?: string | undefined | null
-				
-				'email'?: string | undefined | null
 		}
 
 		interface EventTargetSchema extends SpruceSchema.Schema {
@@ -67,11 +65,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			                type: 'id',
 			                options: undefined
 			            },
-			            /** . */
-			            'email': {
-			                type: 'email',
-			                options: undefined
-			            },
 			    }
 		}
 
@@ -95,8 +88,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				'skillId'?: string | undefined | null
 				
 				'roleId'?: string | undefined | null
-				
-				'email'?: string | undefined | null
 				/** Proxy token. */
 				'proxyToken'?: string | undefined | null
 		}
@@ -132,11 +123,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			            /** . */
 			            'roleId': {
 			                type: 'id',
-			                options: undefined
-			            },
-			            /** . */
-			            'email': {
-			                type: 'email',
 			                options: undefined
 			            },
 			            /** Proxy token. */

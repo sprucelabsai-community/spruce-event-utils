@@ -36,11 +36,6 @@ const eventSourceSchema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceS
 	                type: 'id',
 	                options: undefined
 	            },
-	            /** . */
-	            'email': {
-	                type: 'email',
-	                options: undefined
-	            },
 	            /** Proxy token. */
 	            'proxyToken': {
 	                label: 'Proxy token',
