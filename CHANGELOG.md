@@ -1,3 +1,83 @@
+## [41.0.138](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.137...v41.0.138) (2025-10-13)
+
+## [41.0.137](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.136...v41.0.137) (2025-10-11)
+
+## [41.0.136](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.135...v41.0.136) (2025-10-11)
+
+## [41.0.135](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.134...v41.0.135) (2025-10-11)
+
+## [41.0.134](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.133...v41.0.134) (2025-10-11)
+
+## [41.0.133](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.132...v41.0.133) (2025-10-10)
+
+## [41.0.132](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.131...v41.0.132) (2025-10-10)
+
+## [41.0.131](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.130...v41.0.131) (2025-10-09)
+
+## [41.0.130](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.129...v41.0.130) (2025-10-06)
+
+## [41.0.129](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.128...v41.0.129) (2025-10-06)
+
+## [41.0.128](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.127...v41.0.128) (2025-10-06)
+
+## [41.0.127](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.126...v41.0.127) (2025-10-05)
+
+## [41.0.126](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.125...v41.0.126) (2025-10-04)
+
+## [41.0.125](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.124...v41.0.125) (2025-10-03)
+
+## [41.0.124](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.123...v41.0.124) (2025-10-02)
+
+## [41.0.123](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.122...v41.0.123) (2025-10-02)
+
+## [41.0.122](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.121...v41.0.122) (2025-10-02)
+
+## [41.0.121](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.120...v41.0.121) (2025-10-02)
+
+## [41.0.120](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.119...v41.0.120) (2025-09-30)
+
+## [41.0.119](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.118...v41.0.119) (2025-09-30)
+
+## [41.0.118](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.117...v41.0.118) (2025-09-30)
+
+## [41.0.117](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.116...v41.0.117) (2025-09-29)
+
+## [41.0.116](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.115...v41.0.116) (2025-09-29)
+
+## [41.0.115](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.114...v41.0.115) (2025-09-21)
+
+## [41.0.114](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.113...v41.0.114) (2025-09-20)
+
+## [41.0.113](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.112...v41.0.113) (2025-09-20)
+
+## [41.0.112](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.111...v41.0.112) (2025-09-18)
+
+## [41.0.111](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.110...v41.0.111) (2025-09-18)
+
+## [41.0.110](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.109...v41.0.110) (2025-09-18)
+
+## [41.0.109](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.108...v41.0.109) (2025-09-18)
+
+## [41.0.108](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.107...v41.0.108) (2025-09-17)
+
+## [41.0.107](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.106...v41.0.107) (2025-09-15)
+
+## [41.0.106](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.105...v41.0.106) (2025-09-14)
+
+## [41.0.105](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.104...v41.0.105) (2025-09-14)
+
+## [41.0.104](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.103...v41.0.104) (2025-09-13)
+
+## [41.0.103](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.102...v41.0.103) (2025-09-13)
+
+## [41.0.102](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.101...v41.0.102) (2025-09-13)
+
+## [41.0.101](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.100...v41.0.101) (2025-09-13)
+
+## [41.0.100](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.99...v41.0.100) (2025-09-12)
+
+## [41.0.99](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.98...v41.0.99) (2025-09-11)
+
 ## [41.0.98](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.97...v41.0.98) (2025-09-10)
 
 ## [41.0.97](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.96...v41.0.97) (2025-09-10)
