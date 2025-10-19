@@ -17,7 +17,7 @@ export declare namespace SpruceErrors.SpruceEventUtils {
 	export interface MercuryResponseError {
 		
 			
-			'responseErrors': (AbstractSpruceError<any>)[]
+			'responseErrors': AbstractSpruceError<any>[]
 	}
 
 	export interface MercuryResponseErrorSchema extends SpruceSchema.Schema {
