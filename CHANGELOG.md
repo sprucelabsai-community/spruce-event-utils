@@ -1,3 +1,8 @@
+## <small>41.0.168 (2025-11-08)</small>
+
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([002eab1](https://github.com/sprucelabsai-community/spruce-event-utils/commit/002eab1))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([bd47fea](https://github.com/sprucelabsai-community/spruce-event-utils/commit/bd47fea))
+
 ## [41.0.167](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.166...v41.0.167) (2025-11-08)
 
 ## [41.0.166](https://github.com/sprucelabsai-community/spruce-event-utils/compare/v41.0.165...v41.0.166) (2025-10-31)
