@@ -1,3 +1,7 @@
+## 42.0.0 (2025-11-09)
+
+* major: upgrade ([f5b9c6f](https://github.com/sprucelabsai-community/spruce-event-utils/commit/f5b9c6f))
+
 ## <small>41.0.168 (2025-11-08)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([002eab1](https://github.com/sprucelabsai-community/spruce-event-utils/commit/002eab1))
