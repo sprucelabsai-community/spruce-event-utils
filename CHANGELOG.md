@@ -1,3 +1,9 @@
+## 42.1.0 (2026-01-07)
+
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([224d590](https://github.com/sprucelabsai-community/spruce-event-utils/commit/224d590))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([98fcaf7](https://github.com/sprucelabsai-community/spruce-event-utils/commit/98fcaf7))
+* feat: add exports field for proper ESM support in Node.js ([f03248e](https://github.com/sprucelabsai-community/spruce-event-utils/commit/f03248e))
+
 ## <small>42.0.29 (2026-01-07)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([c99e29b](https://github.com/sprucelabsai-community/spruce-event-utils/commit/c99e29b))
