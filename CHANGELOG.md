@@ -1,3 +1,7 @@
+## 43.0.0 (2026-01-08)
+
+* major: upgrade dependencies ([d5bf8c3](https://github.com/sprucelabsai-community/spruce-event-utils/commit/d5bf8c3))
+
 ## 42.1.0 (2026-01-07)
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([224d590](https://github.com/sprucelabsai-community/spruce-event-utils/commit/224d590))
