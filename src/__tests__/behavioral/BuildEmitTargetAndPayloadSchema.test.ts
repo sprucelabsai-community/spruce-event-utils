@@ -83,6 +83,7 @@ export default class BuildEmitTargetAndPayloadSchemaTest extends AbstractSpruceT
 
     @test('tests typing (tests always pass, types will fail)')
     protected static typesTarget() {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const schema = buildEmitTargetPayloadSchema({
             eventName: 'will-book',
             payloadSchema: {
