@@ -1,3 +1,7 @@
+## <small>43.0.4 (2026-02-17)</small>
+
+* patch: upgrade dependencies and fix lint errors ([764f441](https://github.com/sprucelabsai-community/spruce-event-utils/commit/764f441))
+
 ## <small>43.0.3 (2026-01-27)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([25418df](https://github.com/sprucelabsai-community/spruce-event-utils/commit/25418df))
