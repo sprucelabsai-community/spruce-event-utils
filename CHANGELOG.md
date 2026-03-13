@@ -1,3 +1,8 @@
+## <small>43.0.18 (2026-03-13)</small>
+
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([f26fc24](https://github.com/sprucelabsai-community/spruce-event-utils/commit/f26fc24))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([3f3d267](https://github.com/sprucelabsai-community/spruce-event-utils/commit/3f3d267))
+
 ## <small>43.0.17 (2026-03-13)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([8f10862](https://github.com/sprucelabsai-community/spruce-event-utils/commit/8f10862))
